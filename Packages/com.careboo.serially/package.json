@@ -10,6 +10,6 @@
     "directory": "Packages/com.careboo.serially"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@careboo%2F"
+    "registry": "https://npm.pkg.github.com/careboo"
   }
 }
