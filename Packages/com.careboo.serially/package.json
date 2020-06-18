@@ -1,7 +1,10 @@
 {
-  "name": "@careboo/com.careboo.serially",
+  "name": "com.careboo.serially",
   "displayName": "Serially",
   "version": "0.1.0",
   "unity": "2019.4",
-  "description": "Provides extension classes to extend Unity's serialization capabilities.\n\n- Serialize Type references\n- Inject instances into [SerializeReference] fields"
+  "description": "Provides extension classes to extend Unity's serialization capabilities.\n\n- Serialize Type references\n- Inject instances into [SerializeReference] fields",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
 }
