@@ -1,10 +1,14 @@
 {
-  "name": "@careboo/com.careboo.serially",
+  "name": "com.careboo.serially",
   "displayName": "Serially",
   "version": "0.1.0",
   "unity": "2019.4",
   "description": "Provides extension classes to extend Unity's serialization capabilities.\n\n- Serialize Type references\n- Inject instances into [SerializeReference] fields",
-  "repository": "git://github.com/CareBoo/Serially.git",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/CareBoo/Serially.git",
+    "directory": "Packages/com.careboo.serially"
+  },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   }
