@@ -13,7 +13,7 @@ namespace CareBoo.Serially.Editor
             var type = property.GetManagedReferenceValueType();
             var types = property.GetSelectableManagedReferenceValueTypes();
             var cachedPosition = position;
-            position.xMin += labelWidth;
+            position.xMin += labelWidth + 2f;
             position.height = singleLineHeight;
             TypeField(position, type, types, property.SetManagedReferenceValueToNew);
 

@@ -1,0 +1,15 @@
+{
+    "name": "CareBoo.Serially.Samples.Animals",
+    "references": [
+        "CareBoo.Serially"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
