@@ -3,6 +3,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using static UnityEditor.EditorGUILayout;
+using static CareBoo.Serially.Editor.EditorGUIExtensions;
 
 namespace CareBoo.Serially.Editor
 {
@@ -11,7 +12,7 @@ namespace CareBoo.Serially.Editor
         private static class Styles
         {
             public static readonly GUIStyle selected = "selectionRect";
-            public static readonly GUIStyle unselected = EditorStyles.objectField;
+            public static readonly GUIStyle unselected = "ObjectPickerSmallStatus";
         }
 
         private const int MaxResults = 100;
@@ -72,13 +73,8 @@ namespace CareBoo.Serially.Editor
                 ? Styles.selected
                 : Styles.unselected;
 
-            var position = BeginHorizontal();
-            if (GUI.Button(position, GUIContent.none, buttonStyle))
+            if (GUILayout.Button(GetTypeGUIContent(type), buttonStyle))
                 Select(type);
-            LabelField(type?.Name ?? "None", EditorStyles.boldLabel);
-            if (!string.IsNullOrEmpty(type?.Namespace))
-                LabelField($"({type.Namespace})");
-            EndHorizontal();
         }
 
         private void UpdateTypeSearch(string newSearchValue)

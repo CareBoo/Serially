@@ -52,7 +52,7 @@ namespace CareBoo.Serially.Editor
 
         private static Rect DrawTypeLabel(Rect position, Type type)
         {
-            Button(position, GetSerializeReferenceContent(type), EditorStyles.objectField);
+            Button(position, GetTypeGUIContent(type), EditorStyles.objectField);
             return position;
         }
 
@@ -85,7 +85,7 @@ namespace CareBoo.Serially.Editor
             return type?.GetCustomAttribute<ProvideSourceInfoAttribute>();
         }
 
-        private static GUIContent GetSerializeReferenceContent(Type type)
+        public static GUIContent GetTypeGUIContent(Type type)
         {
             var label = type != null
                 ? string.IsNullOrEmpty(type.Namespace)
