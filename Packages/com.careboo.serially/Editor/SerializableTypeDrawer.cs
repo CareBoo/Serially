@@ -21,12 +21,12 @@ namespace CareBoo.Serially.Editor
             if (currentType != null && !Attribute.IsDefined(currentType, typeof(GuidAttribute)))
             {
                 label.image = EditorGUIUtility.IconContent("console.warnicon").image;
-                label.tooltip = "[WARNING] The current type doesn't have a GuidAttribute defined. Renaming this type will cause it to lose its reference!";
+                label.tooltip = "The current type doesn't have a GuidAttribute defined. Renaming this type will cause it to lose its reference!";
             }
             else if (currentType == null && !string.IsNullOrEmpty(typeIdProperty.stringValue))
             {
                 label.image = EditorGUIUtility.IconContent("console.erroricon").image;
-                label.tooltip = $"[ERROR] Type reference could not be found for the typeId, \"{typeIdProperty.stringValue}\". This can happen when renaming a type without a GuidAttribute defined.";
+                label.tooltip = $"Type reference could not be found for the typeId, \"{typeIdProperty.stringValue}\". This can happen when renaming a type without a GuidAttribute defined.";
             }
 
             position = EditorGUI.PrefixLabel(position, label);
