@@ -33,14 +33,13 @@ namespace CareBoo.Serially.Editor
             return position;
         }
 
-        private static void HandleTypeLabelClicked(Event evt, Type type)
+        public static MonoScript HandleTypeLabelClicked(Event evt, Type type)
         {
-            if (type == null) return;
             var sourceInfo = GetSourceInfo(type);
             if (sourceInfo == null)
             {
-                Debug.LogWarning($"Cannot find source script of \"{type.FullName}\" because it does not have \"{nameof(ProvideSourceInfoAttribute)}\" defined.");
-                return;
+                Debug.LogWarning($"Cannot find source script of \"{type?.FullName ?? "Null"}\" because it doesn't have a \"{nameof(ProvideSourceInfoAttribute)}\".");
+                return null;
             }
             var monoScript = LoadAssetAtPath<MonoScript>(sourceInfo.AssetPath);
             switch (evt.clickCount)
@@ -48,21 +47,26 @@ namespace CareBoo.Serially.Editor
                 case 1: PingObject(monoScript); break;
                 case 2: OpenAsset(monoScript, sourceInfo.LineNumber); break;
             }
+            if (monoScript == null)
+            {
+                Debug.LogWarning($"Cannot find MonoScript at the path \"{sourceInfo.AssetPath}\".");
+            }
+            return monoScript;
         }
 
-        private static Rect DrawTypeLabel(Rect position, Type type)
+        public static Rect DrawTypeLabel(Rect position, Type type)
         {
             Button(position, GetTypeGUIContent(type), EditorStyles.objectField);
             return position;
         }
 
-        private static Rect DrawTypePicker(Rect position)
+        public static Rect DrawTypePicker(Rect position)
         {
             Button(position, GUIContent.none, pickButtonStyle);
             return position;
         }
 
-        private static Rect GetPickerArea(Rect position)
+        public static Rect GetPickerArea(Rect position)
         {
             position.height = singleLineHeight - 2f;
             position.y += 1f;
@@ -71,7 +75,7 @@ namespace CareBoo.Serially.Editor
             return position;
         }
 
-        private static void OpenMonoScript(ProvideSourceInfoAttribute sourceInfo)
+        public static void OpenMonoScript(ProvideSourceInfoAttribute sourceInfo)
         {
             if (sourceInfo != null)
             {
@@ -80,7 +84,7 @@ namespace CareBoo.Serially.Editor
             }
         }
 
-        private static ProvideSourceInfoAttribute GetSourceInfo(Type type)
+        public static ProvideSourceInfoAttribute GetSourceInfo(Type type)
         {
             return type?.GetCustomAttribute<ProvideSourceInfoAttribute>();
         }
