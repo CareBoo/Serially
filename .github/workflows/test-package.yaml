@@ -7,7 +7,7 @@ on:
   pull_request:
 
 env:
-  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE_2019_4 }}
 
 jobs:
   testAllModes:
@@ -20,7 +20,7 @@ jobs:
         projectPath:
           - .
         unityVersion:
-          - 2019.4.0f1
+          - 2019.4.1f1
         testMode:
           - playmode
           - editmode

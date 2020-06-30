@@ -20,11 +20,14 @@ namespace CareBoo.Serially
             {
                 if (assetPath == null)
                 {
-                    assetPath = "Assets" + absoluteFilePath.Substring(Application.dataPath.Length);
+                    assetPath = absoluteFilePath.Substring(LengthOfPathToProject);
                 }
                 return assetPath;
             }
         }
+
+        private static int LengthOfPathToProject =>
+            Application.dataPath.Length - "Assets".Length;
 
         public ProvideSourceInfoAttribute(
             [CallerMemberName] string member = "",
