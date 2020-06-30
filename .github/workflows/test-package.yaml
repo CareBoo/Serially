@@ -26,15 +26,6 @@ jobs:
           - editmode
 
     steps:
-      - name: Request activation file
-        id: getManualLicenseFile
-        uses: webbertakken/unity-request-manual-activation-file@v1.1
-        with:
-          unityVersion: ${{ matrix.unityVersion }}
-      - uses: actions/upload-artifact@v1
-        with:
-          name: ${{ steps.getManualLicenseFile.outputs.filePath }}
-          path: ${{ steps.getManualLicenseFile.outputs.filePath }}
       - uses: actions/checkout@v2
         with:
           lfs: true
