@@ -156,6 +156,7 @@ MonoBehaviour:
     typeId: b19cb907-dd97-42cd-94fc-c537382f971e
   MyCurrentPet:
     id: 0
+  GameObjectReference: {fileID: 0}
   references:
     version: 1
     00000000:
