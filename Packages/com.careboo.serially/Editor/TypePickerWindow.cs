@@ -7,7 +7,7 @@ using static CareBoo.Serially.Editor.EditorGUIExtensions;
 
 namespace CareBoo.Serially.Editor
 {
-    public class SelectTypeWindow : EditorWindow
+    public class TypePickerWindow : EditorWindow
     {
         private static class Styles
         {
@@ -24,14 +24,14 @@ namespace CareBoo.Serially.Editor
         private string searchValue;
         private Vector2 scrollPosition;
 
-        public static SelectTypeWindow ShowWindow(
+        public static TypePickerWindow ShowWindow(
             Type selected,
             Type[] types,
             Action<Type> onSelected,
             string title = null
         )
         {
-            var window = (SelectTypeWindow)CreateInstance(typeof(SelectTypeWindow));
+            var window = (TypePickerWindow)CreateInstance(typeof(TypePickerWindow));
             window.types = types;
             window.onSelected = onSelected;
             window.selected = selected;
