@@ -58,7 +58,8 @@ namespace CareBoo.Serially.Editor
             if (searchedTypes.Length > MaxResults)
                 LabelField(
                     $"only showing the first {MaxResults} of {searchedTypes.Length} results...",
-                    EditorStyles.centeredGreyMiniLabel);
+                    EditorStyles.centeredGreyMiniLabel
+                    );
         }
 
         private void DrawSearchFieldLayout()
