@@ -22,7 +22,7 @@ namespace CareBoo.Serially.Editor
             if (evt.type == EventType.MouseDown)
             {
                 if (pickerArea.Contains(evt.mousePosition))
-                    SelectTypeWindow.ShowWindow(type, types, onSelect);
+                    TypePickerWindow.ShowWindow(type, types, onSelect);
                 else if (position.Contains(evt.mousePosition))
                     HandleTypeLabelClicked(evt, type);
             }
