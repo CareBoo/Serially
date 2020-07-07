@@ -1,0 +1,22 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="row" class="row" style="flex-direction: row;">
+        <Style path="UI Builder/TanksPlayerListItem/TanksPlayerListItem" />
+        <ui:VisualElement name="icon" style="background-image: resource('UI Builder/TanksPlayerListItem/tank_icon_base'); -unity-background-scale-mode: scale-to-fit; width: 100px; height: 90px; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px;" />
+        <ui:VisualElement name="body" style="flex-grow: 1;">
+            <ui:Label text="Label" name="player-name" class="player-name" />
+            <ui:VisualElement name="details-row" style="flex-direction: row; justify-content: space-between;">
+                <ui:Label text="SCORE: 9000" name="score" class="details-text" />
+                <ui:VisualElement name="kills-box" style="flex-direction: row; -unity-background-scale-mode: scale-to-fit; align-items: center;">
+                    <ui:VisualElement name="kills-icon" style="height: 15px; width: 15px; background-image: resource('UI Builder/TanksPlayerListItem/Kills_icon');" />
+                    <ui:Label text="10/10" name="kills" class="details-text" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement style="flex-direction: row;">
+                <ui:Label text="HP:" class="details-text" />
+                <ui:VisualElement name="health-bar" class="health-bar">
+                    <ui:VisualElement name="health-bar-fill" class="health-bar-fill" style="flex-grow: 1; width: 87px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

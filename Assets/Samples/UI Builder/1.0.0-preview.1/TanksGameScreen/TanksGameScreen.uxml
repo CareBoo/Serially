@@ -1,0 +1,20 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:Template name="StatsBox" path="UI Builder/TanksGameScreen/TanksGameScreenStatsBox_UXML" />
+    <ui:VisualElement name="screen" style="flex-grow: 1; flex-direction: row; justify-content: space-between;">
+        <Style path="UI Builder/TanksGameScreen/TanksGameScreen" />
+        <ui:VisualElement name="left" style="justify-content: center;">
+            <ui:VisualElement name="toolbar">
+                <ui:Button name="increase-speed" class="toolbar-button" style="background-image: resource('UI Builder/TanksGameScreen/upgrade_icon');" />
+                <ui:Button name="random-explosion" class="toolbar-button" style="background-image: resource('UI Builder/TanksGameScreen/shoot_icon');" />
+                <ui:Button name="back-to-menu" class="toolbar-button" style="background-image: resource('UI Builder/TanksGameScreen/quit_icon');" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="right" style="justify-content: space-between;">
+            <ui:Instance template="StatsBox" name="stats" class="container" />
+            <ui:VisualElement name="player-list-container" class="container">
+                <ui:Label text="PLAYERS" class="stats-title" style="background-color: rgb(0, 0, 0); -unity-font: resource('UI Builder/TanksGameScreen/Teko-Regular'); font-size: 24px; color: rgb(226, 226, 226); -unity-text-align: upper-center;" />
+                <ui:ListView focusable="True" name="player-list" item-height="100" style="width: 302px; height: 366px; background-color: rgba(0, 0, 0, 0.69); border-color: rgb(0, 0, 0); border-left-width: 2px; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
