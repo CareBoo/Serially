@@ -1,0 +1,38 @@
+.stat-row {
+    flex-direction: row;
+}
+
+.unity-label {
+    min-width: 20px;
+    color: rgba(255, 255, 255, 0.95);
+    -unity-font: resource('UI Builder/TanksStatsBox/Teko-Regular');
+    font-size: 19px;
+}
+
+.row-label {
+    width: 80px;
+    -unity-text-align: upper-right;
+}
+
+.stats-title {
+    background-color: rgb(0, 0, 0);
+    align-items: stretch;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.heading-icon {
+    width: 20px;
+    height: 20px;
+    flex-grow: 1;
+    -unity-background-scale-mode: scale-to-fit;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.stat {
+    flex-grow: 1;
+    -unity-text-align: upper-center;
+    flex-basis: 35px;
+    flex-shrink: 0;
+}

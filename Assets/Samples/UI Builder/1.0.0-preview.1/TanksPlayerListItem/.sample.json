@@ -1,0 +1,5 @@
+{
+	"displayName":"TanksPlayerListItem",
+	"description": "Players list item derived from the Unite CPH 2019 Tanks demo.",
+	"createSeparatePackage": false
+}

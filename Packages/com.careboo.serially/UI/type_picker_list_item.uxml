@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="click-area" style="height: 30px; flex-direction: row; justify-content: space-around;">
+        <ui:Label text="Label" />
+        <ui:Label text="Label" />
+    </ui:VisualElement>
+</ui:UXML>
