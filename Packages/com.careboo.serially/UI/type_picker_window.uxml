@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="search-bar" style="height: 30px;" />
+    <ui:ListView focusable="True" name="list-area" style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; height: 403px;" />
+</ui:UXML>

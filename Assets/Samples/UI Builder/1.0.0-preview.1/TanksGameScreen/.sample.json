@@ -1,0 +1,5 @@
+{
+	"displayName":"TanksGameScreen",
+	"description": "Main game screen derived from the Unite CPH 2019 Tanks demo.",
+	"createSeparatePackage": false
+}

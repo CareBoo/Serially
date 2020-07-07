@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="screen" class="screen">
+        <Style path="UI Builder/TanksMainMenu/TanksMainMenu" />
+        <ui:VisualElement name="menu-column" class="menu-column">
+            <ui:VisualElement name="menu" class="menu-window">
+                <ui:VisualElement name="menu-title-image" class="title-image" style="height: 230px; background-image: resource('UI Builder/TanksMainMenu/Muzzle_flash_001');" />
+                <ui:Button text="START" name="start-button" class="menu-button" />
+                <ui:Button text="EXIT" name="exit-button" class="menu-button" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

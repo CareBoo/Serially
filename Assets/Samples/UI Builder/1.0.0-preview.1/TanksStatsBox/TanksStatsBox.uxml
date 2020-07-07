@@ -1,0 +1,20 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="stats" style="background-color: rgba(0, 0, 0, 0.63); border-color: rgb(0, 0, 0); border-left-width: 2px; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px;">
+        <Style path="UI Builder/TanksStatsBox/TanksStatsBox" />
+        <ui:VisualElement name="title-bar" class="stats-title">
+            <ui:VisualElement name="speed-heading" class="heading-icon" style="background-image: resource('UI Builder/TanksStatsBox/speed_icon');" />
+            <ui:VisualElement name="kills-heading" class="heading-icon" style="background-image: resource('UI Builder/TanksStatsBox/Kills_icon');" />
+            <ui:VisualElement name="shots-heading" class="heading-icon" style="background-image: resource('UI Builder/TanksStatsBox/Shots_icon');" />
+            <ui:VisualElement name="accuracy-heading" class="heading-icon" style="background-image: resource('UI Builder/TanksStatsBox/Accuracy_icon');" />
+        </ui:VisualElement>
+        <ui:VisualElement name="body" style="flex-direction: row;">
+            <ui:Label text="42" name="_speed" class="stat" />
+            <ui:Label text="42" name="_kills" class="stat" />
+            <ui:Label text="42" name="_shots" class="stat" />
+            <ui:VisualElement name="stat-row" class="stat-row stat" style="justify-content: center;">
+                <ui:Label text="42" name="_accuracy" />
+                <ui:Label text="%" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
