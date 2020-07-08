@@ -89,13 +89,19 @@ namespace CareBoo.Serially.Editor
             return type?.GetCustomAttribute<ProvideSourceInfoAttribute>();
         }
 
-        public static GUIContent GetTypeGUIContent(Type type)
+        public static string GetTypeLabelString(Type type)
         {
             var label = type != null
                 ? string.IsNullOrEmpty(type.Namespace)
                     ? type.Name
                     : $"{type.Name} ({type.Namespace})"
                 : "None (Type)";
+            return label;
+        }
+
+        public static GUIContent GetTypeGUIContent(Type type)
+        {
+            var label = GetTypeLabelString(type);
             var image = IconContent("FilterByType").image;
             return new GUIContent(label, image);
         }

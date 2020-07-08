@@ -4,6 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using static UnityEditor.EditorGUILayout;
 using static CareBoo.Serially.Editor.EditorGUIExtensions;
+using UnityEngine.UIElements;
 
 namespace CareBoo.Serially.Editor
 {
@@ -16,6 +17,9 @@ namespace CareBoo.Serially.Editor
         }
 
         private const int MaxResults = 100;
+        private const string WindowVisualElementResourcePath = "type_picker_window";
+        private const string ListItemVisualElementResourcePath = "type_picker_list_item";
+
 
         private Type selected;
         private Type[] types;
@@ -23,6 +27,8 @@ namespace CareBoo.Serially.Editor
         private Action<Type> onSelected;
         private string searchValue;
         private Vector2 scrollPosition;
+
+        private VisualTreeAsset typePickerWindowAssetTree;
 
         public static TypePickerWindow ShowWindow(
             Type selected,
@@ -41,17 +47,38 @@ namespace CareBoo.Serially.Editor
             return window;
         }
 
-        private void OnGUI()
+        private void OnEnable()
         {
-            DrawMaxResultsWarningLayout();
-            DrawSearchFieldLayout();
-
-            scrollPosition = BeginScrollView(scrollPosition);
-            DrawSelectableTypeLayout(null);
-            foreach (var type in searchedTypes.Take(MaxResults))
-                DrawSelectableTypeLayout(type);
-            EndScrollView();
+            AddWindowVisualElement();
+            AddListContentVisualElements();
         }
+
+        private void AddWindowVisualElement()
+        {
+            var assetPath = nameof(TypePickerWindow).ToSnakeCase();
+            var windowVisualTreeAsset = Resources.Load<VisualTreeAsset>(assetPath);
+            windowVisualTreeAsset.CloneTree(rootVisualElement);
+        }
+
+        private void AddListContentVisualElements()
+        {
+            var listView = rootVisualElement.Q<ListView>(name: "type-list");
+            listView.Add(new TypePickerListElement(null, Select));
+            foreach (var type in searchedTypes.Take(MaxResults))
+                listView.Add(new TypePickerListElement(type, Select));
+        }
+
+        // private void OnGUI()
+        // {
+        //     DrawMaxResultsWarningLayout();
+        //     DrawSearchFieldLayout();
+
+        //     scrollPosition = BeginScrollView(scrollPosition);
+        //     DrawSelectableTypeLayout(null);
+        //     foreach (var type in searchedTypes.Take(MaxResults))
+        //         DrawSelectableTypeLayout(type);
+        //     EndScrollView();
+        // }
 
         private void DrawMaxResultsWarningLayout()
         {
