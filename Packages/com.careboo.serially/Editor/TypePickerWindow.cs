@@ -42,6 +42,7 @@ namespace CareBoo.Serially.Editor
             window.selected = selected;
             window.UpdateTypeSearch(null);
             window.titleContent = new GUIContent(title ?? "Select Type");
+            window.AddListContentVisualElements();
             window.ShowAuxWindow();
             return window;
         }
@@ -49,7 +50,6 @@ namespace CareBoo.Serially.Editor
         private void OnEnable()
         {
             AddWindowVisualElement();
-            AddListContentVisualElements();
         }
 
         private void AddWindowVisualElement()
