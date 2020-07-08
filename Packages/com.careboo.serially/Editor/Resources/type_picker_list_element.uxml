@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
     <ui:VisualElement name="click-area" style="height: 30px; flex-direction: row; justify-content: flex-start; align-items: center;">
         <ui:IMGUIContainer style="background-image: none; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px; margin-right: 8px; margin-left: 1px; margin-top: 1px; margin-bottom: 1px; min-width: 15px; min-height: 15px;" />
-        <ui:Label text="Label" style="margin-left: 8px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;" />
+        <ui:Label text="Label" name="type-label" style="margin-left: 8px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;" />
     </ui:VisualElement>
 </ui:UXML>
