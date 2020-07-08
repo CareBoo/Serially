@@ -17,8 +17,7 @@ namespace CareBoo.Serially.Editor
         }
 
         private const int MaxResults = 100;
-        private const string WindowVisualElementResourcePath = "type_picker_window";
-        private const string ListItemVisualElementResourcePath = "type_picker_list_item";
+        private const string TypeListName = "type-list";
 
 
         private Type selected;
@@ -62,7 +61,7 @@ namespace CareBoo.Serially.Editor
 
         private void AddListContentVisualElements()
         {
-            var listView = rootVisualElement.Q<ListView>(name: "type-list");
+            var listView = rootVisualElement.Q<ListView>(name: TypeListName);
             listView.Add(new TypePickerListElement(null, Select));
             foreach (var type in searchedTypes.Take(MaxResults))
                 listView.Add(new TypePickerListElement(type, Select));
