@@ -7,6 +7,8 @@ namespace CareBoo.Serially.Editor
 {
     public class TypePickerListElement
     {
+        public const string TypeLabelName = "type-label";
+
         public Type Type { get; }
 
         public Action<Type> OnSelect { get; }
@@ -27,7 +29,7 @@ namespace CareBoo.Serially.Editor
 
         public TypePickerListElement(Type type, Action<Type> onSelect)
         {
-            Type = type ?? throw new ArgumentNullException(nameof(type));
+            Type = type;
             OnSelect = onSelect ?? throw new ArgumentNullException(nameof(onSelect));
             MouseDownCallback = _ => OnSelect(type);
         }
@@ -35,7 +37,7 @@ namespace CareBoo.Serially.Editor
         public static implicit operator VisualElement(TypePickerListElement source)
         {
             var result = VisualTreeAsset.CloneTree().GetFirstOfType<VisualElement>();
-            var label = result.Q<Label>(name: "type-label");
+            var label = result.Q<Label>(name: TypeLabelName);
             label.text = GetTypeLabelString(source.Type);
             result.RegisterCallback(source.MouseDownCallback);
             return result;
