@@ -14,7 +14,6 @@ namespace CareBoo.Serially.Editor
         private const string TypeListName = "type-list";
         private const string SearchFieldName = "search-field";
 
-
         private Type selected;
         private Type[] types;
         private Type[] searchedTypes;
@@ -36,7 +35,7 @@ namespace CareBoo.Serially.Editor
             Type[] types,
             Action<Type> onSelected,
             string title = null
-        )
+            )
         {
             var window = (TypePickerWindow)CreateInstance(typeof(TypePickerWindow));
             window.Init(selected, types, onSelected, title);
