@@ -1,4 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
-    <ui:VisualElement name="search-bar" style="height: 30px;" />
-    <ui:ListView focusable="True" name="type-list" style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; height: 403px;" />
+    <ui:VisualElement name="search-container" style="height: 30px; border-bottom-width: 3px; border-bottom-right-radius: 0; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-left-color: rgb(126, 126, 126); border-right-color: rgb(126, 126, 126); border-top-color: rgb(126, 126, 126); border-bottom-color: rgb(126, 126, 126); justify-content: center; align-items: center; flex-grow: 0; padding-left: 8px; padding-right: 8px; padding-top: 8px; padding-bottom: 8px;">
+        <uie:ToolbarSearchField focusable="True" name="search-field" style="width: auto; min-width: 100%; flex-grow: 0; flex-shrink: 0; align-items: stretch; flex-direction: row;" />
+    </ui:VisualElement>
+    <ui:ListView name="type-list" item-height="15" style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; height: auto; flex-grow: 1; flex-shrink: 0; display: flex; visibility: visible;" />
 </ui:UXML>

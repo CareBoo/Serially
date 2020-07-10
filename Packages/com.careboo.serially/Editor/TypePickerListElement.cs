@@ -11,9 +11,9 @@ namespace CareBoo.Serially.Editor
 
         public Type Type { get; }
 
-        public Action<Type> OnSelect { get; }
+        public Action<Type, MouseDownEvent> OnClick { get; }
 
-        public EventCallback<MouseDownEvent> MouseDownCallback { get; }
+        public VisualElement VisualElement { get; }
 
         private static VisualTreeAsset visualTreeAsset;
 
@@ -27,20 +27,29 @@ namespace CareBoo.Serially.Editor
             return visualTreeAsset;
         }
 
-        public TypePickerListElement(Type type, Action<Type> onSelect)
+        public TypePickerListElement(Type type, Action<Type, MouseDownEvent> onClick)
         {
             Type = type;
-            OnSelect = onSelect ?? throw new ArgumentNullException(nameof(onSelect));
-            MouseDownCallback = _ => OnSelect(type);
+            OnClick = onClick;
+            VisualElement = VisualTreeAsset.CloneTree().GetFirstOfType<VisualElement>();
+            var label = VisualElement.Q<Label>(name: TypeLabelName);
+            label.text = GetTypeLabelString(Type);
+            VisualElement.RegisterCallback<MouseDownEvent>(MouseDownCallback);
+        }
+
+        public void MouseDownCallback(MouseDownEvent evt)
+        {
+            OnClick?.Invoke(Type, evt);
+        }
+
+        public void SetHighlight(bool isHighlighted)
+        {
+
         }
 
         public static implicit operator VisualElement(TypePickerListElement source)
         {
-            var result = VisualTreeAsset.CloneTree().GetFirstOfType<VisualElement>();
-            var label = result.Q<Label>(name: TypeLabelName);
-            label.text = GetTypeLabelString(source.Type);
-            result.RegisterCallback(source.MouseDownCallback);
-            return result;
+            return source.VisualElement;
         }
     }
 }
