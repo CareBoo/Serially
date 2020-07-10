@@ -5,19 +5,14 @@ using UnityEngine;
 using static UnityEditor.EditorGUILayout;
 using static CareBoo.Serially.Editor.EditorGUIExtensions;
 using UnityEngine.UIElements;
+using UnityEditor.UIElements;
 
 namespace CareBoo.Serially.Editor
 {
     public class TypePickerWindow : EditorWindow
     {
-        private static class Styles
-        {
-            public static readonly GUIStyle selected = "selectionRect";
-            public static readonly GUIStyle unselected = "ObjectPickerSmallStatus";
-        }
-
-        private const int MaxResults = 100;
         private const string TypeListName = "type-list";
+        private const string SearchFieldName = "search-field";
 
 
         private Type selected;
@@ -25,9 +20,16 @@ namespace CareBoo.Serially.Editor
         private Type[] searchedTypes;
         private Action<Type> onSelected;
         private string searchValue;
-        private Vector2 scrollPosition;
 
-        private VisualTreeAsset typePickerWindowAssetTree;
+        private ToolbarSearchField searchField;
+        private ToolbarSearchField SearchField =>
+            searchField
+            ?? (searchField = rootVisualElement.Q<ToolbarSearchField>(name: SearchFieldName));
+
+        private ListView listView;
+        public ListView ListView =>
+            listView
+            ?? (listView = rootVisualElement.Q<ListView>(name: TypeListName));
 
         public static TypePickerWindow ShowWindow(
             Type selected,
@@ -37,14 +39,19 @@ namespace CareBoo.Serially.Editor
         )
         {
             var window = (TypePickerWindow)CreateInstance(typeof(TypePickerWindow));
-            window.types = types;
-            window.onSelected = onSelected;
-            window.selected = selected;
-            window.UpdateTypeSearch(null);
-            window.titleContent = new GUIContent(title ?? "Select Type");
-            window.AddListContentVisualElements();
+            window.Init(selected, types, onSelected, title);
             window.ShowAuxWindow();
             return window;
+        }
+
+        public void Init(Type selected, Type[] types, Action<Type> onSelected, string title = null)
+        {
+            this.selected = selected;
+            this.types = types;
+            this.onSelected = onSelected;
+            titleContent = new GUIContent(title ?? "Select Type");
+            UpdateTypeSearch(null);
+            ResetListContent();
         }
 
         private void OnEnable()
@@ -59,49 +66,19 @@ namespace CareBoo.Serially.Editor
             windowVisualTreeAsset.CloneTree(rootVisualElement);
         }
 
-        private void AddListContentVisualElements()
+        private void ResetListContent()
         {
-            var listView = rootVisualElement.Q<ListView>(name: TypeListName);
-            listView.Add(new TypePickerListElement(null, Select));
-            foreach (var type in searchedTypes.Take(MaxResults))
-                listView.Add(new TypePickerListElement(type, Select));
+            ListView.Clear();
+            ListView.Add(new TypePickerListElement(null, Select));
+            foreach (var type in searchedTypes)
+                ListView.Add(new TypePickerListElement(type, Select));
         }
 
-        // private void OnGUI()
-        // {
-        //     DrawMaxResultsWarningLayout();
-        //     DrawSearchFieldLayout();
-
-        //     scrollPosition = BeginScrollView(scrollPosition);
-        //     DrawSelectableTypeLayout(null);
-        //     foreach (var type in searchedTypes.Take(MaxResults))
-        //         DrawSelectableTypeLayout(type);
-        //     EndScrollView();
-        // }
-
-        private void DrawMaxResultsWarningLayout()
+        private void AddTypeElement(Type type)
         {
-            if (searchedTypes.Length > MaxResults)
-                LabelField(
-                    $"only showing the first {MaxResults} of {searchedTypes.Length} results...",
-                    EditorStyles.centeredGreyMiniLabel
-                    );
-        }
-
-        private void DrawSearchFieldLayout()
-        {
-            var newSearchValue = DelayedTextField(searchValue, EditorStyles.toolbarSearchField);
-            if (newSearchValue != searchValue) UpdateTypeSearch(newSearchValue);
-        }
-
-        private void DrawSelectableTypeLayout(Type type)
-        {
-            var buttonStyle = selected == type
-                ? Styles.selected
-                : Styles.unselected;
-
-            if (GUILayout.Button(GetTypeGUIContent(type), buttonStyle))
-                Select(type);
+            var element = new TypePickerListElement(type, Select);
+            ListView.Add(element);
+            element.SetHighlight(type == selected);
         }
 
         private void UpdateTypeSearch(string newSearchValue)
@@ -117,10 +94,12 @@ namespace CareBoo.Serially.Editor
             return type.AssemblyQualifiedName.Contains(searchValue);
         }
 
-        private void Select(Type type)
+        private void Select(Type type, MouseDownEvent evt)
         {
             selected = type;
             onSelected?.Invoke(type);
+            if (evt.clickCount >= 2)
+                Close();
         }
     }
 }
