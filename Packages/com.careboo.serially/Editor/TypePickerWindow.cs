@@ -52,6 +52,7 @@ namespace CareBoo.Serially.Editor
             titleContent = new GUIContent(title ?? "Select Type");
             UpdateTypeSearch(null);
             ResetListContent();
+            SearchField.RegisterValueChangedCallback(UpdateTypeSearch);
         }
 
         private void OnEnable()
@@ -69,9 +70,9 @@ namespace CareBoo.Serially.Editor
         private void ResetListContent()
         {
             ListView.Clear();
-            ListView.Add(new TypePickerListElement(null, Select));
+            AddTypeElement(null);
             foreach (var type in searchedTypes)
-                ListView.Add(new TypePickerListElement(type, Select));
+                AddTypeElement(type);
         }
 
         private void AddTypeElement(Type type)
@@ -81,12 +82,13 @@ namespace CareBoo.Serially.Editor
             element.SetHighlight(type == selected);
         }
 
-        private void UpdateTypeSearch(string newSearchValue)
+        private void UpdateTypeSearch(ChangeEvent<string> stringChangeEvent)
         {
-            searchValue = newSearchValue;
+            searchValue = stringChangeEvent?.newValue;
             searchedTypes = string.IsNullOrEmpty(searchValue)
                 ? types
                 : types.Where(IsInSearch).ToArray();
+            ResetListContent();
         }
 
         private bool IsInSearch(Type type)
