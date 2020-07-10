@@ -14,11 +14,15 @@ namespace CareBoo.Serially.Editor
         private const string TypeListName = "type-list";
         private const string SearchFieldName = "search-field";
 
-        private Type selected;
+        private TypePickerListElement selected;
+        private Type preselectedType;
         private Type[] types;
         private Type[] searchedTypes;
         private Action<Type> onSelected;
         private string searchValue;
+
+        public Type SelectedType =>
+            selected?.Type ?? preselectedType;
 
         private ToolbarSearchField searchField;
         private ToolbarSearchField SearchField =>
@@ -31,21 +35,21 @@ namespace CareBoo.Serially.Editor
             ?? (listView = rootVisualElement.Q<ListView>(name: TypeListName));
 
         public static TypePickerWindow ShowWindow(
-            Type selected,
+            Type preselectedType,
             Type[] types,
             Action<Type> onSelected,
             string title = null
             )
         {
             var window = (TypePickerWindow)CreateInstance(typeof(TypePickerWindow));
-            window.Init(selected, types, onSelected, title);
+            window.Init(preselectedType, types, onSelected, title);
             window.ShowAuxWindow();
             return window;
         }
 
-        public void Init(Type selected, Type[] types, Action<Type> onSelected, string title = null)
+        public void Init(Type preselectedType, Type[] types, Action<Type> onSelected, string title = null)
         {
-            this.selected = selected;
+            this.preselectedType = preselectedType;
             this.types = types;
             this.onSelected = onSelected;
             titleContent = new GUIContent(title ?? "Select Type");
@@ -78,7 +82,7 @@ namespace CareBoo.Serially.Editor
         {
             var element = new TypePickerListElement(type, Select);
             ListView.Add(element);
-            element.SetHighlight(type == selected);
+            element.SetHighlight(type == SelectedType);
         }
 
         private void UpdateTypeSearch(ChangeEvent<string> stringChangeEvent)
@@ -95,10 +99,12 @@ namespace CareBoo.Serially.Editor
             return type.AssemblyQualifiedName.Contains(searchValue);
         }
 
-        private void Select(Type type, MouseDownEvent evt)
+        private void Select(TypePickerListElement element, MouseDownEvent evt)
         {
-            selected = type;
-            onSelected?.Invoke(type);
+            selected?.SetHighlight(false);
+            selected = element;
+            selected?.SetHighlight(true);
+            onSelected?.Invoke(selected?.Type);
             if (evt.clickCount >= 2)
                 Close();
         }

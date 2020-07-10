@@ -11,7 +11,7 @@ namespace CareBoo.Serially.Editor
 
         public Type Type { get; }
 
-        public Action<Type, MouseDownEvent> OnClick { get; }
+        public Action<TypePickerListElement, MouseDownEvent> OnClick { get; }
 
         public VisualElement VisualElement { get; }
 
@@ -27,7 +27,7 @@ namespace CareBoo.Serially.Editor
             return visualTreeAsset;
         }
 
-        public TypePickerListElement(Type type, Action<Type, MouseDownEvent> onClick)
+        public TypePickerListElement(Type type, Action<TypePickerListElement, MouseDownEvent> onClick)
         {
             Type = type;
             OnClick = onClick;
@@ -39,12 +39,13 @@ namespace CareBoo.Serially.Editor
 
         public void MouseDownCallback(MouseDownEvent evt)
         {
-            OnClick?.Invoke(Type, evt);
+            OnClick?.Invoke(this, evt);
         }
 
         public void SetHighlight(bool isHighlighted)
         {
-
+            if (isHighlighted)
+                VisualElement.style.backgroundColor = new StyleColor(Color.blue);
         }
 
         public static implicit operator VisualElement(TypePickerListElement source)
