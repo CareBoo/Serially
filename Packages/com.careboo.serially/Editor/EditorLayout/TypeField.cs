@@ -35,6 +35,7 @@ namespace CareBoo.Serially.Editor
 
         public static MonoScript HandleTypeLabelClicked(Event evt, Type type)
         {
+            if (type == null) return null;
             var sourceInfo = GetSourceInfo(type);
             if (sourceInfo == null)
             {
@@ -99,10 +100,15 @@ namespace CareBoo.Serially.Editor
             return label;
         }
 
+        public static Texture GetTypeImage()
+        {
+            return IconContent("FilterByType").image;
+        }
+
         public static GUIContent GetTypeGUIContent(Type type)
         {
             var label = GetTypeLabelString(type);
-            var image = IconContent("FilterByType").image;
+            var image = GetTypeImage();
             return new GUIContent(label, image);
         }
     }
