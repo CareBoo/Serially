@@ -13,7 +13,7 @@ namespace CareBoo.Serially.Editor
 
             return count <= 0
                 ? source.Skip(0)
-                : SkipLastIterator<TSource>(source, count);
+                : SkipLastIterator(source, count);
         }
 
         private static IEnumerable<TSource> SkipLastIterator<TSource>(IEnumerable<TSource> source, int count)
