@@ -13,8 +13,6 @@ namespace CareBoo.Serially.Editor
     public class TypePickerWindow : EditorWindow
     {
         public const string TypeItemName = "type-item";
-        public const string TypeImageName = "type-image";
-        public const string TypeLabelName = "type-label";
         public const string TypeListName = "type-list";
         public const string SearchFieldName = "search-field";
         public const string WindowAssetPath = "type_picker_window";
