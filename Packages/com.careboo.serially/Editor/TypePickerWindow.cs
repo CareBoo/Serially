@@ -90,19 +90,15 @@ namespace CareBoo.Serially.Editor
 
         private VisualElement MakeItem()
         {
-            var container = itemVisualTreeAsset.CloneTree();
-            var element = container.Q<VisualElement>(name: TypeItemName);
-            var imageElement = element.Q<VisualElement>(name: TypeImageName);
-            var image = (Texture2D)GetTypeImage();
-            imageElement.style.backgroundImage = new StyleBackground(image);
-            return element;
+            return itemVisualTreeAsset.CloneTree()
+                .Q<IMGUIContainer>(name: TypeItemName);
         }
 
         private void BindItem(VisualElement element, int index)
         {
             var type = searchedTypes.ElementAt(index);
-            var label = element.Q<Label>(name: TypeLabelName);
-            label.text = GetTypeLabelString(type);
+            var imguiContainer = element as IMGUIContainer;
+            imguiContainer.onGUIHandler = ItemOnGUI(type);
         }
 
         private void OnItemChosen(object item)
@@ -114,6 +110,11 @@ namespace CareBoo.Serially.Editor
         private void OnSelectionChanged(List<object> _)
         {
             onSelected?.Invoke((Type)listView.selectedItem);
+        }
+
+        private Action ItemOnGUI(Type type)
+        {
+            return () => LabelField(GetTypeGUIContent(type));
         }
 
         private void UpdateTypeSearch(ChangeEvent<string> stringChangeEvent)
