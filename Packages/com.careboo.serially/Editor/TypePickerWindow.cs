@@ -12,6 +12,8 @@ namespace CareBoo.Serially.Editor
 {
     public class TypePickerWindow : EditorWindow
     {
+        public const string TypeItemName = "type-item";
+        public const string TypeImageName = "type-image";
         public const string TypeLabelName = "type-label";
         public const string TypeListName = "type-list";
         public const string SearchFieldName = "search-field";
@@ -60,11 +62,13 @@ namespace CareBoo.Serially.Editor
             InitWindow();
             InitListView();
             listView.onItemChosen += OnItemChosen;
+            listView.onSelectionChanged += OnSelectionChanged;
         }
 
         private void OnDisable()
         {
             listView.onItemChosen -= OnItemChosen;
+            listView.onSelectionChanged -= OnSelectionChanged;
         }
 
         private void InitWindow()
@@ -86,7 +90,12 @@ namespace CareBoo.Serially.Editor
 
         private VisualElement MakeItem()
         {
-            return itemVisualTreeAsset.CloneTree().GetFirstOfType<VisualElement>();
+            var container = itemVisualTreeAsset.CloneTree();
+            var element = container.Q<VisualElement>(name: TypeItemName);
+            var imageElement = element.Q<VisualElement>(name: TypeImageName);
+            var image = (Texture2D)GetTypeImage();
+            imageElement.style.backgroundImage = new StyleBackground(image);
+            return element;
         }
 
         private void BindItem(VisualElement element, int index)
@@ -100,6 +109,11 @@ namespace CareBoo.Serially.Editor
         {
             onSelected?.Invoke((Type)item);
             Close();
+        }
+
+        private void OnSelectionChanged(List<object> _)
+        {
+            onSelected?.Invoke((Type)listView.selectedItem);
         }
 
         private void UpdateTypeSearch(ChangeEvent<string> stringChangeEvent)

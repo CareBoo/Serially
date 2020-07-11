@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
-    <ui:VisualElement name="click-area" focusable="true" class="highlighted" style="height: 15px; flex-direction: row; justify-content: flex-start; align-items: center; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; color: rgb(255, 255, 255);">
-        <ui:IMGUIContainer style="background-image: resource(&apos;FilterByType&apos;); padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; margin-right: 8px; margin-left: 1px; margin-top: 1px; margin-bottom: 1px; min-width: 15px; min-height: 15px; -unity-background-image-tint-color: rgba(255, 255, 255, 255);" />
-        <ui:Label text="Label" name="type-label" class="highlighted" style="margin-left: 8px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; -unity-text-align: middle-left;" />
+    <ui:VisualElement name="type-item" focusable="true" class="highlighted" style="height: 15px; flex-direction: row; justify-content: flex-start; align-items: center; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; color: rgb(255, 255, 255);">
+        <ui:VisualElement name="type-image" style="min-width: 15px; min-height: 15px; margin-left: 0; margin-right: 4px; margin-top: 0; margin-bottom: 0;" />
+        <ui:Label text="Label" name="type-label" class="highlighted" style="margin-left: 4px; margin-right: 0; margin-top: 0; margin-bottom: 0; -unity-text-align: middle-left;" />
     </ui:VisualElement>
 </ui:UXML>
