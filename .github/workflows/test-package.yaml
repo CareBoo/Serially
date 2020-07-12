@@ -38,7 +38,7 @@ jobs:
           projectPath: ${{ matrix.projectPath }}
           unityVersion: ${{ matrix.unityVersion }}
           artifactsPath: TestResults
-          customParameters: -enableCodeCoverage -coverageOptions enableCyclomaticComplexity;assemblyFilters:+CareBoo.Serially,+CareBoo.Serially.Editor
+          customParameters: -enableCodeCoverage -coverageOptions generateAdditionalMetrics;enableCyclomaticComplexity;assemblyFilters:+CareBoo.Serially,+CareBoo.Serially.Editor
       - name: Upload Test Results Artifacts
         uses: actions/upload-artifact@v1
         with:
@@ -53,4 +53,5 @@ jobs:
         uses: codecov/codecov-action@v1.0.10
         with:
           flags: unittests
-          file: ./CodeCoverage/workspace-opencov/
+          file: ./CodeCoverage/workspace-opencov/EditMode/TestCoverageResults_0000.xml
+          files: ./CodeCoverage/workspace-opencov/PlayMode/TestCoverageResults_0000.xml
