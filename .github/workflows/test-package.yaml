@@ -32,12 +32,13 @@ jobs:
           key: Library-${{ matrix.unityVersion }}
           restore-keys: |
             Library-
-      - uses: webbertakken/unity-test-runner@v1
+      - uses: webbertakken/unity-test-runner@v1.6
         id: tests
         with:
           projectPath: ${{ matrix.projectPath }}
           unityVersion: ${{ matrix.unityVersion }}
           artifactsPath: artifacts
+          customParameters: -enableCodeCoverage -coverageOptions generateHtmlReport
       - uses: actions/upload-artifact@v1
         with:
           name: Test results
