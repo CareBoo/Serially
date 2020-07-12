@@ -12,7 +12,6 @@ namespace CareBoo.Serially.Editor
 {
     public class TypePickerWindow : EditorWindow
     {
-        public const string TypeItemName = "type-item";
         public const string TypeListName = "type-list";
         public const string SearchFieldName = "search-field";
         public const string WindowAssetPath = "type_picker_window";
@@ -88,15 +87,14 @@ namespace CareBoo.Serially.Editor
 
         private VisualElement MakeItem()
         {
-            return itemVisualTreeAsset.CloneTree()
-                .Q<IMGUIContainer>(name: TypeItemName);
+            return itemVisualTreeAsset.CloneTree().GetFirstOfType<VisualElement>();
         }
 
         private void BindItem(VisualElement element, int index)
         {
             var type = searchedTypes.ElementAt(index);
-            var imguiContainer = element as IMGUIContainer;
-            imguiContainer.onGUIHandler = ItemOnGUI(type);
+            var label = element.Q<Label>();
+            label.text = GetTypeLabelString(type);
         }
 
         private void OnItemChosen(object item)
@@ -108,11 +106,6 @@ namespace CareBoo.Serially.Editor
         private void OnSelectionChanged(List<object> _)
         {
             onSelected?.Invoke((Type)listView.selectedItem);
-        }
-
-        private Action ItemOnGUI(Type type)
-        {
-            return () => LabelField(GetTypeGUIContent(type));
         }
 
         private void UpdateTypeSearch(ChangeEvent<string> stringChangeEvent)
