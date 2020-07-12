@@ -7,18 +7,25 @@ using static CareBoo.Serially.Editor.EditorGUIExtensions;
 using UnityEngine.UIElements;
 using UnityEditor.UIElements;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace CareBoo.Serially.Editor
 {
     public class TypePickerWindow : EditorWindow
     {
+        public const string TypeNameLabel = "type-name";
+        public const string TypeNamespaceLabel = "type-namespace";
         public const string TypeListName = "type-list";
         public const string SearchFieldName = "search-field";
         public const string WindowAssetPath = "type_picker_window";
         public const string ItemAssetPath = "type_picker_item";
 
-        private VisualTreeAsset itemVisualTreeAsset;
+        private static readonly Regex TypeLabelRegex = new Regex(
+            @"^(?<name>\w+\s?)(\<i\>(?<namespace>[\w\.\(\)]*)\</i\>)?",
+            RegexOptions.Compiled
+        );
 
+        private VisualTreeAsset itemVisualTreeAsset;
         private Type selected;
         private IEnumerable<Type> types;
         private List<Type> searchedTypes;
@@ -93,8 +100,16 @@ namespace CareBoo.Serially.Editor
         private void BindItem(VisualElement element, int index)
         {
             var type = searchedTypes.ElementAt(index);
-            var label = element.Q<Label>();
-            label.text = GetTypeLabelString(type);
+            var text = GetTypeLabelString(type);
+            var groups = TypeLabelRegex.Match(text).Groups;
+
+            var typeNameGroup = groups["name"];
+            var typeNameLabel = element.Q<Label>(name: TypeNameLabel);
+            typeNameLabel.text = typeNameGroup.Success ? typeNameGroup.Value : string.Empty;
+
+            var typeNamespaceGroup = groups["namespace"];
+            var typeNamespaceLabel = element.Q<Label>(name: TypeNamespaceLabel);
+            typeNamespaceLabel.text = typeNamespaceGroup.Success ? typeNamespaceGroup.Value : string.Empty;
         }
 
         private void OnItemChosen(object item)
