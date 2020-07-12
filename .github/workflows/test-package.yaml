@@ -38,12 +38,14 @@ jobs:
           projectPath: ${{ matrix.projectPath }}
           unityVersion: ${{ matrix.unityVersion }}
           artifactsPath: artifacts
-          customParameters: -enableCodeCoverage -coverageOptions enableCyclomaticComplexity;assemblyFilters:+careboo.serially,+careboo.serially.editor
-      - uses: actions/upload-artifact@v1
+          customParameters: -enableCodeCoverage -coverageOptions generateHtmlReport;enableCyclomaticComplexity;assemblyFilters:+careboo.serially,+careboo.serially.editor
+      - name: Upload Test Results
+        uses: actions/upload-artifact@v1
         with:
           name: Test results
           path: ${{ steps.tests.outputs.artifactsPath }}
-      - uses: actions/upload-artifact@v1
+      - name: Upload Code Coverage
+        uses: actions/upload-artifact@v1
         with:
           name: Code Coverage
           path: ./CodeCoverage
