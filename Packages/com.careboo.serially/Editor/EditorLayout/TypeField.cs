@@ -9,7 +9,11 @@ namespace CareBoo.Serially.Editor
 {
     public static partial class EditorGUIExtensions
     {
-        private static readonly GUIStyle pickButtonStyle = "ObjectFieldButton";
+        private static class Styles
+        {
+            public static readonly GUIStyle pickButton = "ObjectFieldButton";
+            public static GUIStyle objectField = new GUIStyle("ObjectField") { richText = true };
+        }
 
         public static Rect TypeField(
             Rect position,
@@ -57,13 +61,14 @@ namespace CareBoo.Serially.Editor
 
         public static Rect DrawTypeLabel(Rect position, Type type)
         {
-            Button(position, GetTypeGUIContent(type), EditorStyles.objectField);
+            EditorStyles.objectField.richText = true;
+            Button(position, GetTypeGUIContent(type), Styles.objectField);
             return position;
         }
 
         public static Rect DrawTypePicker(Rect position)
         {
-            Button(position, GUIContent.none, pickButtonStyle);
+            Button(position, GUIContent.none, Styles.pickButton);
             return position;
         }
 
@@ -95,8 +100,8 @@ namespace CareBoo.Serially.Editor
             var label = type != null
                 ? string.IsNullOrEmpty(type.Namespace)
                     ? type.Name
-                    : $"{type.Name} ({type.Namespace})"
-                : "None (Type)";
+                    : $"{type.Name} <i>({type.Namespace})</i>"
+                : "None <i>(Type)</i>";
             return label;
         }
 
