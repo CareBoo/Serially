@@ -43,3 +43,7 @@ jobs:
         with:
           name: Test results
           path: ${{ steps.tests.outputs.artifactsPath }}
+      - uses: actions/upload-artifact@v1
+        with:
+          name: Code Coverage
+          path: ./CodeCoverage
