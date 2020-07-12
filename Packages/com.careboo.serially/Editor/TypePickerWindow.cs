@@ -120,7 +120,7 @@ namespace CareBoo.Serially.Editor
 
         private void OnSelectionChanged(List<object> _)
         {
-            onSelected?.Invoke((Type)listView.selectedItem);
+            //onSelected?.Invoke((Type)listView.selectedItem);
         }
 
         private void UpdateTypeSearch(ChangeEvent<string> stringChangeEvent)
