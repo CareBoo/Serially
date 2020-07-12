@@ -156,14 +156,14 @@ MonoBehaviour:
     typeId: b19cb907-dd97-42cd-94fc-c537382f971e
   MyCurrentPet:
     id: 0
-  GameObjectReference: {fileID: 0}
+  GameObjectReference: {fileID: 662672215}
   references:
     version: 1
     00000000:
       type: {class: Cat, ns: CareBoo.Serially.Samples, asm: CareBoo.Serially.Samples.Animals}
       data:
-        Name: Whiskers
-        IsPurring: 1
+        Name: 
+        IsPurring: 0
 --- !u!4 &662672217
 Transform:
   m_ObjectHideFlags: 0

@@ -52,4 +52,13 @@ namespace CareBoo.Serially.Samples
     {
         public int NumberOfSpots;
     }
+
+    [Serializable]
+    public class Chihuahua : Dog { }
+    [Serializable]
+    public class Greyhound : Dog { }
+    [Serializable]
+    public class Tabby : Cat { }
+    [Serializable]
+    public class Maincoon : Cat { }
 }
