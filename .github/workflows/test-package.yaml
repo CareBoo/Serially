@@ -37,15 +37,20 @@ jobs:
         with:
           projectPath: ${{ matrix.projectPath }}
           unityVersion: ${{ matrix.unityVersion }}
-          artifactsPath: artifacts
-          customParameters: -enableCodeCoverage -coverageOptions generateHtmlReport;enableCyclomaticComplexity;assemblyFilters:+CareBoo.Serially,+CareBoo.Serially.Editor
-      - name: Upload Test Results
+          artifactsPath: TestResults
+          customParameters: -enableCodeCoverage -coverageOptions enableCyclomaticComplexity;assemblyFilters:+CareBoo.Serially,+CareBoo.Serially.Editor
+      - name: Upload Test Results Artifacts
         uses: actions/upload-artifact@v1
         with:
           name: Test results
           path: ${{ steps.tests.outputs.artifactsPath }}
-      - name: Upload Code Coverage
+      - name: Upload Code Coverage Artifacts
         uses: actions/upload-artifact@v1
         with:
           name: Code Coverage
           path: ./CodeCoverage
+      - name: Upload Code Coverage to CodeCov
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./CodeCoverage/workspace-opencov/EditMode/TestCoverageResults_0000.xml,./CodeCoverage/workspace-opencov/PlayMode/TestCoverageResults_0000.xml
