@@ -5,6 +5,7 @@
     "com.unity.ide.vscode": "1.2.1",
     "com.unity.package-validation-suite": "0.13.0-preview",
     "com.unity.test-framework": "1.1.14",
+    "com.unity.testtools.codecoverage": "0.3.0-preview",
     "com.unity.textmeshpro": "2.0.1",
     "com.unity.timeline": "1.2.15",
     "com.unity.ugui": "1.0.0",
