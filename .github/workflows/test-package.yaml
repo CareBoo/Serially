@@ -11,7 +11,7 @@ env:
 
 jobs:
   testAllModes:
-    name: Test in ${{ matrix.testMode }} on version ${{ matrix.unityVersion }}
+    name: Test on version ${{ matrix.unityVersion }}
     runs-on: ubuntu-latest
 
     strategy:
@@ -21,9 +21,6 @@ jobs:
           - .
         unityVersion:
           - 2019.4.2f1
-        testMode:
-          - playmode
-          - editmode
 
     steps:
       - uses: actions/checkout@v2
@@ -35,13 +32,13 @@ jobs:
           key: Library-${{ matrix.unityVersion }}
           restore-keys: |
             Library-
-      - uses: webbertakken/unity-test-runner@v1.4
+      - uses: webbertakken/unity-test-runner@v1
         id: tests
         with:
           projectPath: ${{ matrix.projectPath }}
           unityVersion: ${{ matrix.unityVersion }}
-          testMode: ${{ matrix.testMode }}
           artifactsPath: ${{ matrix.testMode }}-artifacts
+          customParameters: -enableCodeCoverage -coverageOptions generateHtmlReport
       - uses: actions/upload-artifact@v1
         with:
           name: Test results for ${{ matrix.testMode }}
