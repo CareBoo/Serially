@@ -38,7 +38,7 @@ jobs:
           projectPath: ${{ matrix.projectPath }}
           unityVersion: ${{ matrix.unityVersion }}
           artifactsPath: artifacts
-          customParameters: -enableCodeCoverage -coverageOptions generateHtmlReport
+          customParameters: -enableCodeCoverage -coverageOptions generateHtmlReport;assemblyFilters:+careboo.serially*
       - uses: actions/upload-artifact@v1
         with:
           name: Test results
