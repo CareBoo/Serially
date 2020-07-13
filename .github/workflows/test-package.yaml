@@ -51,6 +51,7 @@ jobs:
           path: ./CodeCoverage
       - name: Upload Code Coverage to CodeCov
         uses: codecov/codecov-action@v1.0.10
-        working-directory: $(pwd)/CodeCoverage/workspace-opencov
         with:
           flags: unittests
+          file: ./CodeCoverage/workspace-opencov/PlayMode/TestResults_0000.xml
+          files: ./CodeCoverage/workspace-opencov/EditMode/TestResults_0000.xml
