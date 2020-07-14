@@ -13,6 +13,8 @@ namespace CareBoo.Serially.Editor
 {
     public class TypePickerWindow : EditorWindow
     {
+        public const string ContentContainer = "content-container";
+        public const string TypeIcon = "type-icon";
         public const string TypeNameLabel = "type-name";
         public const string TypeNamespaceLabel = "type-namespace";
         public const string TypeListName = "type-list";
@@ -26,7 +28,8 @@ namespace CareBoo.Serially.Editor
         );
 
         private VisualTreeAsset itemVisualTreeAsset;
-        private Type selected;
+        private int selectedIndex;
+        private Type preselected;
         private IEnumerable<Type> types;
         private List<Type> searchedTypes;
         private Action<Type> onSelected;
@@ -39,21 +42,21 @@ namespace CareBoo.Serially.Editor
             ?? (searchField = rootVisualElement.Q<ToolbarSearchField>(name: SearchFieldName));
 
         public static TypePickerWindow ShowWindow(
-            Type selected,
+            Type preselected,
             IEnumerable<Type> types,
             Action<Type> onSelected,
             string title = null
             )
         {
             var window = (TypePickerWindow)CreateInstance(typeof(TypePickerWindow));
-            window.InitData(selected, types, onSelected, title);
-            window.ShowAuxWindow();
+            window.InitData(preselected, types, onSelected, title);
+            window.Show();
             return window;
         }
 
-        public void InitData(Type selected, IEnumerable<Type> types, Action<Type> onSelected, string title = null)
+        public void InitData(Type preselected, IEnumerable<Type> types, Action<Type> onSelected, string title = null)
         {
-            this.selected = selected;
+            this.preselected = preselected;
             this.types = types;
             this.onSelected = onSelected;
             titleContent = new GUIContent(title ?? "Select Type");
@@ -66,13 +69,11 @@ namespace CareBoo.Serially.Editor
             InitWindow();
             InitListView();
             listView.onItemChosen += OnItemChosen;
-            listView.onSelectionChanged += OnSelectionChanged;
         }
 
         private void OnDisable()
         {
             listView.onItemChosen -= OnItemChosen;
-            listView.onSelectionChanged -= OnSelectionChanged;
         }
 
         private void InitWindow()
@@ -92,10 +93,7 @@ namespace CareBoo.Serially.Editor
             return listView;
         }
 
-        private VisualElement MakeItem()
-        {
-            return itemVisualTreeAsset.CloneTree().GetFirstOfType<VisualElement>();
-        }
+        private VisualElement MakeItem() => itemVisualTreeAsset.CloneTree();
 
         private void BindItem(VisualElement element, int index)
         {
@@ -118,17 +116,14 @@ namespace CareBoo.Serially.Editor
             Close();
         }
 
-        private void OnSelectionChanged(List<object> _)
-        {
-            //onSelected?.Invoke((Type)listView.selectedItem);
-        }
-
         private void UpdateTypeSearch(ChangeEvent<string> stringChangeEvent)
         {
             searchValue = stringChangeEvent?.newValue;
             searchedTypes = types.Where(IsInSearch).Prepend(null).ToList();
             listView.itemsSource = searchedTypes;
-            listView.selectedIndex = searchedTypes.IndexOf(selected);
+            listView.selectedIndex = searchedTypes.IndexOf(preselected);
+            selectedIndex = listView.selectedIndex;
+            listView.Refresh();
         }
 
         private bool IsInSearch(Type type)
