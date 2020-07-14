@@ -53,5 +53,5 @@ jobs:
         uses: codecov/codecov-action@v1.0.10
         with:
           flags: unittests
-          file: ./CodeCoverage/workspace-opencov/PlayMode/TestResults_0000.xml
-          files: ./CodeCoverage/workspace-opencov/EditMode/TestResults_0000.xml
+          file: ./CodeCoverage/workspace-opencov/PlayMode/TestCoverageResults_0000.xml
+          files: ./CodeCoverage/workspace-opencov/EditMode/TestCoverageResults_0000.xml
