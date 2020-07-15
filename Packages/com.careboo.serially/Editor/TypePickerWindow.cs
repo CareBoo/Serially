@@ -50,7 +50,7 @@ namespace CareBoo.Serially.Editor
         {
             var window = (TypePickerWindow)CreateInstance(typeof(TypePickerWindow));
             window.InitData(preselected, types, onSelected, title);
-            window.Show();
+            window.ShowAuxWindow();
             return window;
         }
 
@@ -93,7 +93,9 @@ namespace CareBoo.Serially.Editor
             return listView;
         }
 
-        private VisualElement MakeItem() => itemVisualTreeAsset.CloneTree();
+        private VisualElement MakeItem() =>
+            itemVisualTreeAsset.CloneTree()
+            .Q<VisualElement>(name: ContentContainer);
 
         private void BindItem(VisualElement element, int index)
         {
@@ -108,6 +110,9 @@ namespace CareBoo.Serially.Editor
             var typeNamespaceGroup = groups["namespace"];
             var typeNamespaceLabel = element.Q<Label>(name: TypeNamespaceLabel);
             typeNamespaceLabel.text = typeNamespaceGroup.Success ? typeNamespaceGroup.Value : string.Empty;
+
+            var typeIcon = element.Q<VisualElement>(name: TypeIcon);
+            typeIcon.style.backgroundImage = (Texture2D)GetTypeImage();
         }
 
         private void OnItemChosen(object item)
