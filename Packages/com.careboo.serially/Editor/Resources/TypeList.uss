@@ -1,7 +1,15 @@
-.unity-list-view__item--selected > .type-list__item__icon {
-    -unity-background-image-tint-color: rgb(255, 255, 255);
+.type-list__item__icon {
+    height: 16px;
+    width: 16px;
+    -unity-background-scale-mode: stretch-to-fill;
+    margin-top: 2px;
+    -unity-slice-left: 1;
+    -unity-slice-top: 1;
+    -unity-slice-right: 1;
+    -unity-slice-bottom: 1;
 }
 
 .unity-list-view__item--selected > .type-list__item__label {
     color: rgb(255, 255, 255);
 }
+
