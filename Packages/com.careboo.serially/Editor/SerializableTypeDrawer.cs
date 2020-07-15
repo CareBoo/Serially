@@ -43,10 +43,9 @@ namespace CareBoo.Serially.Editor
             {
                 case DerivedFromAttribute d when d.Type != null:
                     return d.Type;
-                case DerivedFromAttribute d when d.TypeDelegate != null:
-                    return d.TypeDelegate();
                 case DerivedFromAttribute d when d.TypeDelegateName != null:
-                    d.TypeDelegate = CreateTypeDelegate(d.TypeDelegateName, property);
+                    if (d.TypeDelegate == null)
+                        d.TypeDelegate = CreateTypeDelegate(d.TypeDelegateName, property);
                     return d.TypeDelegate();
                 default:
                     return null;

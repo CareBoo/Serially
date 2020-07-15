@@ -4,11 +4,11 @@ using static CareBoo.Serially.Editor.EditorGUIExtensions;
 
 namespace CareBoo.Serially.Editor.Tests
 {
-    [ProvideSourceInfo]
-    public class TestClass { }
-
     public class TypeFieldTest
     {
+        [ProvideSourceInfo]
+        public class TestClass { }
+
         [Test]
         public void ClickingTheTypeFieldShouldPingTheMonoScript()
         {
