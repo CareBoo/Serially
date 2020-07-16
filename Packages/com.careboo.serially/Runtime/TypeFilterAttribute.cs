@@ -5,22 +5,38 @@ using UnityEngine;
 namespace CareBoo.Serially
 {
     [Conditional("UNITY_EDITOR")]
-    public class DerivedFromAttribute : PropertyAttribute
+    public class TypeFilterAttribute : PropertyAttribute
     {
-        public Type Type { get; }
+        public Type DerivedFrom { get; }
 
-        public Func<Type> TypeDelegate { get; set; }
+        public Func<Type, bool> FilterDelegate { get; protected set; }
 
-        public string TypeDelegateName { get; }
+        public string FilterDelegateName { get; }
 
-        public DerivedFromAttribute(Type type)
+        public TypeFilterAttribute(Type derivedFrom)
         {
-            Type = type;
+            DerivedFrom = derivedFrom;
+            FilterDelegate = _ => true;
         }
 
-        public DerivedFromAttribute(string typeDelegateName)
+        public TypeFilterAttribute(string filterDelegateName)
         {
-            TypeDelegateName = typeDelegateName;
+            FilterDelegateName = filterDelegateName;
+        }
+
+        public Func<Type, bool> GetFilter(object parent)
+        {
+            return FilterDelegate ?? BindFilterDelegate(parent);
+        }
+
+        public Func<Type, bool> BindFilterDelegate(object parent)
+        {
+            FilterDelegate = (Func<Type, bool>)Delegate.CreateDelegate(
+                typeof(Func<Type, bool>),
+                parent,
+                FilterDelegateName
+                );
+            return FilterDelegate;
         }
     }
 }
