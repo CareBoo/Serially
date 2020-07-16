@@ -53,11 +53,11 @@ namespace CareBoo.Serially.Editor
 
         public IEnumerable<Type> GetFilteredTypes(SerializedProperty property)
         {
-            var (derivedFrom, filter) = GetTypeFilter(property);
-            return GetDerivedTypes(derivedFrom).Where(filter);
+            var (baseType, filter) = GetTypeFilter(property);
+            return GetDerivedTypes(baseType).Where(filter);
         }
 
-        public (Type derivedType, Func<Type, bool> filter) GetTypeFilter(SerializedProperty property)
+        public (Type baseType, Func<Type, bool> filter) GetTypeFilter(SerializedProperty property)
         {
             if (attribute is TypeFilterAttribute t)
             {
@@ -67,7 +67,7 @@ namespace CareBoo.Serially.Editor
             return (null, _ => true);
         }
 
-        public Type[] GetDerivedTypes(Type baseType)
+        public IEnumerable<Type> GetDerivedTypes(Type baseType)
         {
             var derivedTypes = baseType != null
                 ? TypeCache.GetTypesDerivedFrom(baseType)
@@ -75,7 +75,7 @@ namespace CareBoo.Serially.Editor
                     .Select(assembly => assembly.name)
                     .Select(System.Reflection.Assembly.Load)
                     .SelectMany(a => a.GetExportedTypes());
-            return derivedTypes.Where(type => !type.IsGenericType).ToArray();
+            return derivedTypes.Where(type => !type.IsGenericType);
         }
 
         public Action<Type> SetTypeValue(SerializedProperty property)
