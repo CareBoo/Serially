@@ -18,30 +18,30 @@ namespace CareBoo.Serially.Editor
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             var typeIdProperty = property.FindPropertyRelative(TypeIdProperty);
-            ShowWarnings(typeIdProperty, label);
+            var type = Validate(typeIdProperty, label);
 
             position = EditorGUI.PrefixLabel(position, label);
             TypeField(
                 position,
-                GetTypeValue(typeIdProperty),
+                type,
                 GetFilteredTypes(property).ToArray(),
                 SetTypeValue(typeIdProperty)
                 );
         }
 
-        public Type ShowWarnings(SerializedProperty typeIdProperty, GUIContent label)
+        public Type Validate(SerializedProperty typeIdProperty, GUIContent label)
         {
-            var type = ToType(typeIdProperty.stringValue);
+            var typeReferenceExists = TryGetType(typeIdProperty.stringValue, out Type type);
             var typeId = typeIdProperty.stringValue;
-            if (IsMissingGuidAttribute(type))
-            {
-                label.image = EditorGUIUtility.IconContent("console.warnicon").image;
-                label.tooltip = "The current type doesn't have a GuidAttribute defined. Renaming this type will cause it to lose its reference!";
-            }
-            else if (CannotFindTypeReference(type, typeId))
+            if (!typeReferenceExists)
             {
                 label.image = EditorGUIUtility.IconContent("console.erroricon").image;
                 label.tooltip = $"Type reference could not be found for the typeId, \"{typeId}\". This can happen when renaming a type without a GuidAttribute defined.";
+            }
+            else if (IsMissingGuidAttribute(type))
+            {
+                label.image = EditorGUIUtility.IconContent("console.warnicon").image;
+                label.tooltip = "The current type doesn't have a GuidAttribute defined. Renaming this type will cause it to lose its reference!";
             }
             return type;
         }
@@ -49,11 +49,6 @@ namespace CareBoo.Serially.Editor
         public bool IsMissingGuidAttribute(Type type)
         {
             return type != null && !Attribute.IsDefined(type, typeof(GuidAttribute));
-        }
-
-        public bool CannotFindTypeReference(Type type, string typeId)
-        {
-            return type == null && !string.IsNullOrEmpty(typeId);
         }
 
         public IEnumerable<Type> GetFilteredTypes(SerializedProperty property)
@@ -94,11 +89,6 @@ namespace CareBoo.Serially.Editor
                     property.serializedObject.ApplyModifiedProperties();
                 }
             };
-        }
-
-        public Type GetTypeValue(SerializedProperty property)
-        {
-            return ToType(property.stringValue);
         }
     }
 

@@ -11,7 +11,7 @@ using System.Linq;
 
 namespace CareBoo.Serially
 {
-[Serializable]
+    [Serializable]
     public partial class SerializableType : ISerializationCallbackReceiver
     {
         [SerializeField]
@@ -31,21 +31,22 @@ namespace CareBoo.Serially
             Type = type;
         }
 
-        public static Type ToType(string typeString)
+        public static bool TryGetType(string typeString, out Type type)
         {
 #if UNITY_EDITOR
             if (Guid.TryParse(typeString, out var guid))
             {
-                return TypeCache.GetTypesWithAttribute(typeof(GuidAttribute))
+                type = TypeCache.GetTypesWithAttribute(typeof(GuidAttribute))
                     .FirstOrDefault(t => t.GUID == guid);
             }
             else
             {
-                return Type.GetType(typeString);
+                type = Type.GetType(typeString);
             }
 #else
-            return Type.GetType(typeString);
+            type = Type.GetType(typeString);
 #endif // UNITY_EDITOR
+            return type != null || string.IsNullOrEmpty(typeString);
         }
 
         public static string ToSerializedType(Type type)
@@ -70,11 +71,11 @@ namespace CareBoo.Serially
 
         void ISerializationCallbackReceiver.OnAfterDeserialize()
         {
-            Type = ToType(typeId);
-            if (Type == null && !string.IsNullOrEmpty(typeId))
+            if (!TryGetType(typeId, out var type))
             {
                 Debug.LogError($"Could not find type for typeId[{typeId}] when trying to deserialize this SerializableType.");
             }
+            Type = type;
         }
 
         void ISerializationCallbackReceiver.OnBeforeSerialize()
