@@ -18,6 +18,19 @@ namespace CareBoo.Serially.Editor
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             var typeIdProperty = property.FindPropertyRelative(TypeIdProperty);
+            ShowWarnings(typeIdProperty, label);
+
+            position = EditorGUI.PrefixLabel(position, label);
+            TypeField(
+                position,
+                GetTypeValue(typeIdProperty),
+                GetFilteredTypes(property).ToArray(),
+                SetTypeValue(typeIdProperty)
+                );
+        }
+
+        public Type ShowWarnings(SerializedProperty typeIdProperty, GUIContent label)
+        {
             var currentType = ToType(typeIdProperty.stringValue);
             if (currentType != null && !Attribute.IsDefined(currentType, typeof(GuidAttribute)))
             {
@@ -29,14 +42,7 @@ namespace CareBoo.Serially.Editor
                 label.image = EditorGUIUtility.IconContent("console.erroricon").image;
                 label.tooltip = $"Type reference could not be found for the typeId, \"{typeIdProperty.stringValue}\". This can happen when renaming a type without a GuidAttribute defined.";
             }
-
-            position = EditorGUI.PrefixLabel(position, label);
-            TypeField(
-                position,
-                GetTypeValue(typeIdProperty),
-                GetFilteredTypes(property).ToArray(),
-                SetTypeValue(typeIdProperty)
-                );
+            return currentType;
         }
 
         public IEnumerable<Type> GetFilteredTypes(SerializedProperty property)
