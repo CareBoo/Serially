@@ -4,10 +4,10 @@ namespace CareBoo.Serially.Samples.Animals
 {
     public class InspectorExample : MonoBehaviour
     {
-        [DerivedFrom(typeof(IPet))]
+        [TypeFilter(typeof(IPet))]
         public SerializableType MyFavoriteTypeOfPet;
 
-        [DerivedFrom(typeof(Dog))]
+        [TypeFilter(typeof(Dog))]
         public SerializableType MyFavoriteTypeOfDog;
 
         [ShowValueType]
