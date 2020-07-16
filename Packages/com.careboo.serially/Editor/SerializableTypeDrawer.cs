@@ -7,11 +7,12 @@ using static CareBoo.Serially.SerializableType;
 using static CareBoo.Serially.Editor.SerializableTypeMeta;
 using System.Runtime.InteropServices;
 using UnityEditor.Compilation;
+using System.Collections.Generic;
 
 namespace CareBoo.Serially.Editor
 {
     [CustomPropertyDrawer(typeof(SerializableType))]
-    [CustomPropertyDrawer(typeof(DerivedFromAttribute))]
+    [CustomPropertyDrawer(typeof(TypeFilterAttribute))]
     public class SerializableTypeDrawer : PropertyDrawer
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
@@ -30,40 +31,31 @@ namespace CareBoo.Serially.Editor
             }
 
             position = EditorGUI.PrefixLabel(position, label);
-            var baseType = GetBaseType(property);
-            TypeField(position,
+            TypeField(
+                position,
                 GetTypeValue(typeIdProperty),
-                GetDerivedTypes(baseType),
-                SetTypeValue(typeIdProperty));
+                GetFilteredTypes(property).ToArray(),
+                SetTypeValue(typeIdProperty)
+                );
         }
 
-        private Type GetBaseType(SerializedProperty property)
+        public IEnumerable<Type> GetFilteredTypes(SerializedProperty property)
         {
-            switch (attribute)
+            var (derivedFrom, filter) = GetTypeFilter(property);
+            return GetDerivedTypes(derivedFrom).Where(filter);
+        }
+
+        public (Type derivedType, Func<Type, bool> filter) GetTypeFilter(SerializedProperty property)
+        {
+            if (attribute is TypeFilterAttribute t)
             {
-                case DerivedFromAttribute d when d.Type != null:
-                    return d.Type;
-                case DerivedFromAttribute d when d.TypeDelegateName != null:
-                    if (d.TypeDelegate == null)
-                        d.TypeDelegate = CreateTypeDelegate(d.TypeDelegateName, property);
-                    return d.TypeDelegate();
-                default:
-                    return null;
+                var parentObject = property.GetValue(p => p.SkipLast(1));
+                return (t.DerivedFrom, t.GetFilter(parentObject));
             }
+            return (null, _ => true);
         }
 
-        private Func<Type> CreateTypeDelegate(string name, SerializedProperty property)
-        {
-            var parentObject = property.GetValue(path => path.SkipLast(1));
-
-            return (Func<Type>)Delegate.CreateDelegate(
-                typeof(Func<Type>),
-                parentObject,
-                name
-            );
-        }
-
-        private Type[] GetDerivedTypes(Type baseType)
+        public Type[] GetDerivedTypes(Type baseType)
         {
             var derivedTypes = baseType != null
                 ? TypeCache.GetTypesDerivedFrom(baseType)
@@ -74,7 +66,7 @@ namespace CareBoo.Serially.Editor
             return derivedTypes.Where(type => !type.IsGenericType).ToArray();
         }
 
-        private Action<Type> SetTypeValue(SerializedProperty property)
+        public Action<Type> SetTypeValue(SerializedProperty property)
         {
             return type =>
             {
@@ -87,7 +79,7 @@ namespace CareBoo.Serially.Editor
             };
         }
 
-        private Type GetTypeValue(SerializedProperty property)
+        public Type GetTypeValue(SerializedProperty property)
         {
             return ToType(property.stringValue);
         }
