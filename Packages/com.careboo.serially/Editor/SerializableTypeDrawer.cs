@@ -31,18 +31,29 @@ namespace CareBoo.Serially.Editor
 
         public Type ShowWarnings(SerializedProperty typeIdProperty, GUIContent label)
         {
-            var currentType = ToType(typeIdProperty.stringValue);
-            if (currentType != null && !Attribute.IsDefined(currentType, typeof(GuidAttribute)))
+            var type = ToType(typeIdProperty.stringValue);
+            var typeId = typeIdProperty.stringValue;
+            if (IsMissingGuidAttribute(type))
             {
                 label.image = EditorGUIUtility.IconContent("console.warnicon").image;
                 label.tooltip = "The current type doesn't have a GuidAttribute defined. Renaming this type will cause it to lose its reference!";
             }
-            else if (currentType == null && !string.IsNullOrEmpty(typeIdProperty.stringValue))
+            else if (CannotFindTypeReference(type, typeId))
             {
                 label.image = EditorGUIUtility.IconContent("console.erroricon").image;
-                label.tooltip = $"Type reference could not be found for the typeId, \"{typeIdProperty.stringValue}\". This can happen when renaming a type without a GuidAttribute defined.";
+                label.tooltip = $"Type reference could not be found for the typeId, \"{typeId}\". This can happen when renaming a type without a GuidAttribute defined.";
             }
-            return currentType;
+            return type;
+        }
+
+        public bool IsMissingGuidAttribute(Type type)
+        {
+            return type != null && !Attribute.IsDefined(type, typeof(GuidAttribute));
+        }
+
+        public bool CannotFindTypeReference(Type type, string typeId)
+        {
+            return type == null && !string.IsNullOrEmpty(typeId);
         }
 
         public IEnumerable<Type> GetFilteredTypes(SerializedProperty property)
