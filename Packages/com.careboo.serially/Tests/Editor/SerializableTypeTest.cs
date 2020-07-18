@@ -22,7 +22,7 @@ namespace CareBoo.Serially.Editor.Tests
             new[] { typeof (TypeWithoutGuidAttribute) }
         };
 
-        public string AssetPath => $"Assets/{nameof(SerializableTypeHolder)}.asset";
+        public string AssetPath => $"Assets/{nameof(SerializableTypeFixture)}.asset";
 
         [TearDown]
         public void DeleteAsset()
@@ -51,10 +51,10 @@ namespace CareBoo.Serially.Editor.Tests
         [TestCaseSource(nameof(TypeCases))]
         public void SetTypeShouldPersistAfterCallingSave(Type expected)
         {
-            var asset = ScriptableObject.CreateInstance<SerializableTypeHolder>();
+            var asset = ScriptableObject.CreateInstance<SerializableTypeFixture>();
             asset.Instance = new SerializableType(expected);
             AssetDatabase.CreateAsset(asset, AssetPath);
-            asset = AssetDatabase.LoadAssetAtPath<SerializableTypeHolder>(AssetPath);
+            asset = AssetDatabase.LoadAssetAtPath<SerializableTypeFixture>(AssetPath);
             var actual = asset.Instance.Type;
             Assert.AreEqual(expected, actual);
         }
@@ -62,14 +62,14 @@ namespace CareBoo.Serially.Editor.Tests
         [Test]
         public void SetUnknownTypeIdShouldCauseError()
         {
-            var asset = ScriptableObject.CreateInstance<SerializableTypeHolder>();
+            var asset = ScriptableObject.CreateInstance<SerializableTypeFixture>();
             asset.Instance = new SerializableType();
             AssetDatabase.CreateAsset(asset, AssetPath);
             var serializedObject = new SerializedObject(asset);
             var typeIdProperty = serializedObject.FindProperty("Instance.typeId");
             typeIdProperty.stringValue = "6366a62a-e654-4c53-9da5-d73fb875cd17";
             serializedObject.ApplyModifiedProperties();
-            asset = AssetDatabase.LoadAssetAtPath<SerializableTypeHolder>(AssetPath);
+            asset = AssetDatabase.LoadAssetAtPath<SerializableTypeFixture>(AssetPath);
             var error = asset.Instance.TypeNotFoundError;
             LogAssert.Expect(LogType.Error, error);
         }
@@ -78,7 +78,7 @@ namespace CareBoo.Serially.Editor.Tests
         [TestCaseSource(nameof(TypeCases))]
         public void SettingTypeWhenBuildingShouldSetAssemblyQualifiedName(Type expected)
         {
-            var asset = ScriptableObject.CreateInstance<SerializableTypeHolder>();
+            var asset = ScriptableObject.CreateInstance<SerializableTypeFixture>();
             var serializableType = new SerializableType(expected);
             asset.Instance = new SerializableType(expected);
             (serializableType as IPreprocessBuildWithReport).OnPreprocessBuild(null);

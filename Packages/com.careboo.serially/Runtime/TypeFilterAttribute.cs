@@ -9,34 +9,36 @@ namespace CareBoo.Serially
     {
         public Type DerivedFrom { get; }
 
-        public Func<Type, bool> FilterDelegate { get; protected set; }
+        public Func<Type, bool> DerivedFromFilter => _ => true;
 
-        public string FilterDelegateName { get; }
+        public Func<Type, bool> Filter { get; protected set; }
+
+        public string FilterName { get; }
 
         public TypeFilterAttribute(Type derivedFrom)
         {
             DerivedFrom = derivedFrom;
-            FilterDelegate = _ => true;
+            Filter = DerivedFromFilter;
         }
 
-        public TypeFilterAttribute(string filterDelegateName)
+        public TypeFilterAttribute(string filterName)
         {
-            FilterDelegateName = filterDelegateName;
+            FilterName = filterName;
         }
 
         public Func<Type, bool> GetFilter(object parent)
         {
-            return FilterDelegate ?? BindFilterDelegate(parent);
+            return Filter ?? BindFilterDelegate(parent);
         }
 
         public Func<Type, bool> BindFilterDelegate(object parent)
         {
-            FilterDelegate = (Func<Type, bool>)Delegate.CreateDelegate(
+            Filter = (Func<Type, bool>)Delegate.CreateDelegate(
                 typeof(Func<Type, bool>),
                 parent,
-                FilterDelegateName
+                FilterName
                 );
-            return FilterDelegate;
+            return Filter;
         }
     }
 }
