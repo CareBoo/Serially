@@ -20,8 +20,6 @@ namespace CareBoo.Serially
         public Type Type { get; set; }
 
 #if UNITY_EDITOR
-        public bool IsDirtyGuid { get; set; }
-
         public static bool isBuilding = false;
 #endif // UNITY_EDITOR
 
@@ -83,9 +81,6 @@ namespace CareBoo.Serially
             var value = ToSerializedType(Type);
             if (typeId != value && !string.IsNullOrEmpty(value))
             {
-#if UNITY_EDITOR
-                IsDirtyGuid = !Guid.TryParse(typeId, out var typeGuid);
-#endif // UNITY_EDITOR
                 typeId = value;
             }
         }
