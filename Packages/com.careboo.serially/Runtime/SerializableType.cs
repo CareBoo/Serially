@@ -17,10 +17,13 @@ namespace CareBoo.Serially
         [SerializeField]
         protected string typeId = string.Empty;
 
+        public string TypeNotFoundError =>
+            $"Could not find type for typeId[{typeId}] when trying to deserialize this SerializableType.";
+
         public Type Type { get; set; }
 
 #if UNITY_EDITOR
-        public static bool isBuilding = false;
+        public static bool IsBuilding { get; protected set; }
 #endif // UNITY_EDITOR
 
         public SerializableType() { }
@@ -33,14 +36,10 @@ namespace CareBoo.Serially
         {
 #if UNITY_EDITOR
             if (Guid.TryParse(typeString, out var guid))
-            {
                 type = TypeCache.GetTypesWithAttribute(typeof(GuidAttribute))
                     .FirstOrDefault(t => t.GUID == guid);
-            }
             else
-            {
                 type = Type.GetType(typeString);
-            }
 #else
             type = Type.GetType(typeString);
 #endif // UNITY_EDITOR
@@ -50,18 +49,12 @@ namespace CareBoo.Serially
         public static string ToSerializedType(Type type)
         {
             if (type == null)
-            {
                 return string.Empty;
-            }
 #if UNITY_EDITOR
-            if (Attribute.IsDefined(type, typeof(GuidAttribute)) && !isBuilding)
-            {
+            if (Attribute.IsDefined(type, typeof(GuidAttribute)) && !IsBuilding)
                 return type.GUID.ToString();
-            }
             else
-            {
                 return type.AssemblyQualifiedName;
-            }
 #else
             return type.AssemblyQualifiedName;
 #endif // UNITY_EDITOR
@@ -70,19 +63,15 @@ namespace CareBoo.Serially
         void ISerializationCallbackReceiver.OnAfterDeserialize()
         {
             if (!TryGetType(typeId, out var type))
-            {
-                Debug.LogError($"Could not find type for typeId[{typeId}] when trying to deserialize this SerializableType.");
-            }
+                Debug.LogError(TypeNotFoundError);
             Type = type;
         }
 
         void ISerializationCallbackReceiver.OnBeforeSerialize()
         {
             var value = ToSerializedType(Type);
-            if (typeId != value && !string.IsNullOrEmpty(value))
-            {
+            if (!string.IsNullOrEmpty(value))
                 typeId = value;
-            }
         }
     }
 
@@ -93,12 +82,12 @@ namespace CareBoo.Serially
 
         void IPostprocessBuildWithReport.OnPostprocessBuild(BuildReport report)
         {
-            isBuilding = false;
+            IsBuilding = false;
         }
 
         void IPreprocessBuildWithReport.OnPreprocessBuild(BuildReport report)
         {
-            isBuilding = true;
+            IsBuilding = true;
         }
     }
 #endif // UNITY_EDITOR
