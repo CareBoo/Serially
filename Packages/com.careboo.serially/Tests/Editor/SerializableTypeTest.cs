@@ -41,7 +41,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
-        public void ToSerializedTypeDoesNotFailWhenGivenNullType()
+        public void ToSerializedTypeShouldNotFailWhenGivenNullType()
         {
             var result = ToSerializedType(null);
             Assert.IsTrue(string.IsNullOrEmpty(result));
@@ -60,7 +60,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
-        public void SetInvalidTypeIdShouldError()
+        public void SetUnknownTypeIdShouldCauseError()
         {
             var asset = ScriptableObject.CreateInstance<SerializableTypeHolder>();
             asset.Instance = new SerializableType();
@@ -76,7 +76,7 @@ namespace CareBoo.Serially.Editor.Tests
 
         [Test]
         [TestCaseSource(nameof(TypeCases))]
-        public void SettingTypeWhenBuildingSetsAssemblyQualifiedName(Type expected)
+        public void SettingTypeWhenBuildingShouldSetAssemblyQualifiedName(Type expected)
         {
             var asset = ScriptableObject.CreateInstance<SerializableTypeHolder>();
             var serializableType = new SerializableType(expected);
@@ -91,7 +91,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
-        public void IsBuildingIsTrueOnlyDuringBuild()
+        public void IsBuildingShouldBeTrueOnlyDuringBuild()
         {
             var serializableType = new SerializableType();
             var actual = IsBuilding;
@@ -105,7 +105,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
-        public void CallbackOrderIs0()
+        public void CallbackOrderShouldBe0()
         {
             var actual = new SerializableType();
             Assert.AreEqual(0, actual.callbackOrder);
