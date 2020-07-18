@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.IO;
 using System.Runtime.InteropServices;
 using NUnit.Framework;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.TestTools;
 
 namespace CareBoo.Serially.Editor.Tests
 {
@@ -20,7 +22,7 @@ namespace CareBoo.Serially.Editor.Tests
             new[] { typeof (TypeWithoutGuidAttribute) }
         };
 
-        public string AssetPath => nameof(SerializableTypeHolder);
+        public string AssetPath => $"Assets/{nameof(SerializableTypeHolder)}.asset";
 
         [TearDown]
         public void DeleteAsset()
@@ -47,7 +49,7 @@ namespace CareBoo.Serially.Editor.Tests
 
         [Test]
         [TestCaseSource(nameof(TypeCases))]
-        public void SetTypeShouldPersistAfterCallingSave(Type expected)
+        public void SetTypeWithGuidAttributeShouldPersistAfterCallingSave(Type expected)
         {
             var asset = ScriptableObject.CreateInstance<SerializableTypeHolder>();
             asset.Instance = new SerializableType(expected);
