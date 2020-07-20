@@ -49,15 +49,25 @@ namespace CareBoo.Serially.Editor
             var monoScript = LoadAssetAtPath<MonoScript>(sourceInfo.AssetPath);
             switch (evt.clickCount)
             {
-                case 1: PingObject(monoScript); break;
-                case 2: OpenAsset(monoScript, sourceInfo.LineNumber); break;
+                case 1: OnTypeLabelClickedOnce(sourceInfo); break;
+                case 2: OnTypeLabelClickedTwice(sourceInfo); break;
             }
             if (monoScript == null)
-            {
                 Debug.LogWarning($"Cannot find MonoScript at the path \"{sourceInfo.AssetPath}\".");
-            }
             return monoScript;
         }
+
+        public static Action<ProvideSourceInfoAttribute> OnTypeLabelClickedOnce { get; set; } = sourceInfo =>
+        {
+            var monoScript = LoadAssetAtPath<MonoScript>(sourceInfo.AssetPath);
+            PingObject(monoScript);
+        };
+
+        public static Action<ProvideSourceInfoAttribute> OnTypeLabelClickedTwice { get; set; } = sourceInfo =>
+        {
+            var monoScript = LoadAssetAtPath<MonoScript>(sourceInfo.AssetPath);
+            OpenAsset(monoScript, sourceInfo.LineNumber);
+        };
 
         public static Rect DrawTypeLabel(Rect position, Type type)
         {
