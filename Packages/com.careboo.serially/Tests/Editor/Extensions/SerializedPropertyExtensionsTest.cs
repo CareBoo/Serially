@@ -23,14 +23,6 @@ namespace CareBoo.Serially.Editor.Tests
         [SerializeReference]
         public TestClass SerializeReferenceField;
 
-        public string AssetPath => $"Assets/{nameof(SerializedPropertyExtensionsFixture)}.asset";
-
-        [TearDown]
-        public void DeleteFixture()
-        {
-            AssetDatabase.DeleteAsset(AssetPath);
-        }
-
         public (SerializedProperty, Type) GetNewFixtureProperty(TestClass setFieldValue = null)
         {
             var serializedObject = GetSerializedObject(setFieldValue);
@@ -82,24 +74,28 @@ namespace CareBoo.Serially.Editor.Tests
 
         public class GetValueCase<TExpected>
         {
+            private readonly string description;
+
             public TExpected Expected { get; }
             public TestClass SetValue { get; }
             public string PropertyPath { get; }
             public Func<IEnumerable<string>, IEnumerable<string>> PathModifier { get; }
 
             public GetValueCase(
+                string description,
                 TExpected expected,
                 Func<TExpected, TestClass> setValue,
                 string propertyPath,
                 Func<IEnumerable<string>, IEnumerable<string>> pathModifier = null)
             {
+                this.description = description;
                 Expected = expected;
                 SetValue = setValue(Expected);
                 PropertyPath = propertyPath;
                 PathModifier = pathModifier;
             }
 
-            public override string ToString() => $"{PropertyPath} = {Expected}";
+            public override string ToString() => description;
         }
 
         public static object[] GetValueCases = new object[]
@@ -107,6 +103,7 @@ namespace CareBoo.Serially.Editor.Tests
             new object[]
             {
                 new GetValueCase<int> (
+                    "Get Array Element Value",
                     expected: 1,
                     setValue: _ => new TestClass() { ArrayField = new[] { 1, 2 } },
                     propertyPath: "SerializeReferenceField.ArrayField.Array.data[0]"
@@ -115,9 +112,20 @@ namespace CareBoo.Serially.Editor.Tests
             new object[]
             {
                 new GetValueCase<int[]> (
+                    "Get Array Value",
                     expected: new[] { 1, 2 },
                     setValue: expected => new TestClass() { ArrayField = expected },
                     propertyPath: "SerializeReferenceField.ArrayField"
+                )
+            },
+            new object[]
+            {
+                new GetValueCase<int[]> (
+                    "Get Parent Field Value with Path Modifier",
+                    expected: new[] { 1, 2 },
+                    setValue: expected => new TestClass() { ArrayField = expected },
+                    propertyPath: "SerializeReferenceField.ArrayField.Array.data[0]",
+                    pathModifier: path => path.SkipLast(1)
                 )
             }
         };
@@ -128,7 +136,7 @@ namespace CareBoo.Serially.Editor.Tests
         {
             var serializedObject = GetSerializedObject(testCase.SetValue);
             var serializedProperty = serializedObject.FindProperty(testCase.PropertyPath);
-            var actual = serializedProperty.GetValue();
+            var actual = serializedProperty.GetValue(testCase.PathModifier);
             Assert.AreEqual(testCase.Expected, actual);
         }
     }
