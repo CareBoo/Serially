@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq.Expressions;
 using System.Reflection;
 using static CareBoo.Serially.Editor.Reflection.ReflectionUtil;
 using NUnit.Framework;
@@ -11,10 +10,10 @@ namespace CareBoo.Serially.Editor.Tests
         class TestClass
         {
             [TypeFilter(derivedFrom: typeof(TestClass))]
-            public SerializableType TypeDerivedFromTestClass;
+            public SerializableType TypeDerivedFromTestClass = null;
 
             [TypeFilter(filterName: nameof(Filter))]
-            public SerializableType FilteredType;
+            public SerializableType FilteredType = null;
 
             public bool IsFiltering { get; set; }
 
