@@ -7,7 +7,6 @@ using UnityEngine.UIElements;
 using UnityEditor.UIElements;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using System.IO;
 
 namespace CareBoo.Serially.Editor
 {
@@ -28,7 +27,6 @@ namespace CareBoo.Serially.Editor
         );
 
         private VisualTreeAsset itemVisualTreeAsset;
-        private int selectedIndex;
         private Type preselected;
         private IEnumerable<Type> types;
         private List<Type> searchedTypes;
@@ -63,14 +61,14 @@ namespace CareBoo.Serially.Editor
             SearchField.RegisterValueChangedCallback(UpdateTypeSearch);
         }
 
-        private void OnEnable()
+        void OnEnable()
         {
             InitWindow();
             InitListView();
             listView.onItemChosen += OnItemChosen;
         }
 
-        private void OnDisable()
+        void OnDisable()
         {
             listView.onItemChosen -= OnItemChosen;
         }
@@ -126,7 +124,6 @@ namespace CareBoo.Serially.Editor
             searchedTypes = types.Where(IsInSearch).Prepend(null).ToList();
             listView.itemsSource = searchedTypes;
             listView.selectedIndex = searchedTypes.IndexOf(preselected);
-            selectedIndex = listView.selectedIndex;
             listView.Refresh();
         }
 

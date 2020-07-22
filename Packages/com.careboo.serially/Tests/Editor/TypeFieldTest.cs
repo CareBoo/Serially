@@ -64,6 +64,7 @@ namespace CareBoo.Serially.Editor.Tests
             testWindow.onGui = OnGUI;
             yield return new WaitUntil(() => onGuiCalled);
             Assert.IsTrue(EditorWindow.HasOpenInstances<TypePickerWindow>());
+            EditorWindow.GetWindow<TypePickerWindow>().Close();
         }
 
         private Event SimulateMouseDown(int clickCount, Vector2 position)
