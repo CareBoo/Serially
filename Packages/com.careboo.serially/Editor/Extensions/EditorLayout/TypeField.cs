@@ -11,7 +11,7 @@ namespace CareBoo.Serially.Editor
     {
         private static class Styles
         {
-            public static readonly GUIStyle pickButton = "ObjectFieldButton";
+            public static GUIStyle pickButton = "ObjectFieldButton";
             public static GUIStyle objectField = new GUIStyle("ObjectField") { richText = true };
         }
 
@@ -19,11 +19,16 @@ namespace CareBoo.Serially.Editor
             Rect position,
             Type type,
             Type[] types,
-            Action<Type> onSelect)
+            Action<Type> onSelect,
+            Event customEvent = null) // Have to use this hack to get this to work...
         {
             var pickerArea = GetPickerArea(position);
-            var evt = Event.current;
-            if (evt.type == EventType.MouseDown)
+            var evt = customEvent ?? Event.current;
+            var controlId = GUIUtility.GetControlID(FocusType.Passive);
+            var eventType = customEvent == null
+                ? evt.GetTypeForControl(controlId)
+                : evt.rawType;
+            if (eventType == EventType.MouseDown)
             {
                 if (pickerArea.Contains(evt.mousePosition))
                     TypePickerWindow.ShowWindow(type, types, onSelect);

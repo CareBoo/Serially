@@ -48,18 +48,17 @@ namespace CareBoo.Serially.Editor
             string title = null
             )
         {
-            var window = (TypePickerWindow)CreateInstance(typeof(TypePickerWindow));
-            window.InitData(preselected, types, onSelected, title);
+            var window = GetWindow<TypePickerWindow>(utility: true, title: title ?? "Select Type");
+            window.InitData(preselected, types, onSelected);
             window.ShowAuxWindow();
             return window;
         }
 
-        public void InitData(Type preselected, IEnumerable<Type> types, Action<Type> onSelected, string title = null)
+        public void InitData(Type preselected, IEnumerable<Type> types, Action<Type> onSelected)
         {
             this.preselected = preselected;
             this.types = types;
             this.onSelected = onSelected;
-            titleContent = new GUIContent(title ?? "Select Type");
             UpdateTypeSearch(null);
             SearchField.RegisterValueChangedCallback(UpdateTypeSearch);
         }
