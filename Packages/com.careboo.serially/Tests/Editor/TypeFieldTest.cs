@@ -6,7 +6,6 @@ using System.Text.RegularExpressions;
 using System.Collections;
 using System;
 using UnityEditor;
-using UnityObject = UnityEngine.Object;
 
 namespace CareBoo.Serially.Editor.Tests
 {
@@ -20,6 +19,13 @@ namespace CareBoo.Serially.Editor.Tests
 
         [Serializable, ProvideSourceInfo]
         public class C : A { }
+
+        [TearDown]
+        public void CloseTestWindow()
+        {
+            if (EditorWindow.HasOpenInstances<TestEditorWindow>())
+                EditorWindow.GetWindow<TestEditorWindow>().Close();
+        }
 
         [Test]
         public void ClickingTheTypeFieldOfTypeWithProvideSourceInfoShouldPingTheMonoScript()
@@ -43,23 +49,31 @@ namespace CareBoo.Serially.Editor.Tests
         [UnityTest]
         public IEnumerator ClickingTypePickerOpensTypePickerWindow()
         {
-            yield return new OnGUITest(() =>
+            bool onGuiCalled = false;
+            var position = new Rect(x: 0, y: 0, width: 150, height: 30);
+            var pickerArea = GetPickerArea(position);
+            void OnGUI()
             {
-                var position = new Rect(x: 0, y: 0, width: 150, height: 30);
-                var clickerArea = GetPickerArea(position);
-                Event.current = new Event()
-                {
-                    clickCount = 1,
-                    type = EventType.MouseDown,
-                    mousePosition = clickerArea.center
-                };
                 var type = typeof(A);
                 var types = new[] { typeof(A), typeof(B), typeof(C) };
-                Action<Type> onSelect = _ => { return; };
-                TypeField(position, type, types, onSelect);
-                bool isWindowOpen = UnityObject.FindObjectsOfType<TypePickerWindow>().Length > 0;
-                Assert.IsTrue(isWindowOpen);
-            });
+                var evt = SimulateMouseDown(1, pickerArea.center);
+                TypeField(position, type, types, null, evt);
+                onGuiCalled = true;
+            }
+            var testWindow = TestEditorWindow.ShowWindow();
+            testWindow.onGui = OnGUI;
+            yield return new WaitUntil(() => onGuiCalled);
+            Assert.IsTrue(EditorWindow.HasOpenInstances<TypePickerWindow>());
+        }
+
+        private Event SimulateMouseDown(int clickCount, Vector2 position)
+        {
+            return new Event()
+            {
+                type = EventType.MouseDown,
+                clickCount = clickCount,
+                mousePosition = position
+            };
         }
     }
 }
