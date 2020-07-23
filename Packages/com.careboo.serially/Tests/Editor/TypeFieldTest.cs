@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using System.Collections;
 using System;
 using UnityEditor;
+using UnityEditor.Callbacks;
 
 namespace CareBoo.Serially.Editor.Tests
 {
@@ -20,6 +21,11 @@ namespace CareBoo.Serially.Editor.Tests
         [Serializable, ProvideSourceInfo]
         public class C : A { }
 
+        private static bool thisScriptOpenedAtC = false;
+
+        private static Rect TypeFieldRect => new Rect(x: 0, y: 0, width: 150, height: 18);
+        private static Type[] Types => new[] { typeof(A), typeof(B), typeof(C) };
+
         [TearDown]
         public void CloseTestWindow()
         {
@@ -30,9 +36,9 @@ namespace CareBoo.Serially.Editor.Tests
         [Test]
         public void ClickingTheTypeFieldOfTypeWithProvideSourceInfoShouldPingTheMonoScript()
         {
-            var clickEvent = new Event() { clickCount = 1 };
-            var type = typeof(C);
-            var monoScript = HandleTypeLabelClicked(clickEvent, type);
+            var guiEvent = new GUIEvent(EventType.MouseDown, Vector2.zero, 1);
+            var typeFieldOptions = new TypeFieldOptions(Rect.zero, typeof(C), null, null);
+            var monoScript = HandleTypeLabelClicked(typeFieldOptions, guiEvent);
             Assert.IsNotNull(monoScript);
         }
 
@@ -40,41 +46,100 @@ namespace CareBoo.Serially.Editor.Tests
         public void ClickingTheTypeFieldOfTypeWithoutProvideSourceInfoShouldLogWarning()
         {
             LogAssert.Expect(LogType.Warning, new Regex(nameof(ProvideSourceInfoAttribute)));
-            var clickEvent = new Event() { clickCount = 1 };
-            var type = typeof(B);
-            var monoScript = HandleTypeLabelClicked(clickEvent, type);
+            var guiEvent = new GUIEvent(EventType.MouseDown, Vector2.zero, 1);
+            var typeFieldOptions = new TypeFieldOptions(Rect.zero, typeof(B), null, null);
+            var monoScript = HandleTypeLabelClicked(typeFieldOptions, guiEvent);
             Assert.IsNull(monoScript);
         }
 
         [UnityTest]
-        public IEnumerator ClickingTypePickerOpensTypePickerWindow()
+        public IEnumerator ClickingTypePickerShouldOpenTypePickerWindow()
         {
             bool onGuiCalled = false;
-            var position = new Rect(x: 0, y: 0, width: 150, height: 30);
-            var pickerArea = GetPickerArea(position);
+            var typeFieldOptions = new TypeFieldOptions(
+                TypeFieldRect,
+                typeof(A),
+                Types,
+                null
+                );
+            var pickerArea = GetTypePickerButtonPosition(typeFieldOptions.Position);
+            var guiEvent = new GUIEvent(
+                EventType.MouseDown,
+                pickerArea.center,
+                1
+                );
             void OnGUI()
             {
-                var type = typeof(A);
-                var types = new[] { typeof(A), typeof(B), typeof(C) };
-                var evt = SimulateMouseDown(1, pickerArea.center);
-                TypeField(position, type, types, null, evt);
+                TypeField(typeFieldOptions, guiEvent);
                 onGuiCalled = true;
             }
-            var testWindow = TestEditorWindow.ShowWindow();
+            var testWindow = EditorWindow.GetWindow<TestEditorWindow>();
             testWindow.onGui = OnGUI;
             yield return new WaitUntil(() => onGuiCalled);
             Assert.IsTrue(EditorWindow.HasOpenInstances<TypePickerWindow>());
             EditorWindow.GetWindow<TypePickerWindow>().Close();
         }
 
-        private Event SimulateMouseDown(int clickCount, Vector2 position)
+        [UnityTest]
+        public IEnumerator ClickingTypeLabelTwiceForTypeDefinedInThisAssetShouldOpenThisAsset()
         {
-            return new Event()
+            bool onGuiCalled = false;
+            var typeFieldOptions = new TypeFieldOptions(
+                TypeFieldRect,
+                typeof(C),
+                Types,
+                null
+                );
+            var guiEvent = new GUIEvent(
+                EventType.MouseDown,
+                TypeFieldRect.center,
+                2
+                );
+            void OnGUI()
             {
-                type = EventType.MouseDown,
-                clickCount = clickCount,
-                mousePosition = position
-            };
+                TypeField(typeFieldOptions, guiEvent);
+                onGuiCalled = true;
+            }
+            thisScriptOpenedAtC = false;
+            var testWindow = EditorWindow.GetWindow<TestEditorWindow>();
+            testWindow.onGui = OnGUI;
+            yield return new WaitUntil(() => onGuiCalled);
+            Assert.IsTrue(thisScriptOpenedAtC);
+        }
+
+        [UnityTest]
+        public IEnumerator TypeFieldShouldShowWithoutErrors()
+        {
+            var type = typeof(A);
+            var onGuiCalled = false;
+            void OnGUI()
+            {
+                TypeField(TypeFieldRect, type, Types, null);
+                onGuiCalled = true;
+            }
+            var testWindow = EditorWindow.GetWindow<TestEditorWindow>();
+            testWindow.onGui = OnGUI;
+            yield return new WaitUntil(() => onGuiCalled);
+        }
+
+        [OnOpenAsset(1)]
+        public static bool CheckForThisScriptOpenedAtC(int instanceId, int line)
+        {
+            if (EditorUtility.InstanceIDToObject(instanceId) is MonoScript monoScript
+                && monoScript.name.Contains(nameof(TypeFieldTest))
+                && line == GetLineNumber<C>())
+            {
+                thisScriptOpenedAtC = true;
+                return true;
+            }
+            return false;
+        }
+
+        private static int GetLineNumber<T>()
+        {
+            var type = typeof(T);
+            var sourceInfo = (ProvideSourceInfoAttribute)Attribute.GetCustomAttribute(type, typeof(ProvideSourceInfoAttribute));
+            return sourceInfo == null ? -1 : sourceInfo.LineNumber;
         }
     }
 }

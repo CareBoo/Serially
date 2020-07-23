@@ -18,15 +18,6 @@ namespace CareBoo.Serially.Editor.Tests
         public Action onDisable;
         public Action onEnable;
 
-        public static TestEditorWindow ShowWindow()
-        {
-            var window = (TestEditorWindow)CreateInstance(typeof(TestEditorWindow));
-            window.Show();
-            return window;
-        }
-
-        void Handle(Action action) => action?.Invoke();
-
         void Awake() => Handle(awake);
         void OnDestroy() => Handle(onDestroy);
         void OnFocus() => Handle(onFocus);
@@ -39,5 +30,8 @@ namespace CareBoo.Serially.Editor.Tests
         void Update() => Handle(update);
         void OnDisable() => Handle(onDisable);
         void OnEnable() => Handle(onEnable);
+
+        void Handle(Action action) => action?.Invoke();
+
     }
 }
