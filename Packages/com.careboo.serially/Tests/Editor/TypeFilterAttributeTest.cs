@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Reflection;
-using static CareBoo.Serially.Editor.Reflection.ReflectionUtil;
+using static CareBoo.Serially.Editor.Tests.Reflection.ReflectionUtil;
 using NUnit.Framework;
 
 namespace CareBoo.Serially.Editor.Tests
