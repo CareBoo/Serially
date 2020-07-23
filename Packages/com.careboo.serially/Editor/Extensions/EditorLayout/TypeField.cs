@@ -9,70 +9,86 @@ namespace CareBoo.Serially.Editor
 {
     public static partial class EditorGUIExtensions
     {
-        private static class Styles
+        public static partial class Styles
         {
-            public static GUIStyle pickButton = "ObjectFieldButton";
-            public static GUIStyle objectField = new GUIStyle("ObjectField") { richText = true };
+            public readonly static GUIStyle pickButton = "ObjectFieldButton";
+            public readonly static GUIStyle objectField = new GUIStyle("ObjectField") { richText = true };
         }
 
         public static Rect TypeField(
             Rect position,
-            Type type,
-            Type[] types,
-            Action<Type> onSelect,
-            Event customEvent = null) // Have to use this hack to get this to work...
+            Type selectedType,
+            Type[] selectableTypes,
+            Action<Type> onSelect)
         {
-            var pickerArea = GetPickerArea(position);
-            var evt = customEvent ?? Event.current;
-            var controlId = GUIUtility.GetControlID(FocusType.Passive);
-            var eventType = customEvent == null
-                ? evt.GetTypeForControl(controlId)
-                : evt.rawType;
-            if (eventType == EventType.MouseDown)
-            {
-                if (pickerArea.Contains(evt.mousePosition))
-                    TypePickerWindow.ShowWindow(type, types, onSelect);
-                else if (position.Contains(evt.mousePosition))
-                    HandleTypeLabelClicked(evt, type);
-            }
-            DrawTypeLabel(position, type);
-            DrawTypePicker(pickerArea);
+            var fieldOptions = new TypeFieldOptions(position, selectedType, selectableTypes, onSelect);
+            var evt = Event.current;
+            var guiEvent = new GUIEvent(evt.type, evt.mousePosition, evt.clickCount);
+            return TypeField(fieldOptions, guiEvent);
+        }
 
+        public static Rect TypeField(TypeFieldOptions fieldOptions, GUIEvent guiEvent)
+        {
+            DrawTypeLabel(fieldOptions.Position, fieldOptions.SelectedType);
+            var typePickerPosition = DrawTypePicker(fieldOptions.Position);
+
+            if (guiEvent.Type == EventType.MouseDown)
+                HandleMouseDown(fieldOptions, typePickerPosition, guiEvent);
+
+            return AddTypeFieldVertical(fieldOptions.Position);
+        }
+
+        public static void HandleMouseDown(TypeFieldOptions fieldOptions, Rect typePickerPosition, GUIEvent guiEvent)
+        {
+            var fieldPosition = fieldOptions.Position;
+
+            if (typePickerPosition.Contains(guiEvent.MousePosition))
+                HandleTypePickerButtonClicked(fieldOptions);
+            else if (fieldPosition.Contains(guiEvent.MousePosition))
+                HandleTypeLabelClicked(fieldOptions, guiEvent);
+        }
+
+        public static Rect AddTypeFieldVertical(Rect position)
+        {
             position.y += singleLineHeight + standardVerticalSpacing;
             return position;
         }
 
-        public static MonoScript HandleTypeLabelClicked(Event evt, Type type)
+        public static void HandleTypePickerButtonClicked(TypeFieldOptions fieldOptions)
         {
-            if (type == null) return null;
-            var sourceInfo = GetSourceInfo(type);
+            TypePickerWindow.ShowWindow(fieldOptions.SelectedType, fieldOptions.SelectableTypes, fieldOptions.OnSelect);
+        }
+
+        public static MonoScript HandleTypeLabelClicked(TypeFieldOptions fieldOptions, GUIEvent guiEvent)
+        {
+            var selectedType = fieldOptions.SelectedType;
+            if (selectedType == null) return null;
+            var sourceInfo = GetSourceInfo(selectedType);
             if (sourceInfo == null)
             {
-                Debug.LogWarning($"Cannot find source script of \"{type?.FullName ?? "Null"}\" because it doesn't have a \"{nameof(ProvideSourceInfoAttribute)}\".");
+                Debug.LogWarning($"Cannot find source script of \"{selectedType?.FullName ?? "Null"}\" because it doesn't have a \"{nameof(ProvideSourceInfoAttribute)}\".");
                 return null;
             }
             var monoScript = LoadAssetAtPath<MonoScript>(sourceInfo.AssetPath);
-            switch (evt.clickCount)
+            switch (guiEvent.ClickCount)
             {
                 case 1: OnTypeLabelClickedOnce(sourceInfo); break;
                 case 2: OnTypeLabelClickedTwice(sourceInfo); break;
             }
-            if (monoScript == null)
-                Debug.LogWarning($"Cannot find MonoScript at the path \"{sourceInfo.AssetPath}\".");
             return monoScript;
         }
 
-        public static Action<ProvideSourceInfoAttribute> OnTypeLabelClickedOnce { get; set; } = sourceInfo =>
+        public static void OnTypeLabelClickedOnce(ProvideSourceInfoAttribute sourceInfo)
         {
             var monoScript = LoadAssetAtPath<MonoScript>(sourceInfo.AssetPath);
             PingObject(monoScript);
-        };
+        }
 
-        public static Action<ProvideSourceInfoAttribute> OnTypeLabelClickedTwice { get; set; } = sourceInfo =>
+        public static void OnTypeLabelClickedTwice(ProvideSourceInfoAttribute sourceInfo)
         {
             var monoScript = LoadAssetAtPath<MonoScript>(sourceInfo.AssetPath);
             OpenAsset(monoScript, sourceInfo.LineNumber);
-        };
+        }
 
         public static Rect DrawTypeLabel(Rect position, Type type)
         {
@@ -83,26 +99,18 @@ namespace CareBoo.Serially.Editor
 
         public static Rect DrawTypePicker(Rect position)
         {
+            position = GetTypePickerButtonPosition(position);
             Button(position, GUIContent.none, Styles.pickButton);
             return position;
         }
 
-        public static Rect GetPickerArea(Rect position)
+        public static Rect GetTypePickerButtonPosition(Rect position)
         {
             position.height = singleLineHeight - 2f;
             position.y += 1f;
             position.xMax -= 1f;
             position.xMin = position.xMax - singleLineHeight;
             return position;
-        }
-
-        public static void OpenMonoScript(ProvideSourceInfoAttribute sourceInfo)
-        {
-            if (sourceInfo != null)
-            {
-                var monoScript = LoadAssetAtPath<MonoScript>(sourceInfo.AssetPath);
-                OpenAsset(monoScript, sourceInfo.LineNumber);
-            }
         }
 
         public static ProvideSourceInfoAttribute GetSourceInfo(Type type)
