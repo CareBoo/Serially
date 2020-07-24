@@ -21,7 +21,7 @@ namespace CareBoo.Serially.Editor
         public const string WindowAssetPath = "type_picker_window";
         public const string ItemAssetPath = "type_picker_item";
 
-        private static readonly Regex TypeLabelRegex = new Regex(
+        public static readonly Regex TypeLabelRegex = new Regex(
             @"^(?<name>\w+\s?)(\<i\>(?<namespace>[\w\.\(\)]*)\</i\>)?",
             RegexOptions.Compiled
         );
@@ -90,11 +90,11 @@ namespace CareBoo.Serially.Editor
             return listView;
         }
 
-        private VisualElement MakeItem() =>
+        public VisualElement MakeItem() =>
             itemVisualTreeAsset.CloneTree()
             .Q<VisualElement>(name: ContentContainer);
 
-        private void BindItem(VisualElement element, int index)
+        public void BindItem(VisualElement element, int index)
         {
             var type = searchedTypes.ElementAt(index);
             var text = GetTypeLabelString(type);
@@ -112,13 +112,13 @@ namespace CareBoo.Serially.Editor
             typeIcon.style.backgroundImage = (Texture2D)GetTypeImage();
         }
 
-        private void OnItemChosen(object item)
+        public void OnItemChosen(object item)
         {
             onSelected?.Invoke((Type)item);
             Close();
         }
 
-        private void UpdateTypeSearch(ChangeEvent<string> stringChangeEvent)
+        public void UpdateTypeSearch(ChangeEvent<string> stringChangeEvent)
         {
             searchValue = stringChangeEvent?.newValue;
             searchedTypes = types.Where(IsInSearch).Prepend(null).ToList();
@@ -127,7 +127,7 @@ namespace CareBoo.Serially.Editor
             listView.Refresh();
         }
 
-        private bool IsInSearch(Type type)
+        public bool IsInSearch(Type type)
         {
             return string.IsNullOrEmpty(searchValue)
                 || type.AssemblyQualifiedName.Contains(searchValue);
