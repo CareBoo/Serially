@@ -11,7 +11,8 @@
     [
       "@semantic-release/changelog",
       {
-        "preset": "angular"
+        "preset": "angular",
+        "changelogFile": "Packages/com.careboo.serially/CHANGELOG.md"
       }
     ],
     [
