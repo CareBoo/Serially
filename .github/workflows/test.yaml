@@ -38,7 +38,7 @@ jobs:
           projectPath: ${{ matrix.projectPath }}
           unityVersion: ${{ matrix.unityVersion }}
           artifactsPath: TestResults
-          customParameters: -enableCodeCoverage -coverageOptions generateAdditionalMetrics;enableCyclomaticComplexity;assemblyFilters:+CareBoo*,-CareBoo*.Tests,-CareBoo*.Samples
+          customParameters: -enableCodeCoverage -coverageOptions generateAdditionalMetrics;enableCyclomaticComplexity;assemblyFilters:+CareBoo*,-CareBoo*.Tests,-CareBoo*.Samples.*
       - name: Upload Test Results Artifacts
         uses: actions/upload-artifact@v1
         with:
