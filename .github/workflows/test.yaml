@@ -1,0 +1,61 @@
+name: Unity Tests
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+env:
+  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE_2019_4 }}
+
+jobs:
+  testAllModes:
+    name: Test on version ${{ matrix.unityVersion }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        projectPath:
+          - .
+        unityVersion:
+          - 2019.4.2f1
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          lfs: true
+      - uses: actions/cache@v1.1.0
+        with:
+          path: ${{ matrix.projectPath }}/Library
+          key: Library-${{ matrix.unityVersion }}
+          restore-keys: |
+            Library-
+      - uses: webbertakken/unity-test-runner@v1.6
+        id: tests
+        with:
+          projectPath: ${{ matrix.projectPath }}
+          unityVersion: ${{ matrix.unityVersion }}
+          artifactsPath: TestResults
+          customParameters: -enableCodeCoverage -coverageOptions generateAdditionalMetrics;enableCyclomaticComplexity;assemblyFilters:+CareBoo*,-CareBoo*.Tests
+      - name: Upload Test Results Artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: Test results
+          path: ${{ steps.tests.outputs.artifactsPath }}
+      - name: Upload Code Coverage Artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: Code Coverage
+          path: ./CodeCoverage
+      - name: Upload PlayMode Test Coverage Report
+        uses: codecov/codecov-action@v1
+        with:
+          flags: unittests
+          file: ./CodeCoverage/workspace-opencov/PlayMode/TestCoverageResults_0000.xml
+      - name: Upload EditMode Test Coverage Report
+        uses: codecov/codecov-action@v1
+        with:
+          flags: unittests
+          file: ./CodeCoverage/workspace-opencov/EditMode/TestCoverageResults_0000.xml
