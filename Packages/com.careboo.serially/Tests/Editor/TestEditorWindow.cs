@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 using UnityEditor;
+using UnityEngine;
 
 namespace CareBoo.Serially.Editor.Tests
 {
@@ -17,8 +18,15 @@ namespace CareBoo.Serially.Editor.Tests
 
         public void Invoke()
         {
-            action?.Invoke();
             CallCount += 1;
+            try
+            {
+                action?.Invoke();
+            }
+            catch (Exception ex)
+            {
+                Debug.LogException(ex);
+            }
         }
 
         public static implicit operator EditorEvent(Action action) => new EditorEvent(action);
