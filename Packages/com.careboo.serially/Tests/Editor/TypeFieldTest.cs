@@ -7,6 +7,7 @@ using System.Collections;
 using System;
 using UnityEditor;
 using UnityEditor.Callbacks;
+using UnityEngine.Events;
 
 namespace CareBoo.Serially.Editor.Tests
 {
@@ -55,7 +56,6 @@ namespace CareBoo.Serially.Editor.Tests
         [UnityTest]
         public IEnumerator ClickingTypePickerShouldOpenTypePickerWindow()
         {
-            bool onGuiCalled = false;
             var typeFieldOptions = new TypeFieldOptions(
                 TypeFieldRect,
                 typeof(A),
@@ -68,14 +68,9 @@ namespace CareBoo.Serially.Editor.Tests
                 pickerArea.center,
                 1
                 );
-            void OnGUI()
-            {
-                TypeField(typeFieldOptions, guiEvent);
-                onGuiCalled = true;
-            }
             var testWindow = EditorWindow.GetWindow<TestEditorWindow>();
-            testWindow.onGui = OnGUI;
-            yield return new WaitUntil(() => onGuiCalled);
+            testWindow.onGui = new EditorEvent(() => TypeField(typeFieldOptions, guiEvent));
+            yield return new WaitUntil(testWindow.OnGUIInitialized);
             Assert.IsTrue(EditorWindow.HasOpenInstances<TypePickerWindow>());
             EditorWindow.GetWindow<TypePickerWindow>().Close();
         }
@@ -83,7 +78,6 @@ namespace CareBoo.Serially.Editor.Tests
         [UnityTest]
         public IEnumerator ClickingTypeLabelTwiceForTypeDefinedInThisAssetShouldOpenThisAsset()
         {
-            bool onGuiCalled = false;
             var typeFieldOptions = new TypeFieldOptions(
                 TypeFieldRect,
                 typeof(C),
@@ -95,15 +89,10 @@ namespace CareBoo.Serially.Editor.Tests
                 TypeFieldRect.center,
                 2
                 );
-            void OnGUI()
-            {
-                TypeField(typeFieldOptions, guiEvent);
-                onGuiCalled = true;
-            }
             thisScriptOpenedAtC = false;
             var testWindow = EditorWindow.GetWindow<TestEditorWindow>();
-            testWindow.onGui = OnGUI;
-            yield return new WaitUntil(() => onGuiCalled);
+            testWindow.onGui = new EditorEvent(() => TypeField(typeFieldOptions, guiEvent));
+            yield return new WaitUntil(testWindow.OnGUIInitialized);
             Assert.IsTrue(thisScriptOpenedAtC);
         }
 
@@ -111,15 +100,9 @@ namespace CareBoo.Serially.Editor.Tests
         public IEnumerator TypeFieldShouldShowWithoutErrors()
         {
             var type = typeof(A);
-            var onGuiCalled = false;
-            void OnGUI()
-            {
-                TypeField(TypeFieldRect, type, Types, null);
-                onGuiCalled = true;
-            }
             var testWindow = EditorWindow.GetWindow<TestEditorWindow>();
-            testWindow.onGui = OnGUI;
-            yield return new WaitUntil(() => onGuiCalled);
+            testWindow.onGui = new EditorEvent(() => TypeField(TypeFieldRect, type, Types, null));
+            yield return new WaitUntil(testWindow.OnGUIInitialized);
         }
 
         [OnOpenAsset(1)]
