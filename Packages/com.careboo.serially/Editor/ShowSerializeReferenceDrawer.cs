@@ -5,8 +5,8 @@ using static CareBoo.Serially.Editor.EditorGUIExtensions;
 
 namespace CareBoo.Serially.Editor
 {
-    [CustomPropertyDrawer(typeof(ShowValueTypeAttribute))]
-    public class ShowValueTypeDrawer : PropertyDrawer
+    [CustomPropertyDrawer(typeof(ShowSerializeReferenceAttribute))]
+    public class ShowSerializeReferenceDrawer : PropertyDrawer
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {

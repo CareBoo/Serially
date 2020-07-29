@@ -16,16 +16,16 @@ namespace CareBoo.Serially.Editor.Tests
     [Serializable]
     public class B : A { }
 
-    public class ShowValueTypeDrawerTest : ScriptableObject
+    public class ShowSerializeReferenceDrawerTest : ScriptableObject
     {
-        [ShowValueType]
+        [ShowSerializeReference]
         [SerializeReference]
         public A Field;
 
         [UnityTest]
         public IEnumerator OnGUIShouldDrawWithoutErrors()
         {
-            var obj = CreateInstance<ShowValueTypeDrawerTest>();
+            var obj = CreateInstance<ShowSerializeReferenceDrawerTest>();
             var editor = UEditor.CreateEditor(obj);
             var testWindow = EditorWindow.GetWindow<TestEditorWindow>();
             testWindow.onGui = new EditorEvent(() => editor.DrawDefaultInspector());

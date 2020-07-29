@@ -10,7 +10,7 @@ namespace CareBoo.Serially.Samples.Animals
         [TypeFilter(typeof(Dog))]
         public SerializableType MyFavoriteTypeOfDog;
 
-        [ShowValueType]
+        [ShowSerializeReference]
         [SerializeReference]
         public IPet MyCurrentPet;
 
