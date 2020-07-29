@@ -1,22 +1,44 @@
 ﻿using System;
+using System.Linq.Expressions;
 using UnityEditor;
 
 namespace CareBoo.Serially.Editor.Tests
 {
+    public class EditorEvent
+    {
+        private readonly Action action;
+
+        public int CallCount { get; private set; } = 0;
+
+        public EditorEvent(Action action)
+        {
+            this.action = action;
+        }
+
+        public void Invoke()
+        {
+            action?.Invoke();
+            CallCount += 1;
+        }
+
+        public static implicit operator EditorEvent(Action action) => new EditorEvent(action);
+        public static implicit operator Action(EditorEvent editorEvent) => editorEvent.action;
+    }
+
     public class TestEditorWindow : EditorWindow
     {
-        public Action awake;
-        public Action onDestroy;
-        public Action onFocus;
-        public Action onGui;
-        public Action onHierarchyChange;
-        public Action onInspectorUpdate;
-        public Action onLostFocus;
-        public Action onProjectChange;
-        public Action onSelectionChange;
-        public Action update;
-        public Action onDisable;
-        public Action onEnable;
+        public EditorEvent awake;
+        public EditorEvent onDestroy;
+        public EditorEvent onFocus;
+        public EditorEvent onGui;
+        public EditorEvent onHierarchyChange;
+        public EditorEvent onInspectorUpdate;
+        public EditorEvent onLostFocus;
+        public EditorEvent onProjectChange;
+        public EditorEvent onSelectionChange;
+        public EditorEvent update;
+        public EditorEvent onDisable;
+        public EditorEvent onEnable;
 
         void Awake() => Handle(awake);
         void OnDestroy() => Handle(onDestroy);
@@ -31,7 +53,11 @@ namespace CareBoo.Serially.Editor.Tests
         void OnDisable() => Handle(onDisable);
         void OnEnable() => Handle(onEnable);
 
-        void Handle(Action action) => action?.Invoke();
+        void Handle(EditorEvent editorEvent) => editorEvent?.Invoke();
 
+        public bool OnGUIInitialized()
+        {
+            return onGui != null && onGui.CallCount >= 4;
+        }
     }
 }

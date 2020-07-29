@@ -9,7 +9,7 @@ using static CareBoo.Serially.SerializableType;
 
 namespace CareBoo.Serially.Editor.Tests
 {
-    public class SerializableTypeTest
+    public class SerializableTypeTest : ScriptableObject
     {
         [Guid("e7974cb7-b295-4a9d-b606-824c1fc4c8ea")]
         public class TypeWithGuidAttribute { }
@@ -22,7 +22,9 @@ namespace CareBoo.Serially.Editor.Tests
             new[] { typeof (TypeWithoutGuidAttribute) }
         };
 
-        public string AssetPath => $"Assets/{nameof(SerializableTypeFixture)}.asset";
+        public SerializableType Instance;
+
+        public string AssetPath => $"Assets/{nameof(SerializableTypeTest)}.asset";
 
         [TearDown]
         public void DeleteAsset()
@@ -51,10 +53,10 @@ namespace CareBoo.Serially.Editor.Tests
         [TestCaseSource(nameof(TypeCases))]
         public void SetTypeShouldPersistAfterCallingSave(Type expected)
         {
-            var asset = ScriptableObject.CreateInstance<SerializableTypeFixture>();
+            var asset = CreateInstance<SerializableTypeTest>();
             asset.Instance = new SerializableType(expected);
             AssetDatabase.CreateAsset(asset, AssetPath);
-            asset = AssetDatabase.LoadAssetAtPath<SerializableTypeFixture>(AssetPath);
+            asset = AssetDatabase.LoadAssetAtPath<SerializableTypeTest>(AssetPath);
             var actual = asset.Instance.Type;
             Assert.AreEqual(expected, actual);
         }
@@ -62,14 +64,14 @@ namespace CareBoo.Serially.Editor.Tests
         [Test]
         public void SetUnknownTypeIdShouldCauseError()
         {
-            var asset = ScriptableObject.CreateInstance<SerializableTypeFixture>();
+            var asset = CreateInstance<SerializableTypeTest>();
             asset.Instance = new SerializableType();
             AssetDatabase.CreateAsset(asset, AssetPath);
             var serializedObject = new SerializedObject(asset);
             var typeIdProperty = serializedObject.FindProperty("Instance.typeId");
             typeIdProperty.stringValue = "6366a62a-e654-4c53-9da5-d73fb875cd17";
             serializedObject.ApplyModifiedProperties();
-            asset = AssetDatabase.LoadAssetAtPath<SerializableTypeFixture>(AssetPath);
+            asset = AssetDatabase.LoadAssetAtPath<SerializableTypeTest>(AssetPath);
             var error = asset.Instance.TypeNotFoundError;
             LogAssert.Expect(LogType.Error, error);
         }
@@ -78,7 +80,7 @@ namespace CareBoo.Serially.Editor.Tests
         [TestCaseSource(nameof(TypeCases))]
         public void SettingTypeWhenBuildingShouldSetAssemblyQualifiedName(Type expected)
         {
-            var asset = ScriptableObject.CreateInstance<SerializableTypeFixture>();
+            var asset = CreateInstance<SerializableTypeTest>();
             var serializableType = new SerializableType(expected);
             asset.Instance = new SerializableType(expected);
             (serializableType as IPreprocessBuildWithReport).OnPreprocessBuild(null);
