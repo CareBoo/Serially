@@ -18,21 +18,20 @@ namespace CareBoo.Serially.Editor
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             var typeIdProperty = property.FindPropertyRelative(TypeIdProperty);
-            var type = Validate(typeIdProperty, label);
+            var type = Validate(typeIdProperty.stringValue, label);
 
             position = EditorGUI.PrefixLabel(position, label);
             TypeField(
                 position,
                 type,
-                GetFilteredTypes(property).ToArray(),
+                GetFilteredTypes(property, attribute).ToArray(),
                 SetTypeValue(typeIdProperty)
                 );
         }
 
-        public Type Validate(SerializedProperty typeIdProperty, GUIContent label)
+        public static Type Validate(string typeId, GUIContent label)
         {
-            var typeReferenceExists = TryGetType(typeIdProperty.stringValue, out Type type);
-            var typeId = typeIdProperty.stringValue;
+            var typeReferenceExists = TryGetType(typeId, out Type type);
             if (!typeReferenceExists)
             {
                 label.image = EditorGUIUtility.IconContent("console.erroricon").image;
@@ -46,20 +45,20 @@ namespace CareBoo.Serially.Editor
             return type;
         }
 
-        public bool IsMissingGuidAttribute(Type type)
+        public static bool IsMissingGuidAttribute(Type type)
         {
             return type != null && !Attribute.IsDefined(type, typeof(GuidAttribute));
         }
 
-        public IEnumerable<Type> GetFilteredTypes(SerializedProperty property)
+        public static IEnumerable<Type> GetFilteredTypes(SerializedProperty property, PropertyAttribute propertyAttribute)
         {
-            var (baseType, filter) = GetTypeFilter(property);
+            var (baseType, filter) = GetTypeFilter(property, propertyAttribute);
             return GetDerivedTypes(baseType).Where(filter);
         }
 
-        public (Type baseType, Func<Type, bool> filter) GetTypeFilter(SerializedProperty property)
+        public static (Type baseType, Func<Type, bool> filter) GetTypeFilter(SerializedProperty property, PropertyAttribute propertyAttribute)
         {
-            if (attribute is TypeFilterAttribute t)
+            if (propertyAttribute is TypeFilterAttribute t)
             {
                 var parentObject = property.GetValue(p => p.SkipLast(1));
                 return (t.DerivedFrom, t.GetFilter(parentObject));
@@ -67,7 +66,7 @@ namespace CareBoo.Serially.Editor
             return (null, _ => true);
         }
 
-        public IEnumerable<Type> GetDerivedTypes(Type baseType)
+        public static IEnumerable<Type> GetDerivedTypes(Type baseType)
         {
             var derivedTypes = baseType != null
                 ? TypeCache.GetTypesDerivedFrom(baseType)
@@ -78,7 +77,7 @@ namespace CareBoo.Serially.Editor
             return derivedTypes.Where(type => !type.IsGenericType);
         }
 
-        public Action<Type> SetTypeValue(SerializedProperty property)
+        public static Action<Type> SetTypeValue(SerializedProperty property)
         {
             return type =>
             {
