@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace CareBoo.Serially.Samples
+namespace CareBoo.Serially.Samples.Animals
 {
     public interface IPet
     {
