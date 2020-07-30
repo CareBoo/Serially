@@ -4,5 +4,5 @@ using UnityEngine;
 namespace CareBoo.Serially
 {
     [Conditional("UNITY_EDITOR")]
-    public class ShowValueTypeAttribute : PropertyAttribute { }
+    public class ShowSerializeReferenceAttribute : PropertyAttribute { }
 }
