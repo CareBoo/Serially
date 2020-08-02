@@ -19,17 +19,18 @@ public class MyBehavior : MonoBehaviour
     [TypeFilter(derivedFrom: typeof(IPet))] // only show types derived from IPet
     public SerializableType SomePetType;
 
-    public IEnumerable<Type> MyCustomFilter(IEnumerable<Type> types)
+    public bool MyCustomFilter(Type type)
     {
-        return new[] { typeof(int), SomePetType.Type }; // can be dynamic, and related to this property.
+        var acceptedTypes = new[] { typeof(int), SomePetType.Type };
+        return acceptedTypes.Contains(type);
     }
 
-    [TypeFilter(nameof(MyCustomFilter))] // must be a Func<IEnumerable<Type>, IEnumerable<Type>>
-    public SerializableType ACatDogOrInt;
+    [TypeFilter(nameof(MyCustomFilter))] // must be a Func<Type, bool>
+    public SerializableType SelectedSomePetTypeOrInt;
 }
 ```
 
-The delegate given to `TypeFilter` must be a `Func<IEnumerable<Type>, IEnumerable<Type>>` to work.
+The delegate given to `TypeFilter` must be a `Func<Type, bool>` to work.
 
 ![TypePickerWindow](images/TypePickerWindow.png)
 
