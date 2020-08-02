@@ -1,16 +1,18 @@
 Serially
 ========
 
-Extends the Unity Editor with useful serialization tools:
+Extends the Unity Editor with some serialization tools:
 
 - [ShowSerializeReference](Packages/com.careboo.serially/Documentation/ShowSerializeReference.md)
-    - Adds an inspector to `SerializeReference` fields.
-    - The inspector can be used to select a type to instantiate into the field.
+  - Adds an inspector to `SerializeReference` fields.
+  - The inspector can be used to select a type to instantiate into the field.
 - [SerializableType](Packages/com.careboo.serially/Documentation/SerializableType.md)
-    - Serialize a `System.Type` reference.
+  - Serialize a `System.Type` reference.
+
+[!serially](Packages/com.careboo.serially/Documentation/images/serially.gif)
 
 Installation
-============
+------------
 
 This project can be installed as a UPM package. There are two easy ways to install the package:
 
