@@ -9,7 +9,7 @@ Extends the Unity Editor with some serialization tools:
 - [SerializableType](Packages/com.careboo.serially/Documentation/SerializableType.md)
   - Serialize a `System.Type` reference.
 
-[!serially](Packages/com.careboo.serially/Documentation/images/serially.gif)
+![serially](Packages/com.careboo.serially/Documentation/images/serially.gif)
 
 Installation
 ------------
