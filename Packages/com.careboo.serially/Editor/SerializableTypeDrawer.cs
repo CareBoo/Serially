@@ -82,7 +82,7 @@ namespace CareBoo.Serially.Editor
             return type =>
             {
                 var value = ToSerializedType(type);
-                if (property.stringValue != value && !string.IsNullOrEmpty(value))
+                if (property.stringValue != value)
                 {
                     property.stringValue = value;
                     property.serializedObject.ApplyModifiedProperties();
