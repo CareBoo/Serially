@@ -112,10 +112,17 @@ namespace CareBoo.Serially.Editor.Tests
             Assert.AreEqual(expected, actual);
         }
 
-        [Test]
-        public void SetTypeValueShouldReturnSameType()
+        public static object[] SetTypeCases = new object[]
         {
-            var expected = typeof(B);
+            new object[] { typeof(A) },
+            new object[] { typeof(B) },
+            new object[] { null }
+        };
+
+        [Test]
+        [TestCaseSource(nameof(SetTypeCases))]
+        public void SetTypeValueShouldReturnSameType(Type expected)
+        {
             var property = GetProperty(nameof(NoTypeFilter));
             var typeIdProperty = property.FindPropertyRelative(TypeIdProperty);
             var setTypeValue = SerializableTypeDrawer.SetTypeValue(typeIdProperty);
