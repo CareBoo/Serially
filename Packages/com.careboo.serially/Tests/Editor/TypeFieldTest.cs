@@ -7,7 +7,6 @@ using System.Collections;
 using System;
 using UnityEditor;
 using UnityEditor.Callbacks;
-using UnityEngine.Events;
 
 namespace CareBoo.Serially.Editor.Tests
 {
