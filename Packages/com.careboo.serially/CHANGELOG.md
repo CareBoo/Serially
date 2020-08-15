@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/CareBoo/Serially/compare/v1.0.1...v1.0.2) (2020-08-15)
+
+
+### Bug Fixes
+
+* :bug: fixing can't set null type on SerializableType ([afdb027](https://github.com/CareBoo/Serially/commit/afdb0279c2a60fd1934ce00ab155a77fefe2a24c)), closes [#46](https://github.com/CareBoo/Serially/issues/46)
+
 ## [1.0.1](https://github.com/CareBoo/Serially/compare/v1.0.0...v1.0.1) (2020-08-15)
 
 
