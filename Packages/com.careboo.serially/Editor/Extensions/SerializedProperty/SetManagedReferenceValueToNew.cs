@@ -10,7 +10,8 @@ namespace CareBoo.Serially.Editor
             property.managedReferenceValue = type != null
                 ? Activator.CreateInstance(type)
                 : null;
-            property.serializedObject.ApplyModifiedPropertiesWithoutUndo();
+            var so = property.serializedObject;
+            so.ApplyModifiedProperties();
         }
     }
 }
