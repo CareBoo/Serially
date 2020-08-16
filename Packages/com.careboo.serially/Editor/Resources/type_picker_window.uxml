@@ -1,8 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
-    <uie:Toolbar style="align-items: stretch; justify-content: center; border-left-color: rgb(126, 126, 126); border-right-color: rgb(126, 126, 126); border-top-color: rgb(126, 126, 126); border-bottom-color: rgb(126, 126, 126); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 1px; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px; background-color: rgb(203, 203, 203);">
-        <ui:VisualElement name="search-container" style="flex-grow: 1; flex-direction: row;">
-            <uie:ToolbarSearchField focusable="True" name="search-field" style="flex-grow: 1; flex-shrink: 0; align-items: stretch; flex-direction: row; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; -unity-text-align: lower-left;" />
+    <uie:Toolbar style="align-items: stretch; justify-content: center; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 1px; padding-left: 1px; padding-right: 1px; padding-top: 1px; padding-bottom: 1px;">
+        <ui:VisualElement name="search-container" style="flex-grow: 1; flex-direction: row;">
+            <uie:ToolbarSearchField focusable="True" name="search-field" style="flex-grow: 1; flex-shrink: 0; align-items: stretch; flex-direction: row; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; -unity-text-align: lower-left;" />
         </ui:VisualElement>
     </uie:Toolbar>
-    <ui:ListView name="type-list" item-height="18" style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; height: auto; flex-grow: 1; flex-shrink: 0; display: flex; visibility: visible;" />
+    <ui:ListView name="type-list" item-height="18" style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; height: auto; flex-grow: 1; flex-shrink: 0; display: flex; visibility: visible;" />
 </ui:UXML>
