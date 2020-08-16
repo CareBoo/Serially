@@ -11,18 +11,18 @@ namespace CareBoo.Serially.Editor
         public const int RightClickButton = 1;
         public static object copiedValue;
 
-        public struct ShowSerializeReferenceContext
+        public struct Context
         {
             public SerializedProperty Property { get; }
             public Type FieldType { get; }
 
-            public ShowSerializeReferenceContext(SerializedProperty property)
+            public Context(SerializedProperty property)
             {
                 Property = property;
                 FieldType = property.GetManagedReferenceFieldType();
             }
 
-            public void DrawMenu()
+            public GenericMenu CreateMenu()
             {
                 var menu = new GenericMenu();
                 menu.AddItem(new GUIContent(nameof(Copy)), false, Copy);
@@ -30,7 +30,7 @@ namespace CareBoo.Serially.Editor
                     menu.AddItem(new GUIContent(nameof(Paste)), false, Paste);
                 else
                     menu.AddDisabledItem(new GUIContent(nameof(Paste)));
-                menu.ShowAsContext();
+                return menu;
             }
 
             public void Copy()
@@ -64,8 +64,8 @@ namespace CareBoo.Serially.Editor
                 && position.Contains(currentEvent.MousePosition)
                 && currentEvent.Button == RightClickButton)
             {
-                var context = new ShowSerializeReferenceContext(property);
-                context.DrawMenu();
+                var contextMenu = new Context(property).CreateMenu();
+                contextMenu.ShowAsContext();
                 currentEvent.Type = EventType.Used;
             }
 
