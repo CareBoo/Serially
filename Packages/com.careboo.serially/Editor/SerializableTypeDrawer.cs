@@ -11,7 +11,6 @@ using System.Collections.Generic;
 namespace CareBoo.Serially.Editor
 {
     [CustomPropertyDrawer(typeof(SerializableType))]
-    [CustomPropertyDrawer(typeof(TypeFilterAttribute))]
     public class SerializableTypeDrawer : PropertyDrawer
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
@@ -20,7 +19,8 @@ namespace CareBoo.Serially.Editor
             var type = Validate(typeIdProperty.stringValue, label);
 
             position = EditorGUI.PrefixLabel(position, label);
-            var selectableTypes = new Lazy<IEnumerable<Type>>(() => GetFilteredTypes(property, attribute).ToArray());
+            var typeFilterAttribute = (TypeFilterAttribute)Attribute.GetCustomAttribute(fieldInfo, typeof(TypeFilterAttribute));
+            var selectableTypes = new Lazy<IEnumerable<Type>>(() => GetFilteredTypes(property, typeFilterAttribute).ToArray());
             new TypeField(
                 position,
                 type,
@@ -54,17 +54,17 @@ namespace CareBoo.Serially.Editor
         public static IEnumerable<Type> GetFilteredTypes(SerializedProperty property, PropertyAttribute propertyAttribute)
         {
             var (baseType, filter) = GetTypeFilter(property, propertyAttribute);
-            return GetDerivedTypes(baseType).Where(filter);
+            return filter.Invoke(GetDerivedTypes(baseType));
         }
 
-        public static (Type baseType, Func<Type, bool> filter) GetTypeFilter(SerializedProperty property, PropertyAttribute propertyAttribute)
+        public static (Type baseType, Func<IEnumerable<Type>, IEnumerable<Type>> filter) GetTypeFilter(SerializedProperty property, PropertyAttribute propertyAttribute)
         {
             if (propertyAttribute is TypeFilterAttribute t)
             {
                 var parentObject = property.GetValue(p => p.SkipLast(1));
                 return (t.DerivedFrom, t.GetFilter(parentObject));
             }
-            return (null, _ => true);
+            return (null, sequence => sequence);
         }
 
         public static IEnumerable<Type> GetDerivedTypes(Type baseType)
