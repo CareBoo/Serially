@@ -43,7 +43,7 @@ namespace CareBoo.Serially.Editor.Tests
             var testWindow = EditorWindow.GetWindow<TestEditorWindow>();
             var position = new Rect(0, 0, 50, 50f);
             var currentEvent = new GuiEvent(EventType.MouseDown, position.center, 1, ShowSerializeReferenceDrawer.RightClickButton);
-            testWindow.onGui = new EditorEvent(() => ShowSerializeReferenceDrawer.OnGUI(position, sp, GUIContent.none, currentEvent));
+            testWindow.onGui = new EditorEvent(() => ShowSerializeReferenceDrawer.OnGUI(position, sp, GUIContent.none, currentEvent, GetType().GetField(nameof(Field))));
             yield return new WaitUntil(testWindow.OnGUIInitialized);
             testWindow.Close();
         }
