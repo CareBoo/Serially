@@ -1,3 +1,10 @@
+# [2.1.0-preview.3](https://github.com/CareBoo/Serially/compare/v2.1.0-preview.2...v2.1.0-preview.3) (2020-08-16)
+
+
+### Features
+
+* :sparkles: modify TypeFilterAttribute to use sequences ([71b0ae5](https://github.com/CareBoo/Serially/commit/71b0ae5b9e58631672895dc5a138b191bfcd9055)), closes [#54](https://github.com/CareBoo/Serially/issues/54)
+
 # [2.1.0-preview.2](https://github.com/CareBoo/Serially/compare/v2.1.0-preview.1...v2.1.0-preview.2) (2020-08-16)
 
 
