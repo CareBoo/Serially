@@ -20,10 +20,11 @@ namespace CareBoo.Serially.Editor
             var type = Validate(typeIdProperty.stringValue, label);
 
             position = EditorGUI.PrefixLabel(position, label);
+            var selectableTypes = new Lazy<IEnumerable<Type>>(() => GetFilteredTypes(property, attribute).ToArray());
             new TypeField(
                 position,
                 type,
-                new Lazy<IEnumerable<Type>>(() => GetFilteredTypes(property, attribute).ToArray()),
+                selectableTypes,
                 SetTypeValue(typeIdProperty)
                 )
                 .DrawGui();
