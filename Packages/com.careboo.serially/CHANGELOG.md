@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/CareBoo/Serially/compare/v1.0.2...v2.0.0) (2020-08-16)
+
+
+### Code Refactoring
+
+* :art: refactoring typefield ([d574868](https://github.com/CareBoo/Serially/commit/d574868c210cde549f70c3051ef6a68fe332e03b))
+
+
+### BREAKING CHANGES
+
+* Changes the public API of TypeField and remove TypeFieldOptions
+
 ## [1.0.2](https://github.com/CareBoo/Serially/compare/v1.0.1...v1.0.2) (2020-08-15)
 
 
