@@ -28,9 +28,9 @@ namespace CareBoo.Serially.Editor.Tests
         [TypeFilter(nameof(Filter))]
         public SerializableType DelegateTypeFilter;
 
-        public bool Filter(Type input)
+        public IEnumerable<Type> Filter(IEnumerable<Type> sequence)
         {
-            return input == typeof(B);
+            return sequence.Where(t => t == typeof(B));
         }
 
         [Test]
@@ -104,7 +104,7 @@ namespace CareBoo.Serially.Editor.Tests
         [Test]
         public void GetFilteredTypesWithTypeDelegateShouldReturnTypesMatchingDelegate()
         {
-            var expected = new HashSet<Type>(SerializableTypeDrawer.GetDerivedTypes(null).Where(Filter));
+            var expected = new HashSet<Type>(Filter(SerializableTypeDrawer.GetDerivedTypes(null)));
             var field = GetFieldInfo<SerializableTypeDrawerTest>(x => x.DelegateTypeFilter);
             var attribute = (TypeFilterAttribute)Attribute.GetCustomAttribute(field, typeof(TypeFilterAttribute));
             var property = GetProperty(nameof(DelegateTypeFilter));

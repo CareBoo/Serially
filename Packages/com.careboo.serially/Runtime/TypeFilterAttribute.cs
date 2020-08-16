@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 
@@ -9,9 +10,9 @@ namespace CareBoo.Serially
     {
         public Type DerivedFrom { get; }
 
-        public Func<Type, bool> DerivedFromFilter => _ => true;
+        public Func<IEnumerable<Type>, IEnumerable<Type>> DerivedFromFilter => sequence => sequence;
 
-        public Func<Type, bool> Filter { get; protected set; }
+        public Func<IEnumerable<Type>, IEnumerable<Type>> Filter { get; protected set; }
 
         public string FilterName { get; }
 
@@ -26,15 +27,15 @@ namespace CareBoo.Serially
             FilterName = filterName;
         }
 
-        public Func<Type, bool> GetFilter(object parent)
+        public Func<IEnumerable<Type>, IEnumerable<Type>> GetFilter(object parent)
         {
             return Filter ?? BindFilterDelegate(parent);
         }
 
-        public Func<Type, bool> BindFilterDelegate(object parent)
+        public Func<IEnumerable<Type>, IEnumerable<Type>> BindFilterDelegate(object parent)
         {
-            Filter = (Func<Type, bool>)Delegate.CreateDelegate(
-                typeof(Func<Type, bool>),
+            Filter = (Func<IEnumerable<Type>, IEnumerable<Type>>)Delegate.CreateDelegate(
+                typeof(Func<IEnumerable<Type>, IEnumerable<Type>>),
                 parent,
                 FilterName
                 );
