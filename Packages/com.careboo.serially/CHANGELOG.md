@@ -1,4 +1,11 @@
-# [2.1.0](https://github.com/CareBoo/Serially/compare/v2.0.0...v2.1.0) (2020-08-16)
+# [2.1.0-preview.2](https://github.com/CareBoo/Serially/compare/v2.1.0-preview.1...v2.1.0-preview.2) (2020-08-16)
+
+
+### Performance Improvements
+
+* :zap: making selectabletypes lazy ([fd4d28a](https://github.com/CareBoo/Serially/commit/fd4d28ab623ff11cdc3507de0bc8156eb6496413)), closes [#53](https://github.com/CareBoo/Serially/issues/53)
+
+# [2.1.0-preview.1](https://github.com/CareBoo/Serially/compare/v2.0.0...v2.1.0-preview.1) (2020-08-16)
 
 
 ### Bug Fixes
