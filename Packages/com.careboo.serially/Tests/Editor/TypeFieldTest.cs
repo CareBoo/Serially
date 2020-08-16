@@ -6,6 +6,7 @@ using System.Collections;
 using System;
 using UnityEditor;
 using UnityEditor.Callbacks;
+using System.Collections.Generic;
 
 namespace CareBoo.Serially.Editor.Tests
 {
@@ -23,7 +24,8 @@ namespace CareBoo.Serially.Editor.Tests
         private static bool thisScriptOpenedAtC = false;
 
         private static Rect TypeFieldRect => new Rect(x: 0, y: 0, width: 150, height: 18);
-        private static Type[] Types => new[] { typeof(A), typeof(B), typeof(C) };
+        private static Lazy<IEnumerable<Type>> Types =>
+            new Lazy<IEnumerable<Type>>(() => new[] { typeof(A), typeof(B), typeof(C) });
 
         [TearDown]
         public void CloseTestWindow()
