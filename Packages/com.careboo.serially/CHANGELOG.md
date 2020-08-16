@@ -1,3 +1,18 @@
+# [2.1.0](https://github.com/CareBoo/Serially/compare/v2.0.0...v2.1.0) (2020-08-16)
+
+
+### Bug Fixes
+
+* :art: fixing background color regardless of editor skin ([a871caf](https://github.com/CareBoo/Serially/commit/a871caf71cc5b6fb0852d2999f3616046af7ff15))
+* :art: fixing background color regardless of editor skin ([87bb2a1](https://github.com/CareBoo/Serially/commit/87bb2a1c1436636f9a289da5ab43a15ea24a6c34))
+* :bug: fixing bug if absolute file path is windows ([142b729](https://github.com/CareBoo/Serially/commit/142b729ccf4b70fd627dd436e128d1b9b73ef4f5))
+* :bug: fixing bug if absolute file path is windows ([fb1eafc](https://github.com/CareBoo/Serially/commit/fb1eafc6000dc31b75fe998f0566ed0d9a287fb6))
+
+
+### Features
+
+* :sparkles: copy paste SerializeReference fields! ([559a010](https://github.com/CareBoo/Serially/commit/559a01092dda0bf65a6e5a02b39dd3489f327ee4))
+
 # [2.0.0](https://github.com/CareBoo/Serially/compare/v1.0.2...v2.0.0) (2020-08-16)
 
 
