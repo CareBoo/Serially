@@ -55,7 +55,11 @@ namespace CareBoo.Serially.Editor
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             var currentEvent = GuiEvent.FromCurrentUnityEvent;
+            OnGUI(position, property, label, currentEvent);
+        }
 
+        public static void OnGUI(Rect position, SerializedProperty property, GUIContent label, GuiEvent currentEvent)
+        {
             if (currentEvent.Type == EventType.MouseDown
                 && position.Contains(currentEvent.MousePosition)
                 && currentEvent.Button == RightClickButton)
