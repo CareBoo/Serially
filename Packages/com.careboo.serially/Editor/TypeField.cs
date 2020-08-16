@@ -100,7 +100,9 @@ namespace CareBoo.Serially.Editor
 
         public void HandleCurrentEvent()
         {
-            if (CurrentGuiEvent.Type == EventType.MouseDown) HandleMouseDown();
+            if (Position.Contains(CurrentGuiEvent.MousePosition)
+                && CurrentGuiEvent.Type == EventType.MouseDown)
+                HandleMouseDown();
         }
 
         public void HandleMouseDown()

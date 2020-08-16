@@ -35,7 +35,7 @@ namespace CareBoo.Serially.Editor.Tests
         [Test]
         public void ClickingTheTypeFieldOfTypeWithProvideSourceInfoShouldPingTheMonoScript()
         {
-            var guiEvent = new GuiEvent(EventType.MouseDown, Vector2.zero, 1);
+            var guiEvent = new GuiEvent(EventType.MouseDown, Vector2.zero, 1, 0);
             var typeField = new TypeField(Rect.zero, typeof(C), null, null, guiEvent);
             var monoScript = typeField.HandleTypeLabelClicked();
             Assert.IsNotNull(monoScript);
@@ -45,7 +45,7 @@ namespace CareBoo.Serially.Editor.Tests
         public void ClickingTheTypeFieldOfTypeWithoutProvideSourceInfoShouldLogWarning()
         {
             LogAssert.Expect(LogType.Warning, new Regex(nameof(ProvideSourceInfoAttribute)));
-            var guiEvent = new GuiEvent(EventType.MouseDown, Vector2.zero, 1);
+            var guiEvent = new GuiEvent(EventType.MouseDown, Vector2.zero, 1, 0);
             var typeField = new TypeField(Rect.zero, typeof(B), null, null, guiEvent);
             var monoScript = typeField.HandleTypeLabelClicked();
             Assert.IsNull(monoScript);
@@ -58,7 +58,8 @@ namespace CareBoo.Serially.Editor.Tests
             var guiEvent = new GuiEvent(
                 EventType.MouseDown,
                 pickerArea.center,
-                1
+                1,
+                0
                 );
             var typeField = new TypeField(TypeFieldRect, typeof(A), Types, null, guiEvent);
             var testWindow = EditorWindow.GetWindow<TestEditorWindow>();
@@ -74,7 +75,8 @@ namespace CareBoo.Serially.Editor.Tests
             var guiEvent = new GuiEvent(
                 EventType.MouseDown,
                 TypeFieldRect.center,
-                2
+                2,
+                0
                 );
             var typeField = new TypeField(
                 TypeFieldRect,

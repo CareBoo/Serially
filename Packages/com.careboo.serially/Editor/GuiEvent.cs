@@ -4,19 +4,22 @@ namespace CareBoo.Serially.Editor
 {
     public struct GuiEvent
     {
-        public EventType Type { get; }
+        public EventType Type { get; set; }
         public Vector2 MousePosition { get; }
         public int ClickCount { get; }
+        public int Button { get; }
 
         public GuiEvent(
             EventType type,
             Vector2 mousePosition,
-            int clickCount
+            int clickCount,
+            int button
         )
         {
             Type = type;
             MousePosition = mousePosition;
             ClickCount = clickCount;
+            Button = button;
         }
 
         public static GuiEvent FromCurrentUnityEvent
@@ -24,7 +27,7 @@ namespace CareBoo.Serially.Editor
             get
             {
                 var evt = Event.current;
-                return new GuiEvent(evt.type, evt.mousePosition, evt.clickCount);
+                return new GuiEvent(evt.type, evt.mousePosition, evt.clickCount, evt.button);
             }
         }
     }
