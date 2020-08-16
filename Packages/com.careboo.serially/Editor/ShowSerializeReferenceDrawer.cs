@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using static UnityEditor.EditorGUIUtility;
@@ -72,7 +73,7 @@ namespace CareBoo.Serially.Editor
             new TypeField(
                 position: LabelIndent(position),
                 selectedType: property.GetManagedReferenceValueType(),
-                selectableTypes: property.GetSelectableManagedReferenceValueTypes(),
+                selectableTypes: new Lazy<IEnumerable<Type>>(property.GetSelectableManagedReferenceValueTypes),
                 onSelectType: property.SetManagedReferenceValueToNew,
                 currentEvent
                 ).DrawGui();
