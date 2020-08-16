@@ -1,3 +1,10 @@
+## [2.2.1](https://github.com/CareBoo/Serially/compare/v2.2.0...v2.2.1) (2020-08-16)
+
+
+### Bug Fixes
+
+* :ambulance: fixes renamed GuiEvent meta file ([53f665b](https://github.com/CareBoo/Serially/commit/53f665b0108858b3e0bb93f3198c4e66fa90beb7)), closes [#56](https://github.com/CareBoo/Serially/issues/56)
+
 # [2.2.0](https://github.com/CareBoo/Serially/compare/v2.1.0...v2.2.0) (2020-08-16)
 
 
