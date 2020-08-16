@@ -1,3 +1,16 @@
+# [2.2.0-preview.1](https://github.com/CareBoo/Serially/compare/v2.1.0...v2.2.0-preview.1) (2020-08-16)
+
+
+### Features
+
+* :sparkles: add TypeFilterAttribute support ([23f32c6](https://github.com/CareBoo/Serially/commit/23f32c6cbf94c25763e008402c9c6928f737bbd4)), closes [#52](https://github.com/CareBoo/Serially/issues/52)
+* :sparkles: modify TypeFilterAttribute to use sequences ([e491674](https://github.com/CareBoo/Serially/commit/e491674b352b5821661163034ef32f03acbf24cd)), closes [#54](https://github.com/CareBoo/Serially/issues/54)
+
+
+### Performance Improvements
+
+* :zap: making selectabletypes lazy ([a440a52](https://github.com/CareBoo/Serially/commit/a440a52964a55fcd5fd0b9dd58fc1a90537d2343)), closes [#53](https://github.com/CareBoo/Serially/issues/53)
+
 # [2.1.0-preview.3](https://github.com/CareBoo/Serially/compare/v2.1.0-preview.2...v2.1.0-preview.3) (2020-08-16)
 
 
