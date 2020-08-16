@@ -23,7 +23,7 @@ namespace CareBoo.Serially.Editor
             new TypeField(
                 position,
                 type,
-                GetFilteredTypes(property, attribute).ToArray(),
+                new Lazy<IEnumerable<Type>>(() => GetFilteredTypes(property, attribute).ToArray()),
                 SetTypeValue(typeIdProperty)
                 )
                 .DrawGui();
