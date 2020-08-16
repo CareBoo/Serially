@@ -2,6 +2,8 @@
 using System.Reflection;
 using static CareBoo.Serially.Editor.Tests.Reflection.ReflectionUtil;
 using NUnit.Framework;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace CareBoo.Serially.Editor.Tests
 {
@@ -17,9 +19,12 @@ namespace CareBoo.Serially.Editor.Tests
 
             public bool IsFiltering { get; set; }
 
-            public Func<Type, bool> FilterDelegate => Filter;
+            public Func<IEnumerable<Type>, IEnumerable<Type>> FilterDelegate => Filter;
 
-            public bool Filter(Type _) => IsFiltering;
+            public IEnumerable<Type> Filter(IEnumerable<Type> sequence)
+            {
+                return sequence.Where(_ => IsFiltering);
+            }
         }
 
         [Test]
