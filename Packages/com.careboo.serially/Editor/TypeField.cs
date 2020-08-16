@@ -18,7 +18,7 @@ namespace CareBoo.Serially.Editor
 
         public Rect Position { get; }
         public Type SelectedType { get; }
-        public IEnumerable<Type> SelectableTypes { get; }
+        public Lazy<IEnumerable<Type>> SelectableTypes { get; }
         public Action<Type> OnSelectType { get; }
         public GuiEvent CurrentGuiEvent { get; }
 
@@ -65,7 +65,7 @@ namespace CareBoo.Serially.Editor
         public TypeField(
             Rect position,
             Type selectedType,
-            IEnumerable<Type> selectableTypes,
+            Lazy<IEnumerable<Type>> selectableTypes,
             Action<Type> onSelectType,
             GuiEvent? currentGuiEvent = null
             )
@@ -113,7 +113,7 @@ namespace CareBoo.Serially.Editor
 
         public void HandlePickerButtonClicked()
         {
-            TypePickerWindow.ShowWindow(SelectedType, SelectableTypes, OnSelectType);
+            TypePickerWindow.ShowWindow(SelectedType, SelectableTypes.Value, OnSelectType);
         }
 
         public MonoScript HandleTypeLabelClicked()
