@@ -2,7 +2,6 @@
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
-using static CareBoo.Serially.Editor.EditorGUIExtensions;
 using UnityEngine.UIElements;
 using UnityEditor.UIElements;
 using System.Collections.Generic;
@@ -97,7 +96,7 @@ namespace CareBoo.Serially.Editor
         public void BindItem(VisualElement element, int index)
         {
             var type = searchedTypes.ElementAt(index);
-            var text = GetTypeLabelString(type);
+            var text = TypeField.GetLabelString(type);
             var groups = TypeLabelRegex.Match(text).Groups;
 
             var typeNameGroup = groups["name"];
@@ -109,7 +108,7 @@ namespace CareBoo.Serially.Editor
             typeNamespaceLabel.text = typeNamespaceGroup.Success ? typeNamespaceGroup.Value : string.Empty;
 
             var typeIcon = element.Q<VisualElement>(name: TypeIcon);
-            typeIcon.style.backgroundImage = (Texture2D)GetTypeImage();
+            typeIcon.style.backgroundImage = (Texture2D)TypeField.GetLabelImage();
         }
 
         public void OnItemChosen(object item)

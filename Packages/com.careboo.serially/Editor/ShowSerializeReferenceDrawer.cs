@@ -1,7 +1,6 @@
 ﻿using UnityEditor;
 using UnityEngine;
 using static UnityEditor.EditorGUIUtility;
-using static CareBoo.Serially.Editor.EditorGUIExtensions;
 
 namespace CareBoo.Serially.Editor
 {
@@ -15,7 +14,7 @@ namespace CareBoo.Serially.Editor
             var cachedPosition = position;
             position.xMin += labelWidth + 2f;
             position.height = singleLineHeight;
-            TypeField(position, type, types, property.SetManagedReferenceValueToNew);
+            new TypeField(position, type, types, property.SetManagedReferenceValueToNew).DrawGui();
 
             EditorGUI.PropertyField(cachedPosition, property, label, true);
         }
