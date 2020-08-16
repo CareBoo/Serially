@@ -19,9 +19,7 @@ namespace CareBoo.Serially
             get
             {
                 if (assetPath == null)
-                {
-                    assetPath = absoluteFilePath.Substring(LengthOfPathToProject);
-                }
+                    assetPath = absoluteFilePath.Replace('\\', '/').Substring(LengthOfPathToProject);
                 return assetPath;
             }
         }
