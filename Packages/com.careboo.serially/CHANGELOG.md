@@ -1,3 +1,10 @@
+# [2.1.0-preview.4](https://github.com/CareBoo/Serially/compare/v2.1.0-preview.3...v2.1.0-preview.4) (2020-08-16)
+
+
+### Features
+
+* :sparkles: add TypeFilterAttribute support ([398cf73](https://github.com/CareBoo/Serially/commit/398cf73cd6dbd5f9dbe67afc84241ca3c3f6cef5)), closes [#52](https://github.com/CareBoo/Serially/issues/52)
+
 # [2.1.0-preview.3](https://github.com/CareBoo/Serially/compare/v2.1.0-preview.2...v2.1.0-preview.3) (2020-08-16)
 
 
