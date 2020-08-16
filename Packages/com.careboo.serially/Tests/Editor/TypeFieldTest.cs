@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using NUnit.Framework;
-using static CareBoo.Serially.Editor.EditorGUIExtensions;
 using UnityEngine.TestTools;
 using System.Text.RegularExpressions;
 using System.Collections;
@@ -36,9 +35,9 @@ namespace CareBoo.Serially.Editor.Tests
         [Test]
         public void ClickingTheTypeFieldOfTypeWithProvideSourceInfoShouldPingTheMonoScript()
         {
-            var guiEvent = new GUIEvent(EventType.MouseDown, Vector2.zero, 1);
-            var typeFieldOptions = new TypeFieldOptions(Rect.zero, typeof(C), null, null);
-            var monoScript = HandleTypeLabelClicked(typeFieldOptions, guiEvent);
+            var guiEvent = new GuiEvent(EventType.MouseDown, Vector2.zero, 1);
+            var typeField = new TypeField(Rect.zero, typeof(C), null, null, guiEvent);
+            var monoScript = typeField.HandleTypeLabelClicked();
             Assert.IsNotNull(monoScript);
         }
 
@@ -46,29 +45,24 @@ namespace CareBoo.Serially.Editor.Tests
         public void ClickingTheTypeFieldOfTypeWithoutProvideSourceInfoShouldLogWarning()
         {
             LogAssert.Expect(LogType.Warning, new Regex(nameof(ProvideSourceInfoAttribute)));
-            var guiEvent = new GUIEvent(EventType.MouseDown, Vector2.zero, 1);
-            var typeFieldOptions = new TypeFieldOptions(Rect.zero, typeof(B), null, null);
-            var monoScript = HandleTypeLabelClicked(typeFieldOptions, guiEvent);
+            var guiEvent = new GuiEvent(EventType.MouseDown, Vector2.zero, 1);
+            var typeField = new TypeField(Rect.zero, typeof(B), null, null, guiEvent);
+            var monoScript = typeField.HandleTypeLabelClicked();
             Assert.IsNull(monoScript);
         }
 
         [UnityTest]
         public IEnumerator ClickingTypePickerShouldOpenTypePickerWindow()
         {
-            var typeFieldOptions = new TypeFieldOptions(
-                TypeFieldRect,
-                typeof(A),
-                Types,
-                null
-                );
-            var pickerArea = GetTypePickerButtonPosition(typeFieldOptions.Position);
-            var guiEvent = new GUIEvent(
+            var pickerArea = TypeField.GetPickerButtonArea(TypeFieldRect);
+            var guiEvent = new GuiEvent(
                 EventType.MouseDown,
                 pickerArea.center,
                 1
                 );
+            var typeField = new TypeField(TypeFieldRect, typeof(A), Types, null, guiEvent);
             var testWindow = EditorWindow.GetWindow<TestEditorWindow>();
-            testWindow.onGui = new EditorEvent(() => TypeField(typeFieldOptions, guiEvent));
+            testWindow.onGui = new EditorEvent(typeField.DrawGui);
             yield return new WaitUntil(testWindow.OnGUIInitialized);
             Assert.IsTrue(EditorWindow.HasOpenInstances<TypePickerWindow>());
             EditorWindow.GetWindow<TypePickerWindow>().Close();
@@ -77,20 +71,21 @@ namespace CareBoo.Serially.Editor.Tests
         [UnityTest]
         public IEnumerator ClickingTypeLabelTwiceForTypeDefinedInThisAssetShouldOpenThisAsset()
         {
-            var typeFieldOptions = new TypeFieldOptions(
-                TypeFieldRect,
-                typeof(C),
-                Types,
-                null
-                );
-            var guiEvent = new GUIEvent(
+            var guiEvent = new GuiEvent(
                 EventType.MouseDown,
                 TypeFieldRect.center,
                 2
                 );
+            var typeField = new TypeField(
+                TypeFieldRect,
+                typeof(C),
+                Types,
+                null,
+                guiEvent
+                );
             thisScriptOpenedAtC = false;
             var testWindow = EditorWindow.GetWindow<TestEditorWindow>();
-            testWindow.onGui = new EditorEvent(() => TypeField(typeFieldOptions, guiEvent));
+            testWindow.onGui = new EditorEvent(typeField.DrawGui);
             yield return new WaitUntil(testWindow.OnGUIInitialized);
             Assert.IsTrue(thisScriptOpenedAtC);
         }
@@ -100,7 +95,7 @@ namespace CareBoo.Serially.Editor.Tests
         {
             var type = typeof(A);
             var testWindow = EditorWindow.GetWindow<TestEditorWindow>();
-            testWindow.onGui = new EditorEvent(() => TypeField(TypeFieldRect, type, Types, null));
+            testWindow.onGui = new EditorEvent(() => new TypeField(TypeFieldRect, type, Types, null).DrawGui());
             yield return new WaitUntil(testWindow.OnGUIInitialized);
         }
 

@@ -2,7 +2,6 @@
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
-using static CareBoo.Serially.Editor.EditorGUIExtensions;
 using static CareBoo.Serially.SerializableType;
 using static CareBoo.Serially.Editor.SerializableTypeMeta;
 using System.Runtime.InteropServices;
@@ -21,12 +20,13 @@ namespace CareBoo.Serially.Editor
             var type = Validate(typeIdProperty.stringValue, label);
 
             position = EditorGUI.PrefixLabel(position, label);
-            TypeField(
+            new TypeField(
                 position,
                 type,
                 GetFilteredTypes(property, attribute).ToArray(),
                 SetTypeValue(typeIdProperty)
-                );
+                )
+                .DrawGui();
         }
 
         public static Type Validate(string typeId, GUIContent label)
