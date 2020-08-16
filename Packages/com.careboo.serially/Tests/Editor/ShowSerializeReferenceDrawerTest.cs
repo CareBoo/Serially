@@ -32,5 +32,19 @@ namespace CareBoo.Serially.Editor.Tests
             yield return new WaitUntil(testWindow.OnGUIInitialized);
             testWindow.Close();
         }
+
+        [UnityTest]
+        public IEnumerator RightClickInGUIShouldDrawWithoutErrors()
+        {
+            var obj = CreateInstance<ShowSerializeReferenceDrawerTest>();
+            var so = new SerializedObject(obj);
+            var sp = so.FindProperty(nameof(Field));
+            var testWindow = EditorWindow.GetWindow<TestEditorWindow>();
+            var position = new Rect(0, 0, 50, 50f);
+            var currentEvent = new GuiEvent(EventType.MouseDown, position.center, 1, ShowSerializeReferenceDrawer.RightClickButton);
+            testWindow.onGui = new EditorEvent(() => ShowSerializeReferenceDrawer.OnGUI(position, sp, GUIContent.none, currentEvent));
+            yield return new WaitUntil(testWindow.OnGUIInitialized);
+            testWindow.Close();
+        }
     }
 }
