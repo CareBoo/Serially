@@ -28,9 +28,17 @@ namespace CareBoo.Serially.Editor.Tests
         [TypeFilter(nameof(Filter))]
         public SerializableType DelegateTypeFilter;
 
+        [TypeFilter(nameof(NullFilter))]
+        public SerializableType NullTypeFilter;
+
         public IEnumerable<Type> Filter(IEnumerable<Type> sequence)
         {
             return sequence.Where(t => t == typeof(B));
+        }
+
+        public IEnumerable<Type> NullFilter(IEnumerable<Type> sequence)
+        {
+            return null;
         }
 
         [Test]
@@ -108,6 +116,17 @@ namespace CareBoo.Serially.Editor.Tests
             var field = GetFieldInfo<SerializableTypeDrawerTest>(x => x.DelegateTypeFilter);
             var attribute = (TypeFilterAttribute)Attribute.GetCustomAttribute(field, typeof(TypeFilterAttribute));
             var property = GetProperty(nameof(DelegateTypeFilter));
+            var actual = new HashSet<Type>(SerializableTypeDrawer.GetFilteredTypes(property, attribute));
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void GetFilteredTypesWithNullFilterDelegateShouldReturnTypesMatchingDelegate()
+        {
+            var expected = new HashSet<Type>(NullFilter(SerializableTypeDrawer.GetDerivedTypes(null)) ?? new Type[0]);
+            var field = GetFieldInfo<SerializableTypeDrawerTest>(x => x.NullTypeFilter);
+            var attribute = (TypeFilterAttribute)Attribute.GetCustomAttribute(field, typeof(TypeFilterAttribute));
+            var property = GetProperty(nameof(NullTypeFilter));
             var actual = new HashSet<Type>(SerializableTypeDrawer.GetFilteredTypes(property, attribute));
             Assert.AreEqual(expected, actual);
         }
