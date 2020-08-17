@@ -93,7 +93,9 @@ namespace CareBoo.Serially.Editor
             var typeFilterAttribute = (TypeFilterAttribute)Attribute.GetCustomAttribute(fieldInfo, typeof(TypeFilterAttribute));
             var parentObject = property.GetValue(p => p.SkipLast(1));
             var filter = typeFilterAttribute.GetFilter(parentObject);
-            return filter(property.GetSelectableManagedReferenceValueTypes());
+            var selectableTypes = property.GetSelectableManagedReferenceValueTypes();
+            var filteredTypes = filter(selectableTypes);
+            return filteredTypes ?? new Type[0];
         }
     }
 }
