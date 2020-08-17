@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using NUnit.Framework;
 using UnityEditor;
 using UnityEngine;
@@ -19,9 +21,21 @@ namespace CareBoo.Serially.Editor.Tests
 
     public class ShowSerializeReferenceDrawerTest : ScriptableObject
     {
-        [ShowSerializeReference]
         [SerializeReference]
+        [ShowSerializeReference]
         public A Field;
+
+        [SerializeReference]
+        [ShowSerializeReference]
+        [TypeFilter(nameof(Filter))]
+        public A FilteredField;
+
+        public Func<IEnumerable<Type>, IEnumerable<Type>> typeFilter;
+
+        public IEnumerable<Type> Filter(IEnumerable<Type> types)
+        {
+            return typeFilter.Invoke(types);
+        }
 
         [UnityTest]
         public IEnumerator OnGUIShouldDrawWithoutErrors()
@@ -119,6 +133,41 @@ namespace CareBoo.Serially.Editor.Tests
                 else
                     Assert.AreEqual(pasteIsDisabled, isDisabled);
             }
+        }
+
+        public static Func<IEnumerable<Type>, IEnumerable<Type>> CreateFilter(Func<IEnumerable<Type>, IEnumerable<Type>> filter) => filter;
+
+        public static IEnumerable<Type> NullFilterDelegate(IEnumerable<Type> types)
+        {
+            return null;
+        }
+
+        public static IEnumerable<Type> BOnlyFilterDelegtae(IEnumerable<Type> types)
+        {
+            return types.Where(t => t == typeof(B));
+        }
+
+        public static object[] TypeFilterCases = new object[]
+        {
+            new object[] { CreateFilter(BOnlyFilterDelegtae) },
+            new object[] { CreateFilter(NullFilterDelegate) }
+        };
+
+        [Test]
+        [TestCaseSource(nameof(TypeFilterCases))]
+        public void GetSelectableTypesShouldReturnTypesFilteredByTypeFilter(
+            Func<IEnumerable<Type>, IEnumerable<Type>> filter)
+        {
+            var obj = CreateInstance<ShowSerializeReferenceDrawerTest>();
+            obj.typeFilter = filter;
+            var so = new SerializedObject(obj);
+            var property = so.FindProperty(nameof(FilteredField));
+            var fieldInfo = GetType().GetField(nameof(FilteredField));
+            var expectedTypes = filter(property.GetSelectableManagedReferenceValueTypes()) ?? new Type[0];
+            var actualTypes = ShowSerializeReferenceDrawer.GetSelectableTypes(property, fieldInfo);
+            var expected = new HashSet<Type>(expectedTypes);
+            var actual = new HashSet<Type>(actualTypes);
+            Assert.AreEqual(expected, actual);
         }
     }
 }
