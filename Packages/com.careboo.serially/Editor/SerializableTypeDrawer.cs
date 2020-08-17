@@ -54,7 +54,7 @@ namespace CareBoo.Serially.Editor
         public static IEnumerable<Type> GetFilteredTypes(SerializedProperty property, PropertyAttribute propertyAttribute)
         {
             var (baseType, filter) = GetTypeFilter(property, propertyAttribute);
-            return filter.Invoke(GetDerivedTypes(baseType));
+            return filter.Invoke(GetDerivedTypes(baseType)) ?? new Type[0];
         }
 
         public static (Type baseType, Func<IEnumerable<Type>, IEnumerable<Type>> filter) GetTypeFilter(SerializedProperty property, PropertyAttribute propertyAttribute)
