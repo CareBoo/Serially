@@ -5,7 +5,7 @@ SerializableType
 
 `SerializableType` can be used to Serialize a `System.Type` reference. The UI is very similar to the [ShowSerializeReference](ShowSerializeReference.md) attribute.
 
-Using a `TypeFilter` attribute, you can filter the shown types by a base type, or a custom filter delegate.
+Using a `TypeFilter` attribute, you can filter the shown types by a base type, or a custom filter delegate. The delegate name given to `TypeFilter` must refer to a delegate of type `Func<IEnumerable<Type>, IEnumerable<Type>>` to work.
 
 ```cs
 using CareBoo.Serially;
@@ -19,19 +19,20 @@ public class MyBehavior : MonoBehaviour
     [TypeFilter(derivedFrom: typeof(IPet))] // only show types derived from IPet
     public SerializableType SomePetType;
 
-    public bool MyCustomFilter(Type type)
+    public IEnumerable<Type> MyCustomFilter(IEnumerable<Type> type)
     {
         var acceptedTypes = new[] { typeof(int), SomePetType.Type };
         return acceptedTypes.Contains(type);
     }
 
-    [TypeFilter(nameof(MyCustomFilter))] // must be a Func<Type, bool>
+    [TypeFilter(nameof(MyCustomFilter))] // must be a Func<IEnumerable<Type>, IEnumerable<Type>>
     public SerializableType SelectedSomePetTypeOrInt;
 }
 ```
 
-The delegate given to `TypeFilter` must be a `Func<Type, bool>` to work.
+Selecting Types
+---------------
+
+Similar to the [ShowSerializeReference](ShowSerializeReference.md) attribute, clicking the circle button at the right edge of the label opens up an editor window with a list of types. Double click a type in the list to select it.
 
 ![TypePickerWindow](images/TypePickerWindow.png)
-
-Similar to the [ShowSerializeReference](ShowSerializeReference.md) attribute, clicking the button to the side opens up a type list window.

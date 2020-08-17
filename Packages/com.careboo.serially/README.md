@@ -1,12 +1,11 @@
 Serially
 ========
 
-Extends the Unity Editor with useful serialization tools:
+Extends the Unity Editor with:
 
 - [ShowSerializeReference](Documentation/ShowSerializeReference.md)
-    - Adds an inspector to `SerializeReference` fields.
-    - The inspector can be used to select a type to instantiate into the field.
+  - Adds an inspector to `SerializeReference` fields which can be used to instantiate different types into the field.
 - [SerializableType](Documentation/SerializableType.md)
-    - Serialize a `System.Type` reference.
+  - Serialize a `System.Type` reference.
 
 Check out the Animals sample for a Demo scene.
