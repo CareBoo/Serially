@@ -1,3 +1,10 @@
+## [2.2.2](https://github.com/CareBoo/Serially/compare/v2.2.1...v2.2.2) (2020-08-17)
+
+
+### Bug Fixes
+
+* :bug: typefilter returning null wasn't properly handled ([43928f9](https://github.com/CareBoo/Serially/commit/43928f9577c86a1264533f135f60ad3c13c8dcd8)), closes [#61](https://github.com/CareBoo/Serially/issues/61)
+
 ## [2.2.1](https://github.com/CareBoo/Serially/compare/v2.2.0...v2.2.1) (2020-08-16)
 
 
