@@ -120,7 +120,8 @@ namespace CareBoo.Serially.Editor
         {
             if (SourceInfo == null)
             {
-                Debug.LogWarning($"Cannot find source script of \"{SelectedType?.FullName ?? "Null"}\" because it doesn't have a \"{nameof(ProvideSourceInfoAttribute)}\".");
+                if (SelectedType != null)
+                    Debug.LogWarning($"Cannot find source script of \"{SelectedType.FullName}\" because it doesn't have a \"{nameof(ProvideSourceInfoAttribute)}\".");
                 return null;
             }
             var monoScript = LoadAssetAtPath<MonoScript>(SourceInfo.AssetPath);
