@@ -12,4 +12,3 @@
 .unity-list-view__item--selected > .type-list__item__label {
     color: rgb(255, 255, 255);
 }
-
