@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
@@ -90,12 +91,15 @@ namespace CareBoo.Serially.Editor
 
         public static IEnumerable<Type> GetSelectableTypes(SerializedProperty property, FieldInfo fieldInfo)
         {
+            IEnumerable<Type> selectableTypes = property.GetSelectableManagedReferenceValueTypes();
             var typeFilterAttribute = (TypeFilterAttribute)Attribute.GetCustomAttribute(fieldInfo, typeof(TypeFilterAttribute));
-            var parentObject = property.GetValue(p => p.SkipLast(1));
-            var filter = typeFilterAttribute.GetFilter(parentObject);
-            var selectableTypes = property.GetSelectableManagedReferenceValueTypes();
-            var filteredTypes = filter(selectableTypes);
-            return filteredTypes ?? new Type[0];
+            if (typeFilterAttribute != null)
+            {
+                var parentObject = property.GetValue(p => p.SkipLast(1));
+                var filter = typeFilterAttribute?.GetFilter(parentObject);
+                selectableTypes = filter(selectableTypes);
+            }
+            return selectableTypes ?? Enumerable.Empty<Type>();
         }
     }
 }

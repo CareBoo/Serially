@@ -1,8 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
-    <ui:VisualElement name="content-container" focusable="true" style="flex-direction: row; height: 18px; overflow: hidden; -unity-background-image-tint-color: rgb(255, 255, 255); background-image: none; padding-left: 2px; padding-right: 2px;">
+    <ui:VisualElement name="content-container" focusable="true" style="flex-direction: row; height: 18px; overflow: hidden; -unity-background-image-tint-color: rgb(255, 255, 255); background-image: none; padding-left: 2px; padding-right: 2px;">
         <Style src="TypeList.uss" />
-        <ui:VisualElement name="type-icon" picking-mode="Ignore" class="type-list__item__icon" />
-        <ui:Label text="Type " name="type-name" picking-mode="Ignore" class="type-list__item__label" style="height: 15px; margin-top: 3px; margin-left: 1px; margin-right: 0; padding-right: 0; -unity-font-style: normal;" />
-        <ui:Label text="(Some.Namespace)" name="type-namespace" picking-mode="Ignore" class="type-list__item__label" style="height: 15px; margin-top: 3px; margin-left: 0; margin-right: 4px; padding-right: 1px; -unity-font-style: italic; padding-left: 0;" />
+        <ui:VisualElement name="type-icon" picking-mode="Ignore" class="type-list__item__icon" style="flex-shrink: 0;" />
+        <ui:Label text="Type " name="type-name" picking-mode="Ignore" class="type-list__item__label" style="height: 15px; margin-top: 3px; margin-left: 1px; margin-right: 0; padding-right: 0; -unity-font-style: normal;" />
+        <ui:Label text="(Some.Namespace)" name="type-namespace" picking-mode="Ignore" class="type-list__item__label" style="height: 15px; margin-top: 3px; margin-left: 0; margin-right: 4px; padding-right: 1px; -unity-font-style: italic; padding-left: 0;" />
     </ui:VisualElement>
 </ui:UXML>
