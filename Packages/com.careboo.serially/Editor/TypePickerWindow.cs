@@ -64,12 +64,20 @@ namespace CareBoo.Serially.Editor
         {
             InitWindow();
             InitListView();
+#if UNITY_2020_1_OR_NEWER
+            listView.onItemsChosen += OnItemsChosen;
+#else
             listView.onItemChosen += OnItemChosen;
+#endif // UNITY_2020_1_OR_NEWER
         }
 
         void OnDisable()
         {
+#if UNITY_2020_1_OR_NEWER
+            listView.onItemsChosen -= OnItemsChosen;
+#else
             listView.onItemChosen -= OnItemChosen;
+#endif // UNITY_2020_1_OR_NEWER
         }
 
         private void InitWindow()
@@ -131,5 +139,12 @@ namespace CareBoo.Serially.Editor
             return string.IsNullOrEmpty(searchValue)
                 || type.AssemblyQualifiedName.Contains(searchValue);
         }
+
+#if UNITY_2020_1_OR_NEWER
+        void OnItemsChosen(IEnumerable<object> items)
+        {
+            OnItemChosen(items.FirstOrDefault());
+        }
+#endif // UNITY_2020_1_OR_NEWER
     }
 }
