@@ -1,3 +1,12 @@
+## [2.2.3](https://github.com/CareBoo/Serially/compare/v2.2.2...v2.2.3) (2020-10-23)
+
+
+### Bug Fixes
+
+* :bug: Fix icons not showing ([b777b78](https://github.com/CareBoo/Serially/commit/b777b78ddb3eea1e7dd2032ebefda987c4da9760))
+* :bug: Fix null reference if no TypeFilter specified ([a9d1edb](https://github.com/CareBoo/Serially/commit/a9d1edbe124dd4279d17034d5e88cf7b42742a21)), closes [#63](https://github.com/CareBoo/Serially/issues/63)
+* :bug: Fix warning when clicking null serialize reference ([8fec535](https://github.com/CareBoo/Serially/commit/8fec53523310162f53c2d2c83689bb5df68d3288))
+
 ## [2.2.2](https://github.com/CareBoo/Serially/compare/v2.2.1...v2.2.2) (2020-08-17)
 
 
