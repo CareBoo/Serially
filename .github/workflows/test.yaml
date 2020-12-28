@@ -34,7 +34,7 @@ jobs:
           UNITY_VERSION: ${{ matrix.unityVersion }}
         run: |
           eval "license=\$UNITY_LICENSE_${UNITY_VERSION:0:4}"
-          echo "UNITY_LICENSE=$license"
+          echo "UNITY_LICENSE=$license" >> $GITHUB_ENV
 
       - uses: actions/cache@v1.1.0
         with:
