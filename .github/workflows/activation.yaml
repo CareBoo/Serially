@@ -1,12 +1,12 @@
 name: Acquire Unity Activation File
 
-on: 
+on:
   workflow_dispatch:
     inputs:
       unityVersion:
         description: 'Unity Version to request an activation file from.'
         required: true
-  
+
 jobs:
   activation:
     name: Request manual activation file 🔑
@@ -14,7 +14,7 @@ jobs:
     steps:
     - name: Request manual activation file
       id: getManualLicenseFile
-      uses: webbertakken/unity-request-manual-activation-file@v1
+      uses: game-ci/unity-activate@v1.3
       with:
         unityVersion: ${{ github.event.inputs.unityVersion }}
     - name: Expose as artifact
