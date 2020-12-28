@@ -7,7 +7,8 @@ on:
   pull_request:
 
 env:
-  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE_2019_4 }}
+  UNITY_LICENSE_2019: ${{ secrets.UNITY_LICENSE_2019 }}
+  UNITY_LICENSE_2020: ${{ secrets.UNITY_LICENSE_2020 }}
 
 jobs:
   testAllModes:
@@ -21,18 +22,27 @@ jobs:
           - .
         unityVersion:
           - 2019.4.2f1
+          - 2020.2.1f1
 
     steps:
       - uses: actions/checkout@v2
         with:
           lfs: true
+
+      - name: Set Unity License
+        env:
+          UNITY_VERSION: ${{ matrix.unityVersion }}
+        run: |
+          eval "license=\$UNITY_LICENSE_${UNITY_VERSION:0:4}"
+          echo "UNITY_LICENSE=$license"
+
       - uses: actions/cache@v1.1.0
         with:
           path: ${{ matrix.projectPath }}/Library
           key: Library-${{ matrix.unityVersion }}
           restore-keys: |
             Library-
-      - uses: webbertakken/unity-test-runner@v1.6
+      - uses: game-ci/unity-test-runner@v2.0-alpha-1
         id: tests
         with:
           projectPath: ${{ matrix.projectPath }}
