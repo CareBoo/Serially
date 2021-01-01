@@ -69,7 +69,7 @@ namespace CareBoo.Serially.Editor.Tests
             var typeField = new TypeField(TypeFieldRect, typeof(A), Types, null, guiEvent);
             var testWindow = EditorWindow.GetWindow<TestEditorWindow>();
             testWindow.onGui = new EditorEvent(typeField.DrawGui);
-            yield return new WaitUntil(testWindow.OnGUIInitialized);
+            yield return new WaitUntil(testWindow.OnGUIInitialized).OrTimeout(2000);
             Assert.IsTrue(EditorWindow.HasOpenInstances<TypePickerWindow>());
             EditorWindow.GetWindow<TypePickerWindow>().Close();
         }
@@ -94,7 +94,7 @@ namespace CareBoo.Serially.Editor.Tests
             thisScriptOpenedAtC = false;
             var testWindow = EditorWindow.GetWindow<TestEditorWindow>();
             testWindow.onGui = new EditorEvent(typeField.DrawGui);
-            yield return new WaitUntil(testWindow.OnGUIInitialized);
+            yield return new WaitUntil(testWindow.OnGUIInitialized).OrTimeout(2000);
             Assert.IsTrue(thisScriptOpenedAtC);
         }
 
@@ -105,7 +105,7 @@ namespace CareBoo.Serially.Editor.Tests
             var type = typeof(A);
             var testWindow = EditorWindow.GetWindow<TestEditorWindow>();
             testWindow.onGui = new EditorEvent(() => new TypeField(TypeFieldRect, type, Types, null).DrawGui());
-            yield return new WaitUntil(testWindow.OnGUIInitialized);
+            yield return new WaitUntil(testWindow.OnGUIInitialized).OrTimeout(2000);
         }
 
         [OnOpenAsset(0)]

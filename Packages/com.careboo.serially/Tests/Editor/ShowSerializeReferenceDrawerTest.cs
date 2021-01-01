@@ -45,7 +45,7 @@ namespace CareBoo.Serially.Editor.Tests
             var editor = UEditor.CreateEditor(obj);
             var testWindow = EditorWindow.GetWindow<TestEditorWindow>();
             testWindow.onGui = new EditorEvent(() => editor.DrawDefaultInspector());
-            yield return new WaitUntil(testWindow.OnGUIInitialized);
+            yield return new WaitUntil(testWindow.OnGUIInitialized).OrTimeout(2000);
             testWindow.Close();
         }
 
@@ -60,7 +60,7 @@ namespace CareBoo.Serially.Editor.Tests
             var position = new Rect(0, 0, 50, 50f);
             var currentEvent = new GuiEvent(EventType.MouseDown, position.center, 1, ShowSerializeReferenceDrawer.RightClickButton);
             testWindow.onGui = new EditorEvent(() => ShowSerializeReferenceDrawer.OnGUI(position, sp, GUIContent.none, currentEvent, GetType().GetField(nameof(Field))));
-            yield return new WaitUntil(testWindow.OnGUIInitialized);
+            yield return new WaitUntil(testWindow.OnGUIInitialized).OrTimeout(2000);
             testWindow.Close();
         }
 
