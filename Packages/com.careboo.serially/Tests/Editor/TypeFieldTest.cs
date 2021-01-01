@@ -35,6 +35,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
+        [Timeout(5000)]
         public void ClickingTheTypeFieldOfTypeWithProvideSourceInfoShouldPingTheMonoScript()
         {
             var guiEvent = new GuiEvent(EventType.MouseDown, Vector2.zero, 1, 0);
@@ -44,6 +45,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
+        [Timeout(5000)]
         public void ClickingTheTypeFieldOfTypeWithoutProvideSourceInfoShouldLogWarning()
         {
             LogAssert.Expect(LogType.Warning, new Regex(nameof(ProvideSourceInfoAttribute)));
@@ -54,6 +56,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [UnityTest]
+        [Timeout(5000)]
         public IEnumerator ClickingTypePickerShouldOpenTypePickerWindow()
         {
             var pickerArea = TypeField.GetPickerButtonArea(TypeFieldRect);
@@ -72,6 +75,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [UnityTest]
+        [Timeout(5000)]
         public IEnumerator ClickingTypeLabelTwiceForTypeDefinedInThisAssetShouldOpenThisAsset()
         {
             var guiEvent = new GuiEvent(
@@ -95,6 +99,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [UnityTest]
+        [Timeout(5000)]
         public IEnumerator TypeFieldShouldShowWithoutErrors()
         {
             var type = typeof(A);
@@ -103,7 +108,7 @@ namespace CareBoo.Serially.Editor.Tests
             yield return new WaitUntil(testWindow.OnGUIInitialized);
         }
 
-        [OnOpenAsset(1)]
+        [OnOpenAsset(0)]
         public static bool CheckForThisScriptOpenedAtC(int instanceId, int line)
         {
             if (EditorUtility.InstanceIDToObject(instanceId) is MonoScript monoScript
