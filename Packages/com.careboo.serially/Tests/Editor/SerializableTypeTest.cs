@@ -33,6 +33,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
+        [Timeout(5000)]
         [TestCaseSource(nameof(TypeCases))]
         public void TryGetTypeShouldReturnSameTypeSerialized(Type expected)
         {
@@ -43,6 +44,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
+        [Timeout(5000)]
         public void ToSerializedTypeShouldNotFailWhenGivenNullType()
         {
             var result = ToSerializedType(null);
@@ -50,6 +52,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
+        [Timeout(5000)]
         [TestCaseSource(nameof(TypeCases))]
         public void SetTypeShouldPersistAfterCallingSave(Type expected)
         {
@@ -62,6 +65,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
+        [Timeout(5000)]
         public void SetUnknownTypeIdShouldCauseError()
         {
             var asset = CreateInstance<SerializableTypeTest>();
@@ -77,6 +81,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
+        [Timeout(5000)]
         [TestCaseSource(nameof(TypeCases))]
         public void SettingTypeWhenBuildingShouldSetAssemblyQualifiedName(Type expected)
         {
@@ -93,6 +98,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
+        [Timeout(5000)]
         public void IsBuildingShouldBeTrueOnlyDuringBuild()
         {
             var serializableType = new SerializableType();
@@ -107,6 +113,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
+        [Timeout(5000)]
         public void CallbackOrderShouldBe0()
         {
             var actual = new SerializableType();

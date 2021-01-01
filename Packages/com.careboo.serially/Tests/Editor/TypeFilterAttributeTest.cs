@@ -28,6 +28,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
+        [Timeout(5000)]
         public void SettingDerivedFromShouldSetFilterToDerivedFromFilter()
         {
             var field = GetFieldInfo<TestClass>(x => x.TypeDerivedFromTestClass);
@@ -38,6 +39,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
+        [Timeout(5000)]
         public void SetDerivedFromShouldEqualDerivedFrom()
         {
 
@@ -49,6 +51,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
+        [Timeout(5000)]
         public void SettingFilterNameToMethodShouldEqualFilter()
         {
             var instance = new TestClass();

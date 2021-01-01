@@ -38,6 +38,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [UnityTest]
+        [Timeout(5000)]
         public IEnumerator OnGUIShouldDrawWithoutErrors()
         {
             var obj = CreateInstance<ShowSerializeReferenceDrawerTest>();
@@ -49,6 +50,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [UnityTest]
+        [Timeout(5000)]
         public IEnumerator RightClickInGUIShouldDrawWithoutErrors()
         {
             var obj = CreateInstance<ShowSerializeReferenceDrawerTest>();
@@ -63,6 +65,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
+        [Timeout(5000)]
         public void ContextCopyShouldCopyPropertyValue()
         {
             var expected = new A() { Value = 32 };
@@ -77,6 +80,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
+        [Timeout(5000)]
         public void ContextPasteShouldPasteValueOntoProperty()
         {
             var expected = new A() { Value = 32 };
@@ -115,6 +119,7 @@ namespace CareBoo.Serially.Editor.Tests
         };
 
         [Test]
+        [Timeout(5000)]
         [TestCaseSource(nameof(ContextCreateMenuCases))]
         public void ContextCreateMenuShouldReturnMenuWithCopyAndPaste(object copiedValue, bool pasteIsDisabled)
         {
@@ -154,6 +159,7 @@ namespace CareBoo.Serially.Editor.Tests
         };
 
         [Test]
+        [Timeout(5000)]
         [TestCaseSource(nameof(TypeFilterCases))]
         public void GetSelectableTypesShouldReturnTypesFilteredByTypeFilter(
             Func<IEnumerable<Type>, IEnumerable<Type>> filter)

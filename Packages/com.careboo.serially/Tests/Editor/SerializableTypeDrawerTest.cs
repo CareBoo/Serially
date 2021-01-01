@@ -42,6 +42,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
+        [Timeout(5000)]
         public void ValidateWithInvalidTypeIDShouldSetError()
         {
             var expected = EditorGUIUtility.IconContent("console.erroricon").image;
@@ -52,6 +53,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
+        [Timeout(5000)]
         public void ValidateWithMissingGuidAttributeShouldSetWarning()
         {
             var expected = EditorGUIUtility.IconContent("console.warnicon").image;
@@ -62,6 +64,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
+        [Timeout(5000)]
         public void ValidateWithMissingGuidAttributeShouldReturnType()
         {
             var expected = typeof(A);
@@ -70,6 +73,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
+        [Timeout(5000)]
         public void ValidateWithGuidAttributeShouldReturnType()
         {
             var expected = typeof(B);
@@ -78,18 +82,21 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
+        [Timeout(5000)]
         public void IsMissingGuidAttributeShouldReturnTrueIfNoGuidAttributeDefined()
         {
             Assert.IsTrue(SerializableTypeDrawer.IsMissingGuidAttribute(typeof(A)));
         }
 
         [Test]
+        [Timeout(5000)]
         public void IsMissingGuidAttributeShouldReturnFalseIfGuidAttributeDefined()
         {
             Assert.IsFalse(SerializableTypeDrawer.IsMissingGuidAttribute(typeof(B)));
         }
 
         [Test]
+        [Timeout(5000)]
         public void GetFilteredTypesShouldReturnAllBasicTypesWithNoFilter()
         {
             var expected = new HashSet<Type>(SerializableTypeDrawer.GetDerivedTypes(null));
@@ -99,6 +106,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
+        [Timeout(5000)]
         public void GetFilteredTypesWithDerivedFromAttributeShouldReturnOnlyTypesDerivedFromDeclaredType()
         {
             var expected = new HashSet<Type>(SerializableTypeDrawer.GetDerivedTypes(typeof(A)));
@@ -110,6 +118,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
+        [Timeout(5000)]
         public void GetFilteredTypesWithTypeDelegateShouldReturnTypesMatchingDelegate()
         {
             var expected = new HashSet<Type>(Filter(SerializableTypeDrawer.GetDerivedTypes(null)));
@@ -121,6 +130,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
+        [Timeout(5000)]
         public void GetFilteredTypesWithNullFilterDelegateShouldReturnTypesMatchingDelegate()
         {
             var expected = new HashSet<Type>(NullFilter(SerializableTypeDrawer.GetDerivedTypes(null)) ?? new Type[0]);
@@ -139,6 +149,7 @@ namespace CareBoo.Serially.Editor.Tests
         };
 
         [Test]
+        [Timeout(5000)]
         [TestCaseSource(nameof(SetTypeCases))]
         public void SetTypeValueShouldReturnSameType(Type expected)
         {
@@ -151,6 +162,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [UnityTest]
+        [Timeout(5000)]
         public IEnumerator SerializableTypeDrawerShouldShowWithoutErrors()
         {
             var editor = UEditor.CreateEditor(this);

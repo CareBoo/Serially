@@ -16,6 +16,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
+        [Timeout(5000)]
         public void OnItemChosenShouldSelectType()
         {
             bool onSelectCalled = false;
@@ -31,6 +32,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
+        [Timeout(5000)]
         public void OnItemChosenShouldCloseWindow()
         {
             var typePickerWindow = TypePickerWindow.ShowWindow(typeof(A), new[] { typeof(A) }, null);
@@ -45,6 +47,7 @@ namespace CareBoo.Serially.Editor.Tests
         };
 
         [Test]
+        [Timeout(5000)]
         [TestCaseSource(nameof(TypeLabelRegexCases))]
         public void TypeLabelRegexShouldExtractNameAndNamespace(string input, string expectedName, string expectedNamespace)
         {

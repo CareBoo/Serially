@@ -26,6 +26,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
+        [Timeout(5000)]
         public void SettingAttributeShouldSetLineNumber()
         {
             var attribute = GetAttribute(typeof(TestClass));
@@ -33,6 +34,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
+        [Timeout(5000)]
         public void SettingAttributeOnClassShouldSetMemberNameToEmpty()
         {
             var attribute = GetAttribute(typeof(TestClass));
@@ -40,6 +42,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
+        [Timeout(5000)]
         public void SettingAttributeOnPropertyShouldSetMemberNameToPropertyName()
         {
             var attribute = GetAttribute(GetMemberInfo(x => x.MyProperty));
@@ -47,6 +50,7 @@ namespace CareBoo.Serially.Editor.Tests
         }
 
         [Test]
+        [Timeout(5000)]
         public void SettingAttributeShouldSetAssetPath()
         {
             var attribute = GetAttribute(typeof(TestClass));
