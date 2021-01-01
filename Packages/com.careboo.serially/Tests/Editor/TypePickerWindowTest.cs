@@ -11,7 +11,7 @@ namespace CareBoo.Serially.Editor.Tests
         [TearDown]
         public void CloseTypePickerWindows()
         {
-            if (EditorWindow.HasOpenInstances<TypePickerWindow>())
+            while (EditorWindow.HasOpenInstances<TypePickerWindow>())
                 EditorWindow.GetWindow<TypePickerWindow>().Close();
         }
 
