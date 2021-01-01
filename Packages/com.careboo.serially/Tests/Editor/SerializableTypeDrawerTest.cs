@@ -168,7 +168,7 @@ namespace CareBoo.Serially.Editor.Tests
             var editor = UEditor.CreateEditor(this);
             var testWindow = EditorWindow.GetWindow<TestEditorWindow>();
             testWindow.onGui = new EditorEvent(() => editor.DrawDefaultInspector());
-            yield return new WaitUntil(testWindow.OnGUIInitialized);
+            yield return new WaitUntil(testWindow.OnGUIInitialized).OrTimeout(2000);
             testWindow.Close();
         }
 
