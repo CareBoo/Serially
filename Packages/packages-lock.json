@@ -37,7 +37,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.package-validation-suite": {
-      "version": "0.17.1-preview",
+      "version": "0.19.2-preview",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -53,7 +53,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.test-framework": {
-      "version": "1.1.20",
+      "version": "1.1.22",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -64,7 +64,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.testtools.codecoverage": {
-      "version": "0.3.1-preview",
+      "version": "1.0.0-pre.3",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -74,26 +74,25 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ui.builder": {
-      "version": "1.0.0-preview.11",
+      "version": "1.0.0-preview.12",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.upm.develop": {
-      "version": "0.1.2-preview",
+      "version": "0.2.0-preview",
       "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.test-framework": "1.1.9",
-        "nuget.mono-cecil": "0.1.6-preview",
         "com.unity.package-validation-suite": "0.7.10-preview"
       },
       "url": "https://packages.unity.com"
     },
     "nuget.mono-cecil": {
       "version": "0.1.6-preview",
-      "depth": 1,
+      "depth": 2,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
