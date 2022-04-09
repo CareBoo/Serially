@@ -1,15 +1,15 @@
 {
   "folders": [
     {
-      "name": "root",
+      "name": "Serially",
       "path": "."
     },
     {
-      "name": "UPM Package",
+      "name": "UPM Project",
       "path": "Serially.Package"
     },
     {
-      "name": "Asset Store",
+      "name": "Asset Store Project",
       "path": "Serially.AssetStore"
     }
   ]
