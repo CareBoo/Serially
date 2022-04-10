@@ -1,8 +1,6 @@
-- name: Algorand SDK
+- name: Serially
   href: ../index.md
-- name: Your First Transaction
-  href: ../../Documentation~/your_first_transaction.md
-- name: WalletConnect
-  href: ../../Documentation~/walletconnect.md
-- name: Troubleshooting
-  href: ../../Documentation~/troubleshooting.md
+- name: SerializableType
+  href: ../../Documentation~/SerializableType.md
+- name: ShowSerializeReference
+  href: ../../Documentation~/ShowSerializeReference.md
