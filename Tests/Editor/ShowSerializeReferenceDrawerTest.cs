@@ -94,18 +94,18 @@ namespace CareBoo.Serially.Editor.Tests
             Assert.AreEqual(expected.Value, actual.Value);
         }
 
-        private ArrayList GetMenuItems(GenericMenu menu)
+        private IList GetMenuItems(GenericMenu menu)
         {
-            return (ArrayList)menu.GetFieldValue("menuItems");
+            return (IList)menu.GetFieldValue("menuItems");
         }
 
-        private string GetMenuItemName(ArrayList menuItems, int index)
+        private string GetMenuItemName(IList menuItems, int index)
         {
             var content = (GUIContent)menuItems[index].GetFieldValue("content");
             return content.text;
         }
 
-        private bool GetMenuItemIsDisabled(ArrayList menuItems, int index)
+        private bool GetMenuItemIsDisabled(IList menuItems, int index)
         {
             return menuItems[index].GetFieldValue("func") == null
                 && menuItems[index].GetFieldValue("func2") == null;
