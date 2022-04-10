@@ -1,5 +1,4 @@
-ShowSerializeReference
-======================
+# ShowSerializeReference
 
 ![ShowSerializeReferenceDrawer](images/ShowSerializeReferenceDrawer.png)
 
@@ -15,7 +14,7 @@ public class MyBehavior : MonoBehaviour
     public IPet MyCurrentPet; // The field shown in the image above.
 }
 
-public interface IPet 
+public interface IPet
 {
     string Name { get; set; }
     string Noise { get;}
@@ -32,9 +31,11 @@ public class Cat : IPet
 }
 ```
 
-Selecting a New Value
----------------------
+## Selecting a New Value
 
-Clicking the circle button next to the type-name label opens up an editor window with a list of injectable types. Double click a type out of that list to inject a new instance of that type into the `SerializeReference` field. **NOTE:** To instantiate the type, it must either be a value type (`struct`) or have a parameterless constructor. If it doesn't, an error will show in the console.
+Clicking the circle button next to the type-name label opens up an editor window with a list of injectable types. Double click a type out of that list to inject a new instance of that type into the `SerializeReference` field.
+
+> [!Note] To instantiate the type, it must either be a value type (`struct`) or have a parameterless constructor.
+> If it doesn't, an error will show in the console.
 
 ![TypePickerWindow](images/TypePickerWindow.png)
