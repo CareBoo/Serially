@@ -5,6 +5,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
+## [2.2.4](https://github.com/CareBoo/Serially/compare/v2.2.3...v2.2.4) (2022-04-10)
+
+
+### Bug Fixes
+
+* **editor:** fix getting field value on a property ([3834970](https://github.com/CareBoo/Serially/commit/38349702a6630b3cf6df6a9bae4b506797269719))
+* use new API for Unity version 2021+ ([4623df1](https://github.com/CareBoo/Serially/commit/4623df1d8c2720cac77cefd1b41b31dbd6b9654e))
+
 ## [2.2.4-pre.1](https://github.com/CareBoo/Serially/compare/v2.2.3...v2.2.4-pre.1) (2022-04-10)
 
 

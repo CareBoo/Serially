@@ -1,7 +1,7 @@
 {
   "name": "com.careboo.serially",
   "displayName": "Serially",
-  "version": "2.2.4-pre.1",
+  "version": "2.2.4",
   "unity": "2019.4",
   "keywords": [
     "serialization",
@@ -19,9 +19,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "changelogUrl": "https://careboo.github.io/serially/2.2.4-pre.1/changelog",
-  "documentationUrl": "https://careboo.github.io/serially/2.2.4-pre.1",
-  "licensesUrl": "https://careboo.github.io/serially/2.2.4-pre.1/license",
+  "changelogUrl": "https://careboo.github.io/serially/2.2.4/changelog",
+  "documentationUrl": "https://careboo.github.io/serially/2.2.4",
+  "licensesUrl": "https://careboo.github.io/serially/2.2.4/license",
   "author": {
     "name": "CareBoo",
     "url": "https://github.com/CareBoo"
