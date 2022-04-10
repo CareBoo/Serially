@@ -1,0 +1,536 @@
+{
+  "sitemap": {
+    "fileOptions": {
+      "api/*": {
+        "baseUrl": "https://careboo.github.io/serially/1.0.0-pre.1/",
+        "changefreq": "weekly"
+      }
+    },
+    "baseUrl": "https://careboo.github.io/serially/1.0.0-pre.1/",
+    "changefreq": "monthly"
+  },
+  "homepages": [],
+  "source_base_path": "/github/workspace/.docfx",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "../CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "changelog/CHANGELOG.html",
+          "hash": "79UPYsEzSxPIxNur+WI2aw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "../Documentation~/SerializableType.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/SerializableType.html",
+          "hash": "UEyrDc2jf+TGQ91V68/q2A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "MissingNewLineBelowSectionHeader"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "../Documentation~/ShowSerializeReference.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/ShowSerializeReference.html",
+          "hash": "EzRvqdHawfFN1dcs47qnHw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../Documentation~/images/SerializableTypeDrawer.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/images/SerializableTypeDrawer.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../Documentation~/images/SerializableTypeDrawer.png.meta",
+      "output": {
+        "resource": {
+          "relative_path": "resources/images/SerializableTypeDrawer.png.meta"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../Documentation~/images/ShowSerializeReferenceDrawer.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/images/ShowSerializeReferenceDrawer.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../Documentation~/images/ShowSerializeReferenceDrawer.png.meta",
+      "output": {
+        "resource": {
+          "relative_path": "resources/images/ShowSerializeReferenceDrawer.png.meta"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../Documentation~/images/TypePickerWindow.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/images/TypePickerWindow.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../Documentation~/images/TypePickerWindow.png.meta",
+      "output": {
+        "resource": {
+          "relative_path": "resources/images/TypePickerWindow.png.meta"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../Documentation~/images/serially.gif",
+      "output": {
+        "resource": {
+          "relative_path": "resources/images/serially.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../Documentation~/images/serially.gif.meta",
+      "output": {
+        "resource": {
+          "relative_path": "resources/images/serially.gif.meta"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "../LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "license/LICENSE.html",
+          "hash": "U8v6dQfgW4Zdyud2M7szjA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "../Third Party Notices.md",
+      "output": {
+        ".html": {
+          "relative_path": "license/Third Party Notices.html",
+          "hash": "C6V8KT1lJ7UsJXYKLTx8lQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CareBoo.Serially.Editor.EnumerableExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CareBoo.Serially.Editor.EnumerableExtensions.html",
+          "hash": "Ky76I2rgx6KucLWmLQMaeA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CareBoo.Serially.Editor.GuiEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CareBoo.Serially.Editor.GuiEvent.html",
+          "hash": "HyseOKxe5vReBDtMNFK0Ug=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CareBoo.Serially.Editor.SerializableTypeDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CareBoo.Serially.Editor.SerializableTypeDrawer.html",
+          "hash": "07IhH9GGKSYdxiUaUH9hUw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CareBoo.Serially.Editor.SerializableTypeMeta.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CareBoo.Serially.Editor.SerializableTypeMeta.html",
+          "hash": "dDzCDo3kK6ZqObczZZKgxA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CareBoo.Serially.Editor.SerializedPropertyExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CareBoo.Serially.Editor.SerializedPropertyExtensions.html",
+          "hash": "QDeEQA98yWDAYP+vTv3jGg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.html",
+          "hash": "pPrR7/DrXX3h5jM7JuYHww=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.html",
+          "hash": "sdl5QPEH6n8GptUM4oU/Xw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CareBoo.Serially.Editor.StringExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CareBoo.Serially.Editor.StringExtensions.html",
+          "hash": "tKQCp38N55dK4AewzEv4jg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CareBoo.Serially.Editor.SystemObjectExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CareBoo.Serially.Editor.SystemObjectExtensions.html",
+          "hash": "+oHz+Wh/1jSnEyO6ShaQ+A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CareBoo.Serially.Editor.TypeExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CareBoo.Serially.Editor.TypeExtensions.html",
+          "hash": "/In48w5bCZzGRwuH8sPX5A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CareBoo.Serially.Editor.TypeField.Styles.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CareBoo.Serially.Editor.TypeField.Styles.html",
+          "hash": "WH5mKcxmqULhqrT8qeb0ag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CareBoo.Serially.Editor.TypeField.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CareBoo.Serially.Editor.TypeField.html",
+          "hash": "/SU/+A6S5s2MB9iNs/tWvQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CareBoo.Serially.Editor.TypePickerWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CareBoo.Serially.Editor.TypePickerWindow.html",
+          "hash": "Id/sk8W1XxRz+VJyix6ZCQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CareBoo.Serially.Editor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CareBoo.Serially.Editor.html",
+          "hash": "91cfv/vchIzY/v6drJgxbg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CareBoo.Serially.ProvideSourceInfoAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CareBoo.Serially.ProvideSourceInfoAttribute.html",
+          "hash": "ZH0eC+EA7uUNmBOUdcb5Rw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CareBoo.Serially.SerializableType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CareBoo.Serially.SerializableType.html",
+          "hash": "83MvNpDE5t2AuY8GaMr0Aw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CareBoo.Serially.ShowSerializeReferenceAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CareBoo.Serially.ShowSerializeReferenceAttribute.html",
+          "hash": "9cix1h3lHN59QiO5qh5Juw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CareBoo.Serially.TypeFilterAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CareBoo.Serially.TypeFilterAttribute.html",
+          "hash": "79dB5PxyrLlqDY811gnEDA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CareBoo.Serially.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CareBoo.Serially.html",
+          "hash": "0vyWNjXS38YaUDxXyYrJng=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "KhOafgAzYb7F03zpWUMf/A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "changelog/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "changelog/toc.html",
+          "hash": "27p5b8aSHpNAlkSi+ICv6w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "FcsUlUQ0CoMZ5W9Ic4YxMg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "license/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "license/toc.html",
+          "hash": "2KCSw5SuEUFpsGVbZmrdGg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Toc",
+      "source_relative_path": "manual/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "manual/toc.html",
+          "hash": "RTIe81JdvQmNGjgaaF+3tQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "5v/gaxSbfmPZ80wcGg1nKg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 6,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 19,
+          "skipped_file_count": 0
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
