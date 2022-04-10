@@ -1,11 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using UnityEditor;
+using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
-using UnityEditor.UIElements;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
 
 namespace CareBoo.Serially.Editor
 {
@@ -131,7 +131,11 @@ namespace CareBoo.Serially.Editor
             searchedTypes = types.Where(IsInSearch).Prepend(null).ToList();
             listView.itemsSource = searchedTypes;
             listView.selectedIndex = searchedTypes.IndexOf(preselected);
+#if UNITY_2021_1_OR_NEWER
+            listView.Rebuild();
+#else
             listView.Refresh();
+#endif
         }
 
         public bool IsInSearch(Type type)
