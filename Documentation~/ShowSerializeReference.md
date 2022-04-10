@@ -35,7 +35,7 @@ public class Cat : IPet
 
 Clicking the circle button next to the type-name label opens up an editor window with a list of injectable types. Double click a type out of that list to inject a new instance of that type into the `SerializeReference` field.
 
-> [!Note] To instantiate the type, it must either be a value type (`struct`) or have a parameterless constructor.
+> [!Note] To instantiate the type, it must have a parameterless constructor (`new()`).
 > If it doesn't, an error will show in the console.
 
 ![TypePickerWindow](images/TypePickerWindow.png)
