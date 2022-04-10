@@ -1,18 +1,20 @@
-<h1 id="unity-algorand-sdk" align="center">
-<br/>
+<h1 id="Serially">
 Serially
 
 </h1>
-<p align="center">
+<p>
   <a href="LICENSE.md">
     <img src="https://img.shields.io/github/license/CareBoo/Serially"/>
   </a>
+  </br>
   <a href="https://github.com/CareBoo/Serially/actions/workflows/test.yaml">
-    <img src="https://img.shields.io/github/workflow/status/careboo/Serially/Unity%20Tests/main?label=tests"/>
+    <img src="https://img.shields.io/github/workflow/status/CareBoo/Serially/Unity%20Tests/main?label=tests"/>
   </a>
+  </br>
   <a href="https://www.npmjs.com/package/com.careboo.serially">
     <img src="https://img.shields.io/npm/v/com.careboo.serially"/>
   </a>
+  </br>
   <a href="https://openupm.com/packages/com.careboo.serially/">
     <img src="https://img.shields.io/npm/v/com.careboo.serially?label=openupm&registry_uri=https://package.openupm.com"/>
   </a>
