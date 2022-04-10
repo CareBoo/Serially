@@ -4,8 +4,14 @@
       "src": [
         {
           "src": "..",
-          "files": ["Runtime/**/*.cs", "Editor/**/*.cs"],
-          "exclude": ["**/Libraries/**", "**/Plugins/**"]
+          "files": [
+            "Runtime/**/*.cs",
+            "Editor/**/*.cs"
+          ],
+          "exclude": [
+            "**/Libraries/**",
+            "**/Plugins/**"
+          ]
         }
       ],
       "filter": "filter.yml",
@@ -25,42 +31,63 @@
     },
     "content": [
       {
-        "files": ["toc.yml", "index.md", "../README.md"]
+        "files": [
+          "toc.yml",
+          "index.md",
+          "../README.md"
+        ]
       },
       {
         "src": "manual",
-        "files": ["toc.yml"],
+        "files": [
+          "toc.yml"
+        ],
         "dest": "manual"
       },
       {
         "src": "changelog",
-        "files": ["toc.yml"],
+        "files": [
+          "toc.yml"
+        ],
         "dest": "changelog"
       },
       {
         "src": "..",
-        "files": ["CHANGELOG.md"],
+        "files": [
+          "CHANGELOG.md"
+        ],
         "dest": "changelog"
       },
       {
         "src": "license",
-        "files": ["toc.yml"],
+        "files": [
+          "toc.yml"
+        ],
         "dest": "license"
       },
       {
         "src": "..",
-        "files": ["LICENSE.md", "Third Party Notices.md"],
+        "files": [
+          "LICENSE.md",
+          "Third Party Notices.md"
+        ],
         "dest": "license"
       },
       {
         "src": "api",
-        "files": ["*.yml"],
+        "files": [
+          "*.yml"
+        ],
         "dest": "api"
       },
       {
         "src": "../Documentation~",
-        "files": ["*.md"],
-        "exclude": ["TableOfContents.md"],
+        "files": [
+          "*.md"
+        ],
+        "exclude": [
+          "TableOfContents.md"
+        ],
         "dest": "manual"
       }
     ],
@@ -68,21 +95,27 @@
     "overwrite": [
       {
         "src": "..",
-        "files": ["*/CareBoo*/**/*.md"]
+        "files": [
+          "*/CareBoo*/**/*.md"
+        ]
       }
     ],
     "resource": [
       {
-        "files": ["resources/**/*"]
+        "files": [
+          "resources/**/*"
+        ]
       },
       {
         "src": "../Documentation~",
-        "files": ["images/**/*"],
+        "files": [
+          "images/**/*"
+        ],
         "dest": "resources"
       }
     ],
     "sitemap": {
-      "baseUrl": "https://careboo.github.io/Serially/2.3.3",
+      "baseUrl": "https://careboo.github.io/serially/2.2.4-pre.1",
       "changefreq": "monthly",
       "fileOptions": {
         "api/*": {
@@ -90,7 +123,11 @@
         }
       }
     },
-    "xref": ["https://normanderwan.github.io/UnityXrefMaps/xrefmap.yml"],
-    "xrefService": ["https://xref.docs.microsoft.com/query?uid={uid}"]
+    "xref": [
+      "https://normanderwan.github.io/UnityXrefMaps/xrefmap.yml"
+    ],
+    "xrefService": [
+      "https://xref.docs.microsoft.com/query?uid={uid}"
+    ]
   }
 }
