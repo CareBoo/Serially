@@ -1,0 +1,17 @@
+.docfx/**
+.github/**
+.husky/**
+.vscode/**
+dist/**
+Documentation~/**/*.meta
+scripts/**
+Serially*/**
+.codecov.yml
+serially.code-workspace
+.czrc
+.editorconfig
+.gitattributes
+.gitignore
+.npmignore
+.releaserc.json
+omnisharp.json

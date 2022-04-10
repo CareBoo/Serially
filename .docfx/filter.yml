@@ -1,0 +1,15 @@
+apiRules:
+  - include:
+      uidRegex: ^CareBoo\b.*$
+      type: Namespace
+  - exclude:
+      uidRegex: ^System\.Object\..*$
+      type: Method
+  - exclude:
+      uidRegex: ^System\.ValueType\..*$
+      type: Method
+  - exclude:
+      uidRegex: ^(?!CareBoo\b).*$
+  - exclude:
+      hasAttribute:
+        uid: System.ObsoleteAttribute

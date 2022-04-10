@@ -1,0 +1,4 @@
+- name: License
+  href: ../../LICENSE.md
+- name: Third Party Notices
+  href: ../../Third Party Notices.md
