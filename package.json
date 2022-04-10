@@ -1,0 +1,39 @@
+{
+  "name": "com.careboo.serially",
+  "displayName": "Serially",
+  "version": "2.2.4-pre.1",
+  "unity": "2019.4",
+  "keywords": [
+    "serialization",
+    "inspector",
+    "serialize",
+    "serializable",
+    "type",
+    "reference",
+    "SerializeReference",
+    "SerializableType"
+  ],
+  "license": "MIT",
+  "description": "Provides extension classes to extend Unity's serialization capabilities.\n\n- Serialize Type references\n- Inject instances into [SerializeReference] fields",
+  "repository": "github:CareBoo/Serially",
+  "publishConfig": {
+    "access": "public"
+  },
+  "changelogUrl": "https://careboo.github.io/serially/2.2.4-pre.1/changelog",
+  "documentationUrl": "https://careboo.github.io/serially/2.2.4-pre.1",
+  "licensesUrl": "https://careboo.github.io/serially/2.2.4-pre.1/license",
+  "author": {
+    "name": "CareBoo",
+    "url": "https://github.com/CareBoo"
+  },
+  "samples": [
+    {
+      "displayName": "Polymorphic Inspector",
+      "description": "Contains a scene and sample inspector showing off serializing polymorphic types.",
+      "path": "Samples~/PolymorphicInspector"
+    }
+  ],
+  "scripts": {
+    "version": "./scripts/updateVersionUrl.sh && git add package.json .docfx/docfx.json"
+  }
+}

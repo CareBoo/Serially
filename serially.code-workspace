@@ -1,0 +1,16 @@
+{
+  "folders": [
+    {
+      "name": "Serially",
+      "path": "."
+    },
+    {
+      "name": "UPM Project",
+      "path": "Serially.Package"
+    },
+    {
+      "name": "Asset Store Project",
+      "path": "Serially.AssetStore"
+    }
+  ]
+}

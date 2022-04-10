@@ -1,0 +1,2524 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PixelRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 2560
+    height: 1440
+  m_ShowMode: 4
+  m_Title: Project
+  m_RootView: {fileID: 6}
+  m_MinSize: {x: 875, y: 300}
+  m_MaxSize: {x: 10000, y: 10000}
+  m_Maximized: 0
+--- !u!114 &2
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 9}
+  - {fileID: 3}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 30
+    width: 2560
+    height: 1390
+  m_MinSize: {x: 300, y: 200}
+  m_MaxSize: {x: 24288, y: 16192}
+  vertical: 0
+  controlID: 82
+--- !u!114 &3
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: TestRunnerWindow
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 1956
+    y: 0
+    width: 604
+    height: 1390
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 12}
+  m_Panes:
+  - {fileID: 15}
+  - {fileID: 12}
+  m_Selected: 1
+  m_LastSelected: 0
+--- !u!114 &4
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 485
+    height: 824
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 16}
+  m_Panes:
+  - {fileID: 16}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &5
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: ProjectBrowser
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 824
+    width: 1956
+    height: 566
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 14}
+  m_Panes:
+  - {fileID: 14}
+  - {fileID: 19}
+  m_Selected: 0
+  m_LastSelected: 1
+--- !u!114 &6
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12008, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 7}
+  - {fileID: 2}
+  - {fileID: 8}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 2560
+    height: 1440
+  m_MinSize: {x: 875, y: 300}
+  m_MaxSize: {x: 10000, y: 10000}
+  m_UseTopView: 1
+  m_TopViewHeight: 30
+  m_UseBottomView: 1
+  m_BottomViewHeight: 20
+--- !u!114 &7
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12011, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 2560
+    height: 30
+  m_MinSize: {x: 0, y: 0}
+  m_MaxSize: {x: 0, y: 0}
+  m_LastLoadedLayoutName: 
+--- !u!114 &8
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12042, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 1420
+    width: 2560
+    height: 20
+  m_MinSize: {x: 0, y: 0}
+  m_MaxSize: {x: 0, y: 0}
+--- !u!114 &9
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 10}
+  - {fileID: 5}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1956
+    height: 1390
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 16192, y: 16192}
+  vertical: 1
+  controlID: 83
+--- !u!114 &10
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 4}
+  - {fileID: 11}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1956
+    height: 824
+  m_MinSize: {x: 200, y: 100}
+  m_MaxSize: {x: 16192, y: 8096}
+  vertical: 0
+  controlID: 84
+--- !u!114 &11
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: Builder
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 485
+    y: 0
+    width: 1471
+    height: 824
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 13}
+  m_Panes:
+  - {fileID: 17}
+  - {fileID: 18}
+  - {fileID: 13}
+  m_Selected: 2
+  m_LastSelected: 0
+--- !u!114 &12
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13401, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Test Runner
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 1956
+    y: 30
+    width: 603
+    height: 1369
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_Spl:
+    ID: 964
+    splitterInitialOffset: 0
+    currentActiveSplitter: -1
+    realSizes:
+    - 974
+    - 325
+    relativeSizes:
+    - 0.75
+    - 0.25
+    minSizes:
+    - 32
+    - 32
+    maxSizes:
+    - 0
+    - 0
+    lastTotalSize: 1299
+    splitSize: 6
+    xOffset: 0
+    m_Version: 1
+    oldRealSizes: 
+    oldMinSizes: 
+    oldMaxSizes: 
+    oldSplitSize: 0
+  m_TestTypeToolbarIndex: 1
+  m_PlayModeTestListGUI:
+    m_Window: {fileID: 0}
+    m_NewResultList: []
+    m_ResultText: 
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategoryMask: 0
+      availableCategories: []
+    m_SelectedOption: 0
+  m_EditModeTestListGUI:
+    m_Window: {fileID: 12}
+    m_NewResultList:
+    - id: 1000
+      uniqueId: '[Serially][suite]'
+      name: Serially
+      fullName: Serially
+      resultStatus: 2
+      duration: 0.0479783
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    - id: 1080
+      uniqueId: '[CareBoo.Serially.Editor.Tests.dll][suite]'
+      name: CareBoo.Serially.Editor.Tests.dll
+      fullName: /Users/jason/Projects/CareBoo/Serially/Serially.Package/Library/ScriptAssemblies/CareBoo.Serially.Editor.Tests.dll
+      resultStatus: 2
+      duration: 0.0337641
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1000
+      parentUniqueId: '[Serially][suite]'
+    - id: 1081
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/[CareBoo][suite]
+      name: CareBoo
+      fullName: CareBoo
+      resultStatus: 2
+      duration: 0.0334515
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1080
+      parentUniqueId: '[CareBoo.Serially.Editor.Tests.dll][suite]'
+    - id: 1082
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/[Serially][suite]
+      name: Serially
+      fullName: CareBoo.Serially
+      resultStatus: 2
+      duration: 0.0299073
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1081
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/[CareBoo][suite]
+    - id: 1083
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/[Editor][suite]
+      name: Editor
+      fullName: CareBoo.Serially.Editor
+      resultStatus: 2
+      duration: 0.0265986
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1082
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/[Serially][suite]
+    - id: 1084
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests][suite]
+      name: Tests
+      fullName: CareBoo.Serially.Editor.Tests
+      resultStatus: 2
+      duration: 0.0230106
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1083
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/[Editor][suite]
+    - id: 1001
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.EnumerableExtensionsTest][suite]
+      name: EnumerableExtensionsTest
+      fullName: CareBoo.Serially.Editor.Tests.EnumerableExtensionsTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1084
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests][suite]
+    - id: 1003
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/EnumerableExtensionsTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.EnumerableExtensionsTest.ElementAtOrDefaultShouldReturnNullWhenGivenIndexOutsideDomain]
+      name: ElementAtOrDefaultShouldReturnNullWhenGivenIndexOutsideDomain
+      fullName: CareBoo.Serially.Editor.Tests.EnumerableExtensionsTest.ElementAtOrDefaultShouldReturnNullWhenGivenIndexOutsideDomain
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.EnumerableExtensionsTest][suite]
+    - id: 1002
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/EnumerableExtensionsTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.EnumerableExtensionsTest.ElementAtOrDefaultShouldReturnValueWhenGivenIndexWithinDomain]
+      name: ElementAtOrDefaultShouldReturnValueWhenGivenIndexWithinDomain
+      fullName: CareBoo.Serially.Editor.Tests.EnumerableExtensionsTest.ElementAtOrDefaultShouldReturnValueWhenGivenIndexWithinDomain
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.EnumerableExtensionsTest][suite]
+    - id: 1004
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/EnumerableExtensionsTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.EnumerableExtensionsTest.ElementAtOrDefaultShouldThrowErrorWhenUsingNullSequence]
+      name: ElementAtOrDefaultShouldThrowErrorWhenUsingNullSequence
+      fullName: CareBoo.Serially.Editor.Tests.EnumerableExtensionsTest.ElementAtOrDefaultShouldThrowErrorWhenUsingNullSequence
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.EnumerableExtensionsTest][suite]
+    - id: 1005
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/EnumerableExtensionsTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.EnumerableExtensionsTest.SkipLastShouldThrowExceptionWhenUsingNullSequence]
+      name: SkipLastShouldThrowExceptionWhenUsingNullSequence
+      fullName: CareBoo.Serially.Editor.Tests.EnumerableExtensionsTest.SkipLastShouldThrowExceptionWhenUsingNullSequence
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.EnumerableExtensionsTest][suite]
+    - id: 1006
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/EnumerableExtensionsTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.EnumerableExtensionsTest.SkipLastWithZeroCountReturnsSequence]
+      name: SkipLastWithZeroCountReturnsSequence
+      fullName: CareBoo.Serially.Editor.Tests.EnumerableExtensionsTest.SkipLastWithZeroCountReturnsSequence
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.EnumerableExtensionsTest][suite]
+    - id: 1016
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ProvideSourceInfoAttributeTest][suite]
+      name: ProvideSourceInfoAttributeTest
+      fullName: CareBoo.Serially.Editor.Tests.ProvideSourceInfoAttributeTest
+      resultStatus: 2
+      duration: 0.0190491
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1084
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests][suite]
+    - id: 1018
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/ProvideSourceInfoAttributeTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ProvideSourceInfoAttributeTest.SettingAttributeOnClassShouldSetMemberNameToEmpty]
+      name: SettingAttributeOnClassShouldSetMemberNameToEmpty
+      fullName: CareBoo.Serially.Editor.Tests.ProvideSourceInfoAttributeTest.SettingAttributeOnClassShouldSetMemberNameToEmpty
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1016
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ProvideSourceInfoAttributeTest][suite]
+    - id: 1019
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/ProvideSourceInfoAttributeTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ProvideSourceInfoAttributeTest.SettingAttributeOnPropertyShouldSetMemberNameToPropertyName]
+      name: SettingAttributeOnPropertyShouldSetMemberNameToPropertyName
+      fullName: CareBoo.Serially.Editor.Tests.ProvideSourceInfoAttributeTest.SettingAttributeOnPropertyShouldSetMemberNameToPropertyName
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1016
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ProvideSourceInfoAttributeTest][suite]
+    - id: 1020
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/ProvideSourceInfoAttributeTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ProvideSourceInfoAttributeTest.SettingAttributeShouldSetAssetPath]
+      name: SettingAttributeShouldSetAssetPath
+      fullName: CareBoo.Serially.Editor.Tests.ProvideSourceInfoAttributeTest.SettingAttributeShouldSetAssetPath
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1016
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ProvideSourceInfoAttributeTest][suite]
+    - id: 1017
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/ProvideSourceInfoAttributeTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ProvideSourceInfoAttributeTest.SettingAttributeShouldSetLineNumber]
+      name: SettingAttributeShouldSetLineNumber
+      fullName: CareBoo.Serially.Editor.Tests.ProvideSourceInfoAttributeTest.SettingAttributeShouldSetLineNumber
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1016
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ProvideSourceInfoAttributeTest][suite]
+    - id: 1022
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest][suite]
+      name: SerializableTypeDrawerTest
+      fullName: CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1084
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests][suite]
+    - id: 1029
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeDrawerTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.GetFilteredTypesShouldReturnAllBasicTypesWithNoFilter]
+      name: GetFilteredTypesShouldReturnAllBasicTypesWithNoFilter
+      fullName: CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.GetFilteredTypesShouldReturnAllBasicTypesWithNoFilter
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1022
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest][suite]
+    - id: 1030
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeDrawerTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.GetFilteredTypesWithDerivedFromAttributeShouldReturnOnlyTypesDerivedFromDeclaredType]
+      name: GetFilteredTypesWithDerivedFromAttributeShouldReturnOnlyTypesDerivedFromDeclaredType
+      fullName: CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.GetFilteredTypesWithDerivedFromAttributeShouldReturnOnlyTypesDerivedFromDeclaredType
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1022
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest][suite]
+    - id: 1032
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeDrawerTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.GetFilteredTypesWithNullFilterDelegateShouldReturnTypesMatchingDelegate]
+      name: GetFilteredTypesWithNullFilterDelegateShouldReturnTypesMatchingDelegate
+      fullName: CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.GetFilteredTypesWithNullFilterDelegateShouldReturnTypesMatchingDelegate
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1022
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest][suite]
+    - id: 1031
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeDrawerTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.GetFilteredTypesWithTypeDelegateShouldReturnTypesMatchingDelegate]
+      name: GetFilteredTypesWithTypeDelegateShouldReturnTypesMatchingDelegate
+      fullName: CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.GetFilteredTypesWithTypeDelegateShouldReturnTypesMatchingDelegate
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1022
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest][suite]
+    - id: 1028
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeDrawerTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.IsMissingGuidAttributeShouldReturnFalseIfGuidAttributeDefined]
+      name: IsMissingGuidAttributeShouldReturnFalseIfGuidAttributeDefined
+      fullName: CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.IsMissingGuidAttributeShouldReturnFalseIfGuidAttributeDefined
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1022
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest][suite]
+    - id: 1027
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeDrawerTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.IsMissingGuidAttributeShouldReturnTrueIfNoGuidAttributeDefined]
+      name: IsMissingGuidAttributeShouldReturnTrueIfNoGuidAttributeDefined
+      fullName: CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.IsMissingGuidAttributeShouldReturnTrueIfNoGuidAttributeDefined
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1022
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest][suite]
+    - id: 1037
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeDrawerTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.SerializableTypeDrawerShouldShowWithoutErrors]
+      name: SerializableTypeDrawerShouldShowWithoutErrors
+      fullName: CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.SerializableTypeDrawerShouldShowWithoutErrors
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1022
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest][suite]
+    - id: 1036
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeDrawerTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.SetTypeValueShouldReturnSameType][suite]
+      name: SetTypeValueShouldReturnSameType
+      fullName: CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.SetTypeValueShouldReturnSameType
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1022
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest][suite]
+    - id: 1033
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeDrawerTest/SetTypeValueShouldReturnSameType/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.SetTypeValueShouldReturnSameType(CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest+A)]
+      name: SetTypeValueShouldReturnSameType(CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest+A)
+      fullName: CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.SetTypeValueShouldReturnSameType(CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest+A)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1036
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeDrawerTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.SetTypeValueShouldReturnSameType][suite]
+    - id: 1034
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeDrawerTest/SetTypeValueShouldReturnSameType/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.SetTypeValueShouldReturnSameType(CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest+B)]
+      name: SetTypeValueShouldReturnSameType(CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest+B)
+      fullName: CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.SetTypeValueShouldReturnSameType(CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest+B)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1036
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeDrawerTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.SetTypeValueShouldReturnSameType][suite]
+    - id: 1035
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeDrawerTest/SetTypeValueShouldReturnSameType/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.SetTypeValueShouldReturnSameType(null)]
+      name: SetTypeValueShouldReturnSameType(null)
+      fullName: CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.SetTypeValueShouldReturnSameType(null)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1036
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeDrawerTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.SetTypeValueShouldReturnSameType][suite]
+    - id: 1026
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeDrawerTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.ValidateWithGuidAttributeShouldReturnType]
+      name: ValidateWithGuidAttributeShouldReturnType
+      fullName: CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.ValidateWithGuidAttributeShouldReturnType
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1022
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest][suite]
+    - id: 1023
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeDrawerTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.ValidateWithInvalidTypeIDShouldSetError]
+      name: ValidateWithInvalidTypeIDShouldSetError
+      fullName: CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.ValidateWithInvalidTypeIDShouldSetError
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1022
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest][suite]
+    - id: 1025
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeDrawerTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.ValidateWithMissingGuidAttributeShouldReturnType]
+      name: ValidateWithMissingGuidAttributeShouldReturnType
+      fullName: CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.ValidateWithMissingGuidAttributeShouldReturnType
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1022
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest][suite]
+    - id: 1024
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeDrawerTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.ValidateWithMissingGuidAttributeShouldSetWarning]
+      name: ValidateWithMissingGuidAttributeShouldSetWarning
+      fullName: CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest.ValidateWithMissingGuidAttributeShouldSetWarning
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1022
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeDrawerTest][suite]
+    - id: 1038
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeTest][suite]
+      name: SerializableTypeTest
+      fullName: CareBoo.Serially.Editor.Tests.SerializableTypeTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1084
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests][suite]
+    - id: 1051
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeTest.CallbackOrderShouldBe0]
+      name: CallbackOrderShouldBe0
+      fullName: CareBoo.Serially.Editor.Tests.SerializableTypeTest.CallbackOrderShouldBe0
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1038
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeTest][suite]
+    - id: 1050
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeTest.IsBuildingShouldBeTrueOnlyDuringBuild]
+      name: IsBuildingShouldBeTrueOnlyDuringBuild
+      fullName: CareBoo.Serially.Editor.Tests.SerializableTypeTest.IsBuildingShouldBeTrueOnlyDuringBuild
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1038
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeTest][suite]
+    - id: 1049
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeTest.SettingTypeWhenBuildingShouldSetAssemblyQualifiedName][suite]
+      name: SettingTypeWhenBuildingShouldSetAssemblyQualifiedName
+      fullName: CareBoo.Serially.Editor.Tests.SerializableTypeTest.SettingTypeWhenBuildingShouldSetAssemblyQualifiedName
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1038
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeTest][suite]
+    - id: 1047
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeTest/SettingTypeWhenBuildingShouldSetAssemblyQualifiedName/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeTest.SettingTypeWhenBuildingShouldSetAssemblyQualifiedName(CareBoo.Serially.Editor.Tests.SerializableTypeTest+TypeWithGuidAttribute)]
+      name: SettingTypeWhenBuildingShouldSetAssemblyQualifiedName(CareBoo.Serially.Editor.Tests.SerializableTypeTest+TypeWithGuidAttribute)
+      fullName: CareBoo.Serially.Editor.Tests.SerializableTypeTest.SettingTypeWhenBuildingShouldSetAssemblyQualifiedName(CareBoo.Serially.Editor.Tests.SerializableTypeTest+TypeWithGuidAttribute)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1049
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeTest.SettingTypeWhenBuildingShouldSetAssemblyQualifiedName][suite]
+    - id: 1048
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeTest/SettingTypeWhenBuildingShouldSetAssemblyQualifiedName/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeTest.SettingTypeWhenBuildingShouldSetAssemblyQualifiedName(CareBoo.Serially.Editor.Tests.SerializableTypeTest+TypeWithoutGuidAttribute)]
+      name: SettingTypeWhenBuildingShouldSetAssemblyQualifiedName(CareBoo.Serially.Editor.Tests.SerializableTypeTest+TypeWithoutGuidAttribute)
+      fullName: CareBoo.Serially.Editor.Tests.SerializableTypeTest.SettingTypeWhenBuildingShouldSetAssemblyQualifiedName(CareBoo.Serially.Editor.Tests.SerializableTypeTest+TypeWithoutGuidAttribute)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1049
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeTest.SettingTypeWhenBuildingShouldSetAssemblyQualifiedName][suite]
+    - id: 1045
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeTest.SetTypeShouldPersistAfterCallingSave][suite]
+      name: SetTypeShouldPersistAfterCallingSave
+      fullName: CareBoo.Serially.Editor.Tests.SerializableTypeTest.SetTypeShouldPersistAfterCallingSave
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1038
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeTest][suite]
+    - id: 1043
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeTest/SetTypeShouldPersistAfterCallingSave/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeTest.SetTypeShouldPersistAfterCallingSave(CareBoo.Serially.Editor.Tests.SerializableTypeTest+TypeWithGuidAttribute)]
+      name: SetTypeShouldPersistAfterCallingSave(CareBoo.Serially.Editor.Tests.SerializableTypeTest+TypeWithGuidAttribute)
+      fullName: CareBoo.Serially.Editor.Tests.SerializableTypeTest.SetTypeShouldPersistAfterCallingSave(CareBoo.Serially.Editor.Tests.SerializableTypeTest+TypeWithGuidAttribute)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeTest.SetTypeShouldPersistAfterCallingSave][suite]
+    - id: 1044
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeTest/SetTypeShouldPersistAfterCallingSave/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeTest.SetTypeShouldPersistAfterCallingSave(CareBoo.Serially.Editor.Tests.SerializableTypeTest+TypeWithoutGuidAttribute)]
+      name: SetTypeShouldPersistAfterCallingSave(CareBoo.Serially.Editor.Tests.SerializableTypeTest+TypeWithoutGuidAttribute)
+      fullName: CareBoo.Serially.Editor.Tests.SerializableTypeTest.SetTypeShouldPersistAfterCallingSave(CareBoo.Serially.Editor.Tests.SerializableTypeTest+TypeWithoutGuidAttribute)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeTest.SetTypeShouldPersistAfterCallingSave][suite]
+    - id: 1046
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeTest.SetUnknownTypeIdShouldCauseError]
+      name: SetUnknownTypeIdShouldCauseError
+      fullName: CareBoo.Serially.Editor.Tests.SerializableTypeTest.SetUnknownTypeIdShouldCauseError
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1038
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeTest][suite]
+    - id: 1042
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeTest.ToSerializedTypeShouldNotFailWhenGivenNullType]
+      name: ToSerializedTypeShouldNotFailWhenGivenNullType
+      fullName: CareBoo.Serially.Editor.Tests.SerializableTypeTest.ToSerializedTypeShouldNotFailWhenGivenNullType
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1038
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeTest][suite]
+    - id: 1041
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeTest.TryGetTypeShouldReturnSameTypeSerialized][suite]
+      name: TryGetTypeShouldReturnSameTypeSerialized
+      fullName: CareBoo.Serially.Editor.Tests.SerializableTypeTest.TryGetTypeShouldReturnSameTypeSerialized
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1038
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeTest][suite]
+    - id: 1039
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeTest/TryGetTypeShouldReturnSameTypeSerialized/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeTest.TryGetTypeShouldReturnSameTypeSerialized(CareBoo.Serially.Editor.Tests.SerializableTypeTest+TypeWithGuidAttribute)]
+      name: TryGetTypeShouldReturnSameTypeSerialized(CareBoo.Serially.Editor.Tests.SerializableTypeTest+TypeWithGuidAttribute)
+      fullName: CareBoo.Serially.Editor.Tests.SerializableTypeTest.TryGetTypeShouldReturnSameTypeSerialized(CareBoo.Serially.Editor.Tests.SerializableTypeTest+TypeWithGuidAttribute)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1041
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeTest.TryGetTypeShouldReturnSameTypeSerialized][suite]
+    - id: 1040
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeTest/TryGetTypeShouldReturnSameTypeSerialized/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeTest.TryGetTypeShouldReturnSameTypeSerialized(CareBoo.Serially.Editor.Tests.SerializableTypeTest+TypeWithoutGuidAttribute)]
+      name: TryGetTypeShouldReturnSameTypeSerialized(CareBoo.Serially.Editor.Tests.SerializableTypeTest+TypeWithoutGuidAttribute)
+      fullName: CareBoo.Serially.Editor.Tests.SerializableTypeTest.TryGetTypeShouldReturnSameTypeSerialized(CareBoo.Serially.Editor.Tests.SerializableTypeTest+TypeWithoutGuidAttribute)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1041
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializableTypeTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializableTypeTest.TryGetTypeShouldReturnSameTypeSerialized][suite]
+    - id: 1007
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializedPropertyExtensionsTest][suite]
+      name: SerializedPropertyExtensionsTest
+      fullName: CareBoo.Serially.Editor.Tests.SerializedPropertyExtensionsTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1084
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests][suite]
+    - id: 1008
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializedPropertyExtensionsTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializedPropertyExtensionsTest.GetManagedReferenceFieldTypeReturnsFieldType]
+      name: GetManagedReferenceFieldTypeReturnsFieldType
+      fullName: CareBoo.Serially.Editor.Tests.SerializedPropertyExtensionsTest.GetManagedReferenceFieldTypeReturnsFieldType
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1007
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializedPropertyExtensionsTest][suite]
+    - id: 1009
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializedPropertyExtensionsTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializedPropertyExtensionsTest.GetManagedReferenceValueTypeReturnsValueType]
+      name: GetManagedReferenceValueTypeReturnsValueType
+      fullName: CareBoo.Serially.Editor.Tests.SerializedPropertyExtensionsTest.GetManagedReferenceValueTypeReturnsValueType
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1007
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializedPropertyExtensionsTest][suite]
+    - id: 1011
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializedPropertyExtensionsTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializedPropertyExtensionsTest.GetSelectableManagedReferenceValueTypesReturnsSerializableDerivedClasses]
+      name: GetSelectableManagedReferenceValueTypesReturnsSerializableDerivedClasses
+      fullName: CareBoo.Serially.Editor.Tests.SerializedPropertyExtensionsTest.GetSelectableManagedReferenceValueTypesReturnsSerializableDerivedClasses
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1007
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializedPropertyExtensionsTest][suite]
+    - id: 1015
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializedPropertyExtensionsTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializedPropertyExtensionsTest.GetValueReturnsPropertyValue][suite]
+      name: GetValueReturnsPropertyValue
+      fullName: CareBoo.Serially.Editor.Tests.SerializedPropertyExtensionsTest.GetValueReturnsPropertyValue
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1007
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializedPropertyExtensionsTest][suite]
+    - id: 1012
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializedPropertyExtensionsTest/GetValueReturnsPropertyValue/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializedPropertyExtensionsTest.GetValueReturnsPropertyValue<Int32>(Get
+        Array Element Value)]
+      name: GetValueReturnsPropertyValue<Int32>(Get Array Element Value)
+      fullName: CareBoo.Serially.Editor.Tests.SerializedPropertyExtensionsTest.GetValueReturnsPropertyValue<Int32>(Get
+        Array Element Value)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1015
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializedPropertyExtensionsTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializedPropertyExtensionsTest.GetValueReturnsPropertyValue][suite]
+    - id: 1013
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializedPropertyExtensionsTest/GetValueReturnsPropertyValue/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializedPropertyExtensionsTest.GetValueReturnsPropertyValue<Int32[]>(Get
+        Array Value)]
+      name: GetValueReturnsPropertyValue<Int32[]>(Get Array Value)
+      fullName: CareBoo.Serially.Editor.Tests.SerializedPropertyExtensionsTest.GetValueReturnsPropertyValue<Int32[]>(Get
+        Array Value)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1015
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializedPropertyExtensionsTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializedPropertyExtensionsTest.GetValueReturnsPropertyValue][suite]
+    - id: 1014
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializedPropertyExtensionsTest/GetValueReturnsPropertyValue/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializedPropertyExtensionsTest.GetValueReturnsPropertyValue<Int32[]>(Get
+        Parent Field Value with Path Modifier)]
+      name: GetValueReturnsPropertyValue<Int32[]>(Get Parent Field Value with Path
+        Modifier)
+      fullName: CareBoo.Serially.Editor.Tests.SerializedPropertyExtensionsTest.GetValueReturnsPropertyValue<Int32[]>(Get
+        Parent Field Value with Path Modifier)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1015
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializedPropertyExtensionsTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializedPropertyExtensionsTest.GetValueReturnsPropertyValue][suite]
+    - id: 1010
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/SerializedPropertyExtensionsTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializedPropertyExtensionsTest.SetManagedReferenceValueToNewSetsNonNullValue]
+      name: SetManagedReferenceValueToNewSetsNonNullValue
+      fullName: CareBoo.Serially.Editor.Tests.SerializedPropertyExtensionsTest.SetManagedReferenceValueToNewSetsNonNullValue
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1007
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.SerializedPropertyExtensionsTest][suite]
+    - id: 1052
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest][suite]
+      name: ShowSerializeReferenceDrawerTest
+      fullName: CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1084
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests][suite]
+    - id: 1055
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/ShowSerializeReferenceDrawerTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest.ContextCopyShouldCopyPropertyValue]
+      name: ContextCopyShouldCopyPropertyValue
+      fullName: CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest.ContextCopyShouldCopyPropertyValue
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1052
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest][suite]
+    - id: 1060
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/ShowSerializeReferenceDrawerTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest.ContextCreateMenuShouldReturnMenuWithCopyAndPaste][suite]
+      name: ContextCreateMenuShouldReturnMenuWithCopyAndPaste
+      fullName: CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest.ContextCreateMenuShouldReturnMenuWithCopyAndPaste
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1052
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest][suite]
+    - id: 1057
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/ShowSerializeReferenceDrawerTest/ContextCreateMenuShouldReturnMenuWithCopyAndPaste/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest.ContextCreateMenuShouldReturnMenuWithCopyAndPaste(null,True)]
+      name: ContextCreateMenuShouldReturnMenuWithCopyAndPaste(null,True)
+      fullName: CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest.ContextCreateMenuShouldReturnMenuWithCopyAndPaste(null,True)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1060
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/ShowSerializeReferenceDrawerTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest.ContextCreateMenuShouldReturnMenuWithCopyAndPaste][suite]
+    - id: 1058
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/ShowSerializeReferenceDrawerTest/ContextCreateMenuShouldReturnMenuWithCopyAndPaste/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest.ContextCreateMenuShouldReturnMenuWithCopyAndPaste(CareBoo.Serially.Editor.Tests.A,False)]
+      name: ContextCreateMenuShouldReturnMenuWithCopyAndPaste(CareBoo.Serially.Editor.Tests.A,False)
+      fullName: CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest.ContextCreateMenuShouldReturnMenuWithCopyAndPaste(CareBoo.Serially.Editor.Tests.A,False)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1060
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/ShowSerializeReferenceDrawerTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest.ContextCreateMenuShouldReturnMenuWithCopyAndPaste][suite]
+    - id: 1059
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/ShowSerializeReferenceDrawerTest/ContextCreateMenuShouldReturnMenuWithCopyAndPaste/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest.ContextCreateMenuShouldReturnMenuWithCopyAndPaste(32,True)]
+      name: ContextCreateMenuShouldReturnMenuWithCopyAndPaste(32,True)
+      fullName: CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest.ContextCreateMenuShouldReturnMenuWithCopyAndPaste(32,True)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1060
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/ShowSerializeReferenceDrawerTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest.ContextCreateMenuShouldReturnMenuWithCopyAndPaste][suite]
+    - id: 1056
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/ShowSerializeReferenceDrawerTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest.ContextPasteShouldPasteValueOntoProperty]
+      name: ContextPasteShouldPasteValueOntoProperty
+      fullName: CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest.ContextPasteShouldPasteValueOntoProperty
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1052
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest][suite]
+    - id: 1063
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/ShowSerializeReferenceDrawerTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest.GetSelectableTypesShouldReturnTypesFilteredByTypeFilter][suite]
+      name: GetSelectableTypesShouldReturnTypesFilteredByTypeFilter
+      fullName: CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest.GetSelectableTypesShouldReturnTypesFilteredByTypeFilter
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1052
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest][suite]
+    - id: 1061
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/ShowSerializeReferenceDrawerTest/GetSelectableTypesShouldReturnTypesFilteredByTypeFilter/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest.GetSelectableTypesShouldReturnTypesFilteredByTypeFilter(System.Func`2[System.Collections.Generic.IEnumerable`1[System.Type],System.Collections.Generic.IEnumerable`1[System.Type]])]
+      name: GetSelectableTypesShouldReturnTypesFilteredByTypeFilter(System.Func`2[System.Collections.Generic.IEnumerable`1[System.Type],System.Collections.Generic.IEnumerable`1[System.Type]])
+      fullName: CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest.GetSelectableTypesShouldReturnTypesFilteredByTypeFilter(System.Func`2[System.Collections.Generic.IEnumerable`1[System.Type],System.Collections.Generic.IEnumerable`1[System.Type]])
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1063
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/ShowSerializeReferenceDrawerTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest.GetSelectableTypesShouldReturnTypesFilteredByTypeFilter][suite]
+    - id: 1062
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/ShowSerializeReferenceDrawerTest/GetSelectableTypesShouldReturnTypesFilteredByTypeFilter/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest.GetSelectableTypesShouldReturnTypesFilteredByTypeFilter(System.Func`2[System.Collections.Generic.IEnumerable`1[System.Type],System.Collections.Generic.IEnumerable`1[System.Type]])]2
+      name: GetSelectableTypesShouldReturnTypesFilteredByTypeFilter(System.Func`2[System.Collections.Generic.IEnumerable`1[System.Type],System.Collections.Generic.IEnumerable`1[System.Type]])
+      fullName: CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest.GetSelectableTypesShouldReturnTypesFilteredByTypeFilter(System.Func`2[System.Collections.Generic.IEnumerable`1[System.Type],System.Collections.Generic.IEnumerable`1[System.Type]]
+        GeneratedTestCase2)
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1063
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/ShowSerializeReferenceDrawerTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest.GetSelectableTypesShouldReturnTypesFilteredByTypeFilter][suite]
+    - id: 1053
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/ShowSerializeReferenceDrawerTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest.OnGUIShouldDrawWithoutErrors]
+      name: OnGUIShouldDrawWithoutErrors
+      fullName: CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest.OnGUIShouldDrawWithoutErrors
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1052
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest][suite]
+    - id: 1054
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/ShowSerializeReferenceDrawerTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest.RightClickInGUIShouldDrawWithoutErrors]
+      name: RightClickInGUIShouldDrawWithoutErrors
+      fullName: CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest.RightClickInGUIShouldDrawWithoutErrors
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1052
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.ShowSerializeReferenceDrawerTest][suite]
+    - id: 1064
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.TypeFieldTest][suite]
+      name: TypeFieldTest
+      fullName: CareBoo.Serially.Editor.Tests.TypeFieldTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1084
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests][suite]
+    - id: 1066
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/TypeFieldTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.TypeFieldTest.ClickingTheTypeFieldOfTypeWithoutProvideSourceInfoShouldLogWarning]
+      name: ClickingTheTypeFieldOfTypeWithoutProvideSourceInfoShouldLogWarning
+      fullName: CareBoo.Serially.Editor.Tests.TypeFieldTest.ClickingTheTypeFieldOfTypeWithoutProvideSourceInfoShouldLogWarning
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1064
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.TypeFieldTest][suite]
+    - id: 1065
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/TypeFieldTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.TypeFieldTest.ClickingTheTypeFieldOfTypeWithProvideSourceInfoShouldPingTheMonoScript]
+      name: ClickingTheTypeFieldOfTypeWithProvideSourceInfoShouldPingTheMonoScript
+      fullName: CareBoo.Serially.Editor.Tests.TypeFieldTest.ClickingTheTypeFieldOfTypeWithProvideSourceInfoShouldPingTheMonoScript
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1064
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.TypeFieldTest][suite]
+    - id: 1068
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/TypeFieldTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.TypeFieldTest.ClickingTypeLabelTwiceForTypeDefinedInThisAssetShouldOpenThisAsset]
+      name: ClickingTypeLabelTwiceForTypeDefinedInThisAssetShouldOpenThisAsset
+      fullName: CareBoo.Serially.Editor.Tests.TypeFieldTest.ClickingTypeLabelTwiceForTypeDefinedInThisAssetShouldOpenThisAsset
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1064
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.TypeFieldTest][suite]
+    - id: 1067
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/TypeFieldTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.TypeFieldTest.ClickingTypePickerShouldOpenTypePickerWindow]
+      name: ClickingTypePickerShouldOpenTypePickerWindow
+      fullName: CareBoo.Serially.Editor.Tests.TypeFieldTest.ClickingTypePickerShouldOpenTypePickerWindow
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1064
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.TypeFieldTest][suite]
+    - id: 1069
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/TypeFieldTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.TypeFieldTest.TypeFieldShouldShowWithoutErrors]
+      name: TypeFieldShouldShowWithoutErrors
+      fullName: CareBoo.Serially.Editor.Tests.TypeFieldTest.TypeFieldShouldShowWithoutErrors
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1064
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.TypeFieldTest][suite]
+    - id: 1070
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.TypeFilterAttributeTest][suite]
+      name: TypeFilterAttributeTest
+      fullName: CareBoo.Serially.Editor.Tests.TypeFilterAttributeTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1084
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests][suite]
+    - id: 1072
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/TypeFilterAttributeTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.TypeFilterAttributeTest.SetDerivedFromShouldEqualDerivedFrom]
+      name: SetDerivedFromShouldEqualDerivedFrom
+      fullName: CareBoo.Serially.Editor.Tests.TypeFilterAttributeTest.SetDerivedFromShouldEqualDerivedFrom
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1070
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.TypeFilterAttributeTest][suite]
+    - id: 1071
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/TypeFilterAttributeTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.TypeFilterAttributeTest.SettingDerivedFromShouldSetFilterToDerivedFromFilter]
+      name: SettingDerivedFromShouldSetFilterToDerivedFromFilter
+      fullName: CareBoo.Serially.Editor.Tests.TypeFilterAttributeTest.SettingDerivedFromShouldSetFilterToDerivedFromFilter
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1070
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.TypeFilterAttributeTest][suite]
+    - id: 1073
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/TypeFilterAttributeTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.TypeFilterAttributeTest.SettingFilterNameToMethodShouldEqualFilter]
+      name: SettingFilterNameToMethodShouldEqualFilter
+      fullName: CareBoo.Serially.Editor.Tests.TypeFilterAttributeTest.SettingFilterNameToMethodShouldEqualFilter
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1070
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.TypeFilterAttributeTest][suite]
+    - id: 1074
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.TypePickerWindowTest][suite]
+      name: TypePickerWindowTest
+      fullName: CareBoo.Serially.Editor.Tests.TypePickerWindowTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1084
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests][suite]
+    - id: 1076
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/TypePickerWindowTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.TypePickerWindowTest.OnItemChosenShouldCloseWindow]
+      name: OnItemChosenShouldCloseWindow
+      fullName: CareBoo.Serially.Editor.Tests.TypePickerWindowTest.OnItemChosenShouldCloseWindow
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1074
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.TypePickerWindowTest][suite]
+    - id: 1075
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/TypePickerWindowTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.TypePickerWindowTest.OnItemChosenShouldSelectType]
+      name: OnItemChosenShouldSelectType
+      fullName: CareBoo.Serially.Editor.Tests.TypePickerWindowTest.OnItemChosenShouldSelectType
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1074
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.TypePickerWindowTest][suite]
+    - id: 1079
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/TypePickerWindowTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.TypePickerWindowTest.TypeLabelRegexShouldExtractNameAndNamespace][suite]
+      name: TypeLabelRegexShouldExtractNameAndNamespace
+      fullName: CareBoo.Serially.Editor.Tests.TypePickerWindowTest.TypeLabelRegexShouldExtractNameAndNamespace
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1074
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.TypePickerWindowTest][suite]
+    - id: 1077
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/TypePickerWindowTest/TypeLabelRegexShouldExtractNameAndNamespace/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.TypePickerWindowTest.TypeLabelRegexShouldExtractNameAndNamespace("Class","Class","")]
+      name: TypeLabelRegexShouldExtractNameAndNamespace("Class","Class","")
+      fullName: CareBoo.Serially.Editor.Tests.TypePickerWindowTest.TypeLabelRegexShouldExtractNameAndNamespace("Class","Class","")
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1079
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/TypePickerWindowTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.TypePickerWindowTest.TypeLabelRegexShouldExtractNameAndNamespace][suite]
+    - id: 1078
+      uniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/TypePickerWindowTest/TypeLabelRegexShouldExtractNameAndNamespace/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.TypePickerWindowTest.TypeLabelRegexShouldExtractNameAndNamespace("Class
+        <i>(Namespace)</i>","Class ","(Namespace)")]
+      name: TypeLabelRegexShouldExtractNameAndNamespace("Class <i>(Namespace)</i>","Class
+        ","(Namespace)")
+      fullName: CareBoo.Serially.Editor.Tests.TypePickerWindowTest.TypeLabelRegexShouldExtractNameAndNamespace("Class
+        <i>(Namespace)</i>","Class ","(Namespace)")
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1079
+      parentUniqueId: CareBoo.Serially.Editor.Tests.dll/CareBoo/Serially/Editor/Tests/TypePickerWindowTest/[CareBoo.Serially.Editor.Tests][CareBoo.Serially.Editor.Tests.TypePickerWindowTest.TypeLabelRegexShouldExtractNameAndNamespace][suite]
+    m_ResultText: "GetTypeOnNonMonoBehaviourOrScriptableObject (0.012s)\n---\nExpected:
+      <CareBoo.Serially.Editor.Tests.NonMonoScript>\n  But was:  <CareBoo.Serially.Editor.Tests.ProvideSourceInfoAttributeTest>\n---\nat
+      CareBoo.Serially.Editor.Tests.ProvideSourceInfoAttributeTest.GetTypeOnNonMonoBehaviourOrScriptableObject
+      () [0x00039] in /Users/jason/Projects/CareBoo/Serially/Serially.Package/Packages/com.careboo.serially/Tests/Editor/ProvideSourceInfoAttributeTest.cs:78\n---\nexpected:
+      CareBoo.Serially.Editor.Tests.NonMonoScript, actual: CareBoo.Serially.Editor.Tests.ProvideSourceInfoAttributeTest"
+    m_ResultStacktrace: 'at CareBoo.Serially.Editor.Tests.ProvideSourceInfoAttributeTest.GetTypeOnNonMonoBehaviourOrScriptableObject
+      () [0x00039] in /Users/jason/Projects/CareBoo/Serially/Serially.Package/Packages/com.careboo.serially/Tests/Editor/ProvideSourceInfoAttributeTest.cs:78
+
+'
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 3f4f50d9
+      m_LastClickedID: -649048257
+      m_ExpandedIDs: 6d0b0b818f50f28b725f449377474d95b4e21d98f00ef99d1ae7a3a999ddf0bf89a0c5cae80ea2d486f30ad57fada8d75fbe67f9d5e35f21e520602f2882cd3b52187242ec9a2145b6d85b6612c4ea6f8a477b774fd6327ac814fe7effffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategoryMask: 0
+      availableCategories:
+      - Uncategorized
+--- !u!114 &13
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13999, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: UI Builder
+    m_Image: {fileID: -3932862461143797134, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 485
+    y: 30
+    width: 1469
+    height: 803
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+--- !u!114 &14
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12014, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
+  m_TitleContent:
+    m_Text: Project
+    m_Image: {fileID: -5179483145760003458, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 854
+    width: 1955
+    height: 545
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_SearchFilter:
+    m_NameFilter: 
+    m_ClassNames: []
+    m_AssetLabels: []
+    m_AssetBundleNames: []
+    m_VersionControlStates: []
+    m_SoftLockControlStates: []
+    m_ReferencingInstanceIDs: 
+    m_SceneHandles: 
+    m_ShowAllHits: 0
+    m_SkipHidden: 0
+    m_SearchArea: 1
+    m_Folders:
+    - Packages/com.careboo.serially/Tests/Editor
+    m_Globs: []
+    m_OriginalText: 
+  m_ViewMode: 1
+  m_StartGridSize: 16
+  m_LastFolders:
+  - Packages/com.careboo.serially/Tests/Editor
+  m_LastFoldersGridSize: 16
+  m_LastProjectPath: /Users/jason/Projects/CareBoo/Serially/Serially.Package
+  m_LockTracker:
+    m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: e6410000
+    m_LastClickedID: 16870
+    m_ExpandedIDs: 000000006e4100007e410000844100008e4100009041000000ca9a3bffffff7f
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_ClientGUIView: {fileID: 0}
+    m_SearchString: 
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+  m_AssetTreeState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 000000006e410000
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_ClientGUIView: {fileID: 0}
+    m_SearchString: 
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+  m_ListAreaState:
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: c6230000
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: NonMonoScript
+      m_OriginalName: NonMonoScript
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 16882
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 0
+      m_IsRenamingFilename: 1
+      m_ClientGUIView: {fileID: 5}
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+    m_NewAssetIndexInList: -1
+    m_ScrollPosition: {x: 0, y: 0}
+    m_GridSize: 16
+  m_SkipHiddenPackages: 0
+  m_DirectoriesAreaWidth: 207
+--- !u!114 &15
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12019, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Inspector
+    m_Image: {fileID: -2667387946076563598, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 1320
+    y: 67
+    width: 407
+    height: 1009
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_ObjectsLockedBeforeSerialization: []
+  m_InstanceIDsLockedBeforeSerialization: 
+  m_PreviewResizer:
+    m_CachedPref: 160
+    m_ControlHash: -371814159
+    m_PrefName: Preview_InspectorPreview
+  m_LastInspectedObjectInstanceID: 1982
+  m_LastVerticalScrollValue: 0
+  m_GlobalObjectId: 
+  m_InspectorMode: 0
+  m_LockTracker:
+    m_IsLocked: 0
+  m_PreviewWindow: {fileID: 0}
+--- !u!114 &16
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12061, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Hierarchy
+    m_Image: {fileID: -3734745235275155857, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 30
+    width: 484
+    height: 803
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_SceneHierarchy:
+    m_TreeViewState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: be070000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 9cf0ffff66f1ffffb4f1ffff02f2ffff58f2ffff40f3ffff08f4ffff56f4ffffacf4ffff80f5ffffdaf5ffffaef6ffff58f9ffff3cfbffff
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_ExpandedScenes: []
+    m_CurrenRootInstanceID: 0
+    m_LockTracker:
+      m_IsLocked: 0
+    m_CurrentSortingName: TransformSorting
+  m_WindowGUID: 4c969a2b90040154d917609493e03593
+--- !u!114 &17
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12013, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Scene
+    m_Image: {fileID: 8634526014445323508, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 328
+    y: 19
+    width: 991
+    height: 589
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData:
+    - dockPosition: 0
+      containerId: overlay-toolbar__top
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: -101, y: -26}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 3
+      id: Tool Settings
+      index: 0
+      layout: 1
+    - dockPosition: 0
+      containerId: overlay-toolbar__top
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: -141, y: -224}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 3
+      id: unity-grid-and-snap-toolbar
+      index: 1
+      layout: 1
+    - dockPosition: 1
+      containerId: overlay-toolbar__top
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: unity-scene-view-toolbar
+      index: 0
+      layout: 1
+    - dockPosition: 1
+      containerId: overlay-toolbar__top
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 1
+      id: unity-search-toolbar
+      index: 1
+      layout: 1
+    - dockPosition: 0
+      containerId: overlay-container--left
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: unity-transform-toolbar
+      index: 0
+      layout: 2
+    - dockPosition: 0
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: 67.5, y: 86}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Orientation
+      index: 0
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Light Settings
+      index: 0
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Camera
+      index: 1
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Cloth Constraints
+      index: 2
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Cloth Collisions
+      index: 3
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Navmesh Display
+      index: 4
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Agent Display
+      index: 5
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Obstacle Display
+      index: 6
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Occlusion Culling
+      index: 7
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Physics Debugger
+      index: 8
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Scene Visibility
+      index: 9
+      layout: 4
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Particles
+      index: 10
+      layout: 4
+  m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
+  m_Gizmos: 1
+  m_OverrideSceneCullingMask: 6917529027641081856
+  m_SceneIsLit: 1
+  m_SceneLighting: 1
+  m_2DMode: 0
+  m_isRotationLocked: 0
+  m_PlayAudio: 0
+  m_AudioPlay: 0
+  m_Position:
+    m_Target: {x: 0, y: 0, z: 0}
+    speed: 2
+    m_Value: {x: 0, y: 0, z: 0}
+  m_RenderMode: 0
+  m_CameraMode:
+    drawMode: 0
+    name: Shaded
+    section: Shading Mode
+  m_ValidateTrueMetals: 0
+  m_DoValidateTrueMetals: 0
+  m_ExposureSliderValue: 0
+  m_SceneViewState:
+    m_AlwaysRefresh: 0
+    showFog: 1
+    showSkybox: 1
+    showFlares: 1
+    showImageEffects: 1
+    showParticleSystems: 1
+    showVisualEffectGraphs: 1
+    m_FxEnabled: 1
+  m_Grid:
+    xGrid:
+      m_Fade:
+        m_Target: 0
+        speed: 2
+        m_Value: 0
+      m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
+      m_Pivot: {x: 0, y: 0, z: 0}
+      m_Size: {x: 0, y: 0}
+    yGrid:
+      m_Fade:
+        m_Target: 1
+        speed: 2
+        m_Value: 1
+      m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
+      m_Pivot: {x: 0, y: 0, z: 0}
+      m_Size: {x: 1, y: 1}
+    zGrid:
+      m_Fade:
+        m_Target: 0
+        speed: 2
+        m_Value: 0
+      m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
+      m_Pivot: {x: 0, y: 0, z: 0}
+      m_Size: {x: 0, y: 0}
+    m_ShowGrid: 1
+    m_GridAxis: 1
+    m_gridOpacity: 0.5
+  m_Rotation:
+    m_Target: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+    speed: 2
+    m_Value: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_Size:
+    m_Target: 10
+    speed: 2
+    m_Value: 10
+  m_Ortho:
+    m_Target: 0
+    speed: 2
+    m_Value: 0
+  m_CameraSettings:
+    m_Speed: 1
+    m_SpeedNormalized: 0.5
+    m_SpeedMin: 0.001
+    m_SpeedMax: 2
+    m_EasingEnabled: 1
+    m_EasingDuration: 0.4
+    m_AccelerationEnabled: 1
+    m_FieldOfViewHorizontalOrVertical: 60
+    m_NearClip: 0.03
+    m_FarClip: 10000
+    m_DynamicClip: 1
+    m_OcclusionCulling: 0
+  m_LastSceneViewRotation: {x: 0, y: 0, z: 0, w: 0}
+  m_LastSceneViewOrtho: 0
+  m_ReplacementShader: {fileID: 0}
+  m_ReplacementString: 
+  m_SceneVisActive: 1
+  m_LastLockedObject: {fileID: 0}
+  m_ViewIsLockedToObject: 0
+--- !u!114 &18
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12015, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Game
+    m_Image: {fileID: 4621777727084837110, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 507
+    y: 94
+    width: 1532
+    height: 790
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_SerializedViewNames: []
+  m_SerializedViewValues: []
+  m_PlayModeViewName: GameView
+  m_ShowGizmos: 0
+  m_TargetDisplay: 0
+  m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
+  m_TargetSize: {x: 1532, y: 769}
+  m_TextureFilterMode: 0
+  m_TextureHideFlags: 61
+  m_RenderIMGUI: 0
+  m_EnterPlayModeBehavior: 0
+  m_UseMipMap: 0
+  m_VSyncEnabled: 0
+  m_Gizmos: 0
+  m_Stats: 0
+  m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_ZoomArea:
+    m_HRangeLocked: 0
+    m_VRangeLocked: 0
+    hZoomLockedByDefault: 0
+    vZoomLockedByDefault: 0
+    m_HBaseRangeMin: -383
+    m_HBaseRangeMax: 383
+    m_VBaseRangeMin: -192.25
+    m_VBaseRangeMax: 192.25
+    m_HAllowExceedBaseRangeMin: 1
+    m_HAllowExceedBaseRangeMax: 1
+    m_VAllowExceedBaseRangeMin: 1
+    m_VAllowExceedBaseRangeMax: 1
+    m_ScaleWithWindow: 0
+    m_HSlider: 0
+    m_VSlider: 0
+    m_IgnoreScrollWheelUntilClicked: 0
+    m_EnableMouseInput: 1
+    m_EnableSliderZoomHorizontal: 0
+    m_EnableSliderZoomVertical: 0
+    m_UniformScale: 1
+    m_UpDirection: 1
+    m_DrawArea:
+      serializedVersion: 2
+      x: 0
+      y: 21
+      width: 1532
+      height: 769
+    m_Scale: {x: 2, y: 2}
+    m_Translation: {x: 766, y: 384.5}
+    m_MarginLeft: 0
+    m_MarginRight: 0
+    m_MarginTop: 0
+    m_MarginBottom: 0
+    m_LastShownAreaInsideMargins:
+      serializedVersion: 2
+      x: -383
+      y: -192.25
+      width: 766
+      height: 384.5
+    m_MinimalGUI: 1
+  m_defaultScale: 2
+  m_LastWindowPixelSize: {x: 3064, y: 1580}
+  m_ClearInEditMode: 1
+  m_NoCameraWarning: 1
+  m_LowResolutionForAspectRatios: 01000000000000000000
+  m_XRRenderMode: 0
+  m_RenderTexture: {fileID: 0}
+--- !u!114 &19
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12003, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Console
+    m_Image: {fileID: -4950941429401207979, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 677
+    width: 1319
+    height: 399
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
