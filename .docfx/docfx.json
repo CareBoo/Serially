@@ -115,7 +115,7 @@
       }
     ],
     "sitemap": {
-      "baseUrl": "https://careboo.github.io/serially/2.2.4",
+      "baseUrl": "https://careboo.github.io/serially/2.2.5",
       "changefreq": "monthly",
       "fileOptions": {
         "api/*": {
