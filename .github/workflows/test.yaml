@@ -80,16 +80,16 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: ${{ matrix.unityVersion }} Code Coverage
-          path: ${{ matrix.projectPath }}/CodeCoverage
+          path: CodeCoverage
 
       - name: Upload PlayMode Test Coverage Report
         uses: codecov/codecov-action@v1
         with:
           flags: unittests
-          file: ${{ matrix.projectPath }}/CodeCoverage/Serially.Package-opencov/PlayMode/TestCoverageResults_0000.xml
+          file: CodeCoverage/Serially.Package-opencov/PlayMode/TestCoverageResults_0000.xml
 
       - name: Upload EditMode Test Coverage Report
         uses: codecov/codecov-action@v1
         with:
           flags: unittests
-          file: ${{ matrix.projectPath }}/CodeCoverage/Serially.Package-opencov/EditMode/TestCoverageResults_0000.xml
+          file: CodeCoverage/Serially.Package-opencov/EditMode/TestCoverageResults_0000.xml
