@@ -131,7 +131,7 @@ namespace CareBoo.Serially.Editor
             searchedTypes = types.Where(IsInSearch).Prepend(null).ToList();
             listView.itemsSource = searchedTypes;
             listView.selectedIndex = searchedTypes.IndexOf(preselected);
-#if UNITY_2021_1_OR_NEWER
+#if UNITY_2021_2_OR_NEWER
             listView.Rebuild();
 #else
             listView.Refresh();

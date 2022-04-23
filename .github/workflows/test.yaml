@@ -35,7 +35,9 @@ jobs:
         unityVersion:
           - 2019.4.37f1
           - 2020.3.33f1
+          - 2021.1.28f1
           - 2021.2.19f1
+          - 2021.3.1f1
 
     steps:
       - uses: actions/checkout@v2
@@ -78,16 +80,16 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: ${{ matrix.unityVersion }} Code Coverage
-          path: ${{ matrix.projectPath }}/CodeCoverage
+          path: CodeCoverage
 
       - name: Upload PlayMode Test Coverage Report
         uses: codecov/codecov-action@v1
         with:
           flags: unittests
-          file: ${{ matrix.projectPath }}/CodeCoverage/workspace-opencov/PlayMode/TestCoverageResults_0000.xml
+          file: CodeCoverage/Serially.Package-opencov/PlayMode/TestCoverageResults_0000.xml
 
       - name: Upload EditMode Test Coverage Report
         uses: codecov/codecov-action@v1
         with:
           flags: unittests
-          file: ${{ matrix.projectPath }}/CodeCoverage/workspace-opencov/EditMode/TestCoverageResults_0000.xml
+          file: CodeCoverage/Serially.Package-opencov/EditMode/TestCoverageResults_0000.xml
