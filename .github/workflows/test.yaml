@@ -86,10 +86,10 @@ jobs:
         uses: codecov/codecov-action@v1
         with:
           flags: unittests
-          file: ${{ matrix.projectPath }}/CodeCoverage/workspace-opencov/PlayMode/TestCoverageResults_0000.xml
+          file: ${{ matrix.projectPath }}/CodeCoverage/Serially.Package-opencov/PlayMode/TestCoverageResults_0000.xml
 
       - name: Upload EditMode Test Coverage Report
         uses: codecov/codecov-action@v1
         with:
           flags: unittests
-          file: ${{ matrix.projectPath }}/CodeCoverage/workspace-opencov/EditMode/TestCoverageResults_0000.xml
+          file: ${{ matrix.projectPath }}/CodeCoverage/Serially.Package-opencov/EditMode/TestCoverageResults_0000.xml
