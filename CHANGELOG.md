@@ -5,6 +5,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
+## [2.2.5](https://github.com/CareBoo/Serially/compare/v2.2.4...v2.2.5) (2022-04-23)
+
+
+### Bug Fixes
+
+* fix compile err in 2021.1 ([#70](https://github.com/CareBoo/Serially/issues/70)) ([cf51cc3](https://github.com/CareBoo/Serially/commit/cf51cc37e48b5270e95ee80959916a0ab11b2683)), closes [#69](https://github.com/CareBoo/Serially/issues/69)
+
 ## [2.2.4](https://github.com/CareBoo/Serially/compare/v2.2.3...v2.2.4) (2022-04-10)
 
 
