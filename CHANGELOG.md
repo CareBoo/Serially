@@ -5,6 +5,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
+## [2.2.6](https://github.com/CareBoo/Serially/compare/v2.2.5...v2.2.6) (2022-05-20)
+
+
+### Bug Fixes
+
+* **license:** add LICENSE.md.meta file to package ([#72](https://github.com/CareBoo/Serially/issues/72)) ([49cc25a](https://github.com/CareBoo/Serially/commit/49cc25ac3563a25ff157f10e0eb9e707a7541407)), closes [#71](https://github.com/CareBoo/Serially/issues/71)
+
 ## [2.2.5](https://github.com/CareBoo/Serially/compare/v2.2.4...v2.2.5) (2022-04-23)
 
 
