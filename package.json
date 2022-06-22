@@ -19,9 +19,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "changelogUrl": "https://careboo.github.io/serially/2.2/changelog",
-  "documentationUrl": "https://careboo.github.io/serially/2.2",
-  "licensesUrl": "https://careboo.github.io/serially/2.2/license",
+  "changelogUrl": "https://careboo.github.io/Serially/2.2/changelog",
+  "documentationUrl": "https://careboo.github.io/Serially/2.2",
+  "licensesUrl": "https://careboo.github.io/Serially/2.2/license",
   "author": {
     "name": "CareBoo",
     "url": "https://github.com/CareBoo"

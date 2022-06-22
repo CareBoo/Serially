@@ -39,4 +39,4 @@ the [latest release](https://github.com/CareBoo/Serially).
 
 ## Documentation
 
-Documentation is hosted [here on GitHub pages](https://careboo.github.io/serially/2.2).
+Documentation is hosted [here on GitHub pages](https://careboo.github.io/Serially/2.2).
