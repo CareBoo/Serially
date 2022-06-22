@@ -17,6 +17,7 @@ jobs:
     outputs:
       published: ${{ steps.semantic.outputs.new_release_published }}
       version: ${{ steps.semantic.outputs.new_release_version }}
+      major_minor: ${{ steps.semantic.outputs.new_release_major_version }}.${{ steps.semantic.outputs.new_release_minor_version }}
     steps:
       - uses: actions/checkout@v2
         with:
@@ -103,4 +104,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: _site
-          destination_dir: ${{ needs.release.outputs.version }}
+          destination_dir: ${{ needs.release.outputs.major_minor }}
