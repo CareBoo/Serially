@@ -5,6 +5,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
+## [2.2.7](https://github.com/CareBoo/Serially/compare/v2.2.6...v2.2.7) (2022-06-22)
+
+
+### Bug Fixes
+
+* **gui:** fix flex and ordering in type window ([1608348](https://github.com/CareBoo/Serially/commit/1608348d5b11672da8ae4f777f00e0f889b3308a))
+
 ## [2.2.6](https://github.com/CareBoo/Serially/compare/v2.2.5...v2.2.6) (2022-05-20)
 
 
