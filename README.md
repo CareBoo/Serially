@@ -36,3 +36,7 @@ or [npmjs](https://www.npmjs.com/package/com.careboo.serially).
 
 Alternatively, you can install this directly as either a tarball or unity asset package from
 the [latest release](https://github.com/CareBoo/Serially).
+
+## Documentation
+
+Documentation is hosted [here on GitHub pages](https://careboo.github.io/serially/2.2).
