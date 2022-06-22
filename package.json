@@ -34,6 +34,6 @@
     }
   ],
   "scripts": {
-    "version": "./scripts/updateVersionUrl.sh && git add package.json .docfx/docfx.json"
+    "version": "./scripts/updateVersionUrl.sh && git add package.json .docfx/docfx.json README.md"
   }
 }

@@ -3,7 +3,8 @@
 set -euo pipefail
 
 version="$(jq -r '.version' package.json)"
-docUrl="https://careboo.github.io/serially/$version"
+major_minor="$(echo $version | grep -oE '^[0-9]+\.[0-9]+')"
+docUrl="https://careboo.github.io/serially/$major_minor"
 
 echo "[[ Setting documentation urls to $docUrl ]]"
 
@@ -20,3 +21,9 @@ jq --arg url "$docUrl" \
     .docfx/docfx.json > docfx.json.tmp \
     && rm .docfx/docfx.json \
     && mv docfx.json.tmp .docfx/docfx.json
+
+echo "Updating README.md..."
+host='https:\/\/careboo.github.io\/serially\/'
+sed -E -i \
+    's/'$host'[0-9]+\.[0-9]+/'$host''$major_minor'/g' \
+    README.md
