@@ -19,11 +19,11 @@ references:
   commentId: T:CareBoo.Serially.Editor.EnumerableExtensions
   fullName: CareBoo.Serially.Editor.EnumerableExtensions
   nameWithType: EnumerableExtensions
-- uid: CareBoo.Serially.Editor.EnumerableExtensions.ElementAtOrDefault(IEnumerable,System.Int32)
+- uid: CareBoo.Serially.Editor.EnumerableExtensions.ElementAtOrDefault(System.Collections.Generic.IEnumerable,System.Int32)
   name: ElementAtOrDefault(IEnumerable, Int32)
-  href: api/CareBoo.Serially.Editor.EnumerableExtensions.html#CareBoo_Serially_Editor_EnumerableExtensions_ElementAtOrDefault_IEnumerable_System_Int32_
-  commentId: M:CareBoo.Serially.Editor.EnumerableExtensions.ElementAtOrDefault(IEnumerable,System.Int32)
-  fullName: CareBoo.Serially.Editor.EnumerableExtensions.ElementAtOrDefault(IEnumerable, System.Int32)
+  href: api/CareBoo.Serially.Editor.EnumerableExtensions.html#CareBoo_Serially_Editor_EnumerableExtensions_ElementAtOrDefault_System_Collections_Generic_IEnumerable_System_Int32_
+  commentId: M:CareBoo.Serially.Editor.EnumerableExtensions.ElementAtOrDefault(System.Collections.Generic.IEnumerable,System.Int32)
+  fullName: CareBoo.Serially.Editor.EnumerableExtensions.ElementAtOrDefault(System.Collections.Generic.IEnumerable, System.Int32)
   nameWithType: EnumerableExtensions.ElementAtOrDefault(IEnumerable, Int32)
 - uid: CareBoo.Serially.Editor.EnumerableExtensions.ElementAtOrDefault*
   name: ElementAtOrDefault
@@ -39,13 +39,13 @@ references:
   isSpec: "True"
   fullName: CareBoo.Serially.Editor.EnumerableExtensions.SkipLast
   nameWithType: EnumerableExtensions.SkipLast
-- uid: CareBoo.Serially.Editor.EnumerableExtensions.SkipLast``1(IEnumerable{``0},System.Int32)
+- uid: CareBoo.Serially.Editor.EnumerableExtensions.SkipLast``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
   name: SkipLast<TSource>(IEnumerable<TSource>, Int32)
-  href: api/CareBoo.Serially.Editor.EnumerableExtensions.html#CareBoo_Serially_Editor_EnumerableExtensions_SkipLast__1_IEnumerable___0__System_Int32_
-  commentId: M:CareBoo.Serially.Editor.EnumerableExtensions.SkipLast``1(IEnumerable{``0},System.Int32)
+  href: api/CareBoo.Serially.Editor.EnumerableExtensions.html#CareBoo_Serially_Editor_EnumerableExtensions_SkipLast__1_System_Collections_Generic_IEnumerable___0__System_Int32_
+  commentId: M:CareBoo.Serially.Editor.EnumerableExtensions.SkipLast``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
   name.vb: SkipLast(Of TSource)(IEnumerable(Of TSource), Int32)
-  fullName: CareBoo.Serially.Editor.EnumerableExtensions.SkipLast<TSource>(IEnumerable<TSource>, System.Int32)
-  fullName.vb: CareBoo.Serially.Editor.EnumerableExtensions.SkipLast(Of TSource)(IEnumerable(Of TSource), System.Int32)
+  fullName: CareBoo.Serially.Editor.EnumerableExtensions.SkipLast<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Int32)
+  fullName.vb: CareBoo.Serially.Editor.EnumerableExtensions.SkipLast(Of TSource)(System.Collections.Generic.IEnumerable(Of TSource), System.Int32)
   nameWithType: EnumerableExtensions.SkipLast<TSource>(IEnumerable<TSource>, Int32)
   nameWithType.vb: EnumerableExtensions.SkipLast(Of TSource)(IEnumerable(Of TSource), Int32)
 - uid: CareBoo.Serially.Editor.GuiEvent
@@ -286,13 +286,13 @@ references:
   isSpec: "True"
   fullName: CareBoo.Serially.Editor.SerializedPropertyExtensions.GetSelectableManagedReferenceValueTypes
   nameWithType: SerializedPropertyExtensions.GetSelectableManagedReferenceValueTypes
-- uid: CareBoo.Serially.Editor.SerializedPropertyExtensions.GetValue(SerializedProperty,System.Func{IEnumerable{System.String},IEnumerable{System.String}})
+- uid: CareBoo.Serially.Editor.SerializedPropertyExtensions.GetValue(SerializedProperty,System.Func{System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String}})
   name: GetValue(SerializedProperty, Func<IEnumerable<String>, IEnumerable<String>>)
-  href: api/CareBoo.Serially.Editor.SerializedPropertyExtensions.html#CareBoo_Serially_Editor_SerializedPropertyExtensions_GetValue_SerializedProperty_System_Func_IEnumerable_System_String__IEnumerable_System_String___
-  commentId: M:CareBoo.Serially.Editor.SerializedPropertyExtensions.GetValue(SerializedProperty,System.Func{IEnumerable{System.String},IEnumerable{System.String}})
+  href: api/CareBoo.Serially.Editor.SerializedPropertyExtensions.html#CareBoo_Serially_Editor_SerializedPropertyExtensions_GetValue_SerializedProperty_System_Func_System_Collections_Generic_IEnumerable_System_String__System_Collections_Generic_IEnumerable_System_String___
+  commentId: M:CareBoo.Serially.Editor.SerializedPropertyExtensions.GetValue(SerializedProperty,System.Func{System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String}})
   name.vb: GetValue(SerializedProperty, Func(Of IEnumerable(Of String), IEnumerable(Of String)))
-  fullName: CareBoo.Serially.Editor.SerializedPropertyExtensions.GetValue(SerializedProperty, System.Func<IEnumerable<System.String>, IEnumerable<System.String>>)
-  fullName.vb: CareBoo.Serially.Editor.SerializedPropertyExtensions.GetValue(SerializedProperty, System.Func(Of IEnumerable(Of System.String), IEnumerable(Of System.String)))
+  fullName: CareBoo.Serially.Editor.SerializedPropertyExtensions.GetValue(SerializedProperty, System.Func<System.Collections.Generic.IEnumerable<System.String>, System.Collections.Generic.IEnumerable<System.String>>)
+  fullName.vb: CareBoo.Serially.Editor.SerializedPropertyExtensions.GetValue(SerializedProperty, System.Func(Of System.Collections.Generic.IEnumerable(Of System.String), System.Collections.Generic.IEnumerable(Of System.String)))
   nameWithType: SerializedPropertyExtensions.GetValue(SerializedProperty, Func<IEnumerable<String>, IEnumerable<String>>)
   nameWithType.vb: SerializedPropertyExtensions.GetValue(SerializedProperty, Func(Of IEnumerable(Of String), IEnumerable(Of String)))
 - uid: CareBoo.Serially.Editor.SerializedPropertyExtensions.GetValue*
@@ -315,102 +315,133 @@ references:
   isSpec: "True"
   fullName: CareBoo.Serially.Editor.SerializedPropertyExtensions.SetManagedReferenceValueToNew
   nameWithType: SerializedPropertyExtensions.SetManagedReferenceValueToNew
+- uid: CareBoo.Serially.Editor.SerializeReferenceContextMenu
+  name: SerializeReferenceContextMenu
+  href: api/CareBoo.Serially.Editor.SerializeReferenceContextMenu.html
+  commentId: T:CareBoo.Serially.Editor.SerializeReferenceContextMenu
+  fullName: CareBoo.Serially.Editor.SerializeReferenceContextMenu
+  nameWithType: SerializeReferenceContextMenu
+- uid: CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context
+  name: SerializeReferenceContextMenu.Context
+  href: api/CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.html
+  commentId: T:CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context
+  fullName: CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context
+  nameWithType: SerializeReferenceContextMenu.Context
+- uid: CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.#ctor(SerializedProperty)
+  name: Context(SerializedProperty)
+  href: api/CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.html#CareBoo_Serially_Editor_SerializeReferenceContextMenu_Context__ctor_SerializedProperty_
+  commentId: M:CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.#ctor(SerializedProperty)
+  fullName: CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.Context(SerializedProperty)
+  nameWithType: SerializeReferenceContextMenu.Context.Context(SerializedProperty)
+- uid: CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.#ctor*
+  name: Context
+  href: api/CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.html#CareBoo_Serially_Editor_SerializeReferenceContextMenu_Context__ctor_
+  commentId: Overload:CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.#ctor
+  isSpec: "True"
+  fullName: CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.Context
+  nameWithType: SerializeReferenceContextMenu.Context.Context
+- uid: CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.AddToMenu(GenericMenu)
+  name: AddToMenu(GenericMenu)
+  href: api/CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.html#CareBoo_Serially_Editor_SerializeReferenceContextMenu_Context_AddToMenu_GenericMenu_
+  commentId: M:CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.AddToMenu(GenericMenu)
+  fullName: CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.AddToMenu(GenericMenu)
+  nameWithType: SerializeReferenceContextMenu.Context.AddToMenu(GenericMenu)
+- uid: CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.AddToMenu*
+  name: AddToMenu
+  href: api/CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.html#CareBoo_Serially_Editor_SerializeReferenceContextMenu_Context_AddToMenu_
+  commentId: Overload:CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.AddToMenu
+  isSpec: "True"
+  fullName: CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.AddToMenu
+  nameWithType: SerializeReferenceContextMenu.Context.AddToMenu
+- uid: CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.Copy
+  name: Copy()
+  href: api/CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.html#CareBoo_Serially_Editor_SerializeReferenceContextMenu_Context_Copy
+  commentId: M:CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.Copy
+  fullName: CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.Copy()
+  nameWithType: SerializeReferenceContextMenu.Context.Copy()
+- uid: CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.Copy*
+  name: Copy
+  href: api/CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.html#CareBoo_Serially_Editor_SerializeReferenceContextMenu_Context_Copy_
+  commentId: Overload:CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.Copy
+  isSpec: "True"
+  fullName: CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.Copy
+  nameWithType: SerializeReferenceContextMenu.Context.Copy
+- uid: CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.FieldType
+  name: FieldType
+  href: api/CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.html#CareBoo_Serially_Editor_SerializeReferenceContextMenu_Context_FieldType
+  commentId: P:CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.FieldType
+  fullName: CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.FieldType
+  nameWithType: SerializeReferenceContextMenu.Context.FieldType
+- uid: CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.FieldType*
+  name: FieldType
+  href: api/CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.html#CareBoo_Serially_Editor_SerializeReferenceContextMenu_Context_FieldType_
+  commentId: Overload:CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.FieldType
+  isSpec: "True"
+  fullName: CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.FieldType
+  nameWithType: SerializeReferenceContextMenu.Context.FieldType
+- uid: CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.Paste
+  name: Paste()
+  href: api/CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.html#CareBoo_Serially_Editor_SerializeReferenceContextMenu_Context_Paste
+  commentId: M:CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.Paste
+  fullName: CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.Paste()
+  nameWithType: SerializeReferenceContextMenu.Context.Paste()
+- uid: CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.Paste*
+  name: Paste
+  href: api/CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.html#CareBoo_Serially_Editor_SerializeReferenceContextMenu_Context_Paste_
+  commentId: Overload:CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.Paste
+  isSpec: "True"
+  fullName: CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.Paste
+  nameWithType: SerializeReferenceContextMenu.Context.Paste
+- uid: CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.Property
+  name: Property
+  href: api/CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.html#CareBoo_Serially_Editor_SerializeReferenceContextMenu_Context_Property
+  commentId: P:CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.Property
+  fullName: CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.Property
+  nameWithType: SerializeReferenceContextMenu.Context.Property
+- uid: CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.Property*
+  name: Property
+  href: api/CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.html#CareBoo_Serially_Editor_SerializeReferenceContextMenu_Context_Property_
+  commentId: Overload:CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.Property
+  isSpec: "True"
+  fullName: CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.Property
+  nameWithType: SerializeReferenceContextMenu.Context.Property
+- uid: CareBoo.Serially.Editor.SerializeReferenceContextMenu.copiedValue
+  name: copiedValue
+  href: api/CareBoo.Serially.Editor.SerializeReferenceContextMenu.html#CareBoo_Serially_Editor_SerializeReferenceContextMenu_copiedValue
+  commentId: F:CareBoo.Serially.Editor.SerializeReferenceContextMenu.copiedValue
+  fullName: CareBoo.Serially.Editor.SerializeReferenceContextMenu.copiedValue
+  nameWithType: SerializeReferenceContextMenu.copiedValue
+- uid: CareBoo.Serially.Editor.SerializeReferenceContextMenu.CopyContextName
+  name: CopyContextName
+  href: api/CareBoo.Serially.Editor.SerializeReferenceContextMenu.html#CareBoo_Serially_Editor_SerializeReferenceContextMenu_CopyContextName
+  commentId: F:CareBoo.Serially.Editor.SerializeReferenceContextMenu.CopyContextName
+  fullName: CareBoo.Serially.Editor.SerializeReferenceContextMenu.CopyContextName
+  nameWithType: SerializeReferenceContextMenu.CopyContextName
+- uid: CareBoo.Serially.Editor.SerializeReferenceContextMenu.PasteContextName
+  name: PasteContextName
+  href: api/CareBoo.Serially.Editor.SerializeReferenceContextMenu.html#CareBoo_Serially_Editor_SerializeReferenceContextMenu_PasteContextName
+  commentId: F:CareBoo.Serially.Editor.SerializeReferenceContextMenu.PasteContextName
+  fullName: CareBoo.Serially.Editor.SerializeReferenceContextMenu.PasteContextName
+  nameWithType: SerializeReferenceContextMenu.PasteContextName
+- uid: CareBoo.Serially.Editor.SerializeReferenceContextMenu.RegisterContextMenuCallback
+  name: RegisterContextMenuCallback()
+  href: api/CareBoo.Serially.Editor.SerializeReferenceContextMenu.html#CareBoo_Serially_Editor_SerializeReferenceContextMenu_RegisterContextMenuCallback
+  commentId: M:CareBoo.Serially.Editor.SerializeReferenceContextMenu.RegisterContextMenuCallback
+  fullName: CareBoo.Serially.Editor.SerializeReferenceContextMenu.RegisterContextMenuCallback()
+  nameWithType: SerializeReferenceContextMenu.RegisterContextMenuCallback()
+- uid: CareBoo.Serially.Editor.SerializeReferenceContextMenu.RegisterContextMenuCallback*
+  name: RegisterContextMenuCallback
+  href: api/CareBoo.Serially.Editor.SerializeReferenceContextMenu.html#CareBoo_Serially_Editor_SerializeReferenceContextMenu_RegisterContextMenuCallback_
+  commentId: Overload:CareBoo.Serially.Editor.SerializeReferenceContextMenu.RegisterContextMenuCallback
+  isSpec: "True"
+  fullName: CareBoo.Serially.Editor.SerializeReferenceContextMenu.RegisterContextMenuCallback
+  nameWithType: SerializeReferenceContextMenu.RegisterContextMenuCallback
 - uid: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer
   name: ShowSerializeReferenceDrawer
   href: api/CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.html
   commentId: T:CareBoo.Serially.Editor.ShowSerializeReferenceDrawer
   fullName: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer
   nameWithType: ShowSerializeReferenceDrawer
-- uid: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context
-  name: ShowSerializeReferenceDrawer.Context
-  href: api/CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.html
-  commentId: T:CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context
-  fullName: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context
-  nameWithType: ShowSerializeReferenceDrawer.Context
-- uid: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.#ctor(SerializedProperty)
-  name: Context(SerializedProperty)
-  href: api/CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.html#CareBoo_Serially_Editor_ShowSerializeReferenceDrawer_Context__ctor_SerializedProperty_
-  commentId: M:CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.#ctor(SerializedProperty)
-  fullName: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.Context(SerializedProperty)
-  nameWithType: ShowSerializeReferenceDrawer.Context.Context(SerializedProperty)
-- uid: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.#ctor*
-  name: Context
-  href: api/CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.html#CareBoo_Serially_Editor_ShowSerializeReferenceDrawer_Context__ctor_
-  commentId: Overload:CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.#ctor
-  isSpec: "True"
-  fullName: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.Context
-  nameWithType: ShowSerializeReferenceDrawer.Context.Context
-- uid: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.Copy
-  name: Copy()
-  href: api/CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.html#CareBoo_Serially_Editor_ShowSerializeReferenceDrawer_Context_Copy
-  commentId: M:CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.Copy
-  fullName: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.Copy()
-  nameWithType: ShowSerializeReferenceDrawer.Context.Copy()
-- uid: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.Copy*
-  name: Copy
-  href: api/CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.html#CareBoo_Serially_Editor_ShowSerializeReferenceDrawer_Context_Copy_
-  commentId: Overload:CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.Copy
-  isSpec: "True"
-  fullName: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.Copy
-  nameWithType: ShowSerializeReferenceDrawer.Context.Copy
-- uid: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.CreateMenu
-  name: CreateMenu()
-  href: api/CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.html#CareBoo_Serially_Editor_ShowSerializeReferenceDrawer_Context_CreateMenu
-  commentId: M:CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.CreateMenu
-  fullName: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.CreateMenu()
-  nameWithType: ShowSerializeReferenceDrawer.Context.CreateMenu()
-- uid: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.CreateMenu*
-  name: CreateMenu
-  href: api/CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.html#CareBoo_Serially_Editor_ShowSerializeReferenceDrawer_Context_CreateMenu_
-  commentId: Overload:CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.CreateMenu
-  isSpec: "True"
-  fullName: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.CreateMenu
-  nameWithType: ShowSerializeReferenceDrawer.Context.CreateMenu
-- uid: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.FieldType
-  name: FieldType
-  href: api/CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.html#CareBoo_Serially_Editor_ShowSerializeReferenceDrawer_Context_FieldType
-  commentId: P:CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.FieldType
-  fullName: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.FieldType
-  nameWithType: ShowSerializeReferenceDrawer.Context.FieldType
-- uid: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.FieldType*
-  name: FieldType
-  href: api/CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.html#CareBoo_Serially_Editor_ShowSerializeReferenceDrawer_Context_FieldType_
-  commentId: Overload:CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.FieldType
-  isSpec: "True"
-  fullName: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.FieldType
-  nameWithType: ShowSerializeReferenceDrawer.Context.FieldType
-- uid: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.Paste
-  name: Paste()
-  href: api/CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.html#CareBoo_Serially_Editor_ShowSerializeReferenceDrawer_Context_Paste
-  commentId: M:CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.Paste
-  fullName: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.Paste()
-  nameWithType: ShowSerializeReferenceDrawer.Context.Paste()
-- uid: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.Paste*
-  name: Paste
-  href: api/CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.html#CareBoo_Serially_Editor_ShowSerializeReferenceDrawer_Context_Paste_
-  commentId: Overload:CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.Paste
-  isSpec: "True"
-  fullName: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.Paste
-  nameWithType: ShowSerializeReferenceDrawer.Context.Paste
-- uid: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.Property
-  name: Property
-  href: api/CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.html#CareBoo_Serially_Editor_ShowSerializeReferenceDrawer_Context_Property
-  commentId: P:CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.Property
-  fullName: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.Property
-  nameWithType: ShowSerializeReferenceDrawer.Context.Property
-- uid: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.Property*
-  name: Property
-  href: api/CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.html#CareBoo_Serially_Editor_ShowSerializeReferenceDrawer_Context_Property_
-  commentId: Overload:CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.Property
-  isSpec: "True"
-  fullName: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.Property
-  nameWithType: ShowSerializeReferenceDrawer.Context.Property
-- uid: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.copiedValue
-  name: copiedValue
-  href: api/CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.html#CareBoo_Serially_Editor_ShowSerializeReferenceDrawer_copiedValue
-  commentId: F:CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.copiedValue
-  fullName: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.copiedValue
-  nameWithType: ShowSerializeReferenceDrawer.copiedValue
 - uid: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.GetPropertyHeight(SerializedProperty,GUIContent)
   name: GetPropertyHeight(SerializedProperty, GUIContent)
   href: api/CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.html#CareBoo_Serially_Editor_ShowSerializeReferenceDrawer_GetPropertyHeight_SerializedProperty_GUIContent_
@@ -424,11 +455,11 @@ references:
   isSpec: "True"
   fullName: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.GetPropertyHeight
   nameWithType: ShowSerializeReferenceDrawer.GetPropertyHeight
-- uid: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.GetSelectableTypes(SerializedProperty,FieldInfo)
+- uid: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.GetSelectableTypes(SerializedProperty,System.Reflection.FieldInfo)
   name: GetSelectableTypes(SerializedProperty, FieldInfo)
-  href: api/CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.html#CareBoo_Serially_Editor_ShowSerializeReferenceDrawer_GetSelectableTypes_SerializedProperty_FieldInfo_
-  commentId: M:CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.GetSelectableTypes(SerializedProperty,FieldInfo)
-  fullName: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.GetSelectableTypes(SerializedProperty, FieldInfo)
+  href: api/CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.html#CareBoo_Serially_Editor_ShowSerializeReferenceDrawer_GetSelectableTypes_SerializedProperty_System_Reflection_FieldInfo_
+  commentId: M:CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.GetSelectableTypes(SerializedProperty,System.Reflection.FieldInfo)
+  fullName: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.GetSelectableTypes(SerializedProperty, System.Reflection.FieldInfo)
   nameWithType: ShowSerializeReferenceDrawer.GetSelectableTypes(SerializedProperty, FieldInfo)
 - uid: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.GetSelectableTypes*
   name: GetSelectableTypes
@@ -443,11 +474,11 @@ references:
   commentId: M:CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.OnGUI(Rect,SerializedProperty,GUIContent)
   fullName: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.OnGUI(Rect, SerializedProperty, GUIContent)
   nameWithType: ShowSerializeReferenceDrawer.OnGUI(Rect, SerializedProperty, GUIContent)
-- uid: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.OnGUI(Rect,SerializedProperty,GUIContent,CareBoo.Serially.Editor.GuiEvent,FieldInfo)
+- uid: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.OnGUI(Rect,SerializedProperty,GUIContent,CareBoo.Serially.Editor.GuiEvent,System.Reflection.FieldInfo)
   name: OnGUI(Rect, SerializedProperty, GUIContent, GuiEvent, FieldInfo)
-  href: api/CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.html#CareBoo_Serially_Editor_ShowSerializeReferenceDrawer_OnGUI_Rect_SerializedProperty_GUIContent_CareBoo_Serially_Editor_GuiEvent_FieldInfo_
-  commentId: M:CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.OnGUI(Rect,SerializedProperty,GUIContent,CareBoo.Serially.Editor.GuiEvent,FieldInfo)
-  fullName: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.OnGUI(Rect, SerializedProperty, GUIContent, CareBoo.Serially.Editor.GuiEvent, FieldInfo)
+  href: api/CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.html#CareBoo_Serially_Editor_ShowSerializeReferenceDrawer_OnGUI_Rect_SerializedProperty_GUIContent_CareBoo_Serially_Editor_GuiEvent_System_Reflection_FieldInfo_
+  commentId: M:CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.OnGUI(Rect,SerializedProperty,GUIContent,CareBoo.Serially.Editor.GuiEvent,System.Reflection.FieldInfo)
+  fullName: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.OnGUI(Rect, SerializedProperty, GUIContent, CareBoo.Serially.Editor.GuiEvent, System.Reflection.FieldInfo)
   nameWithType: ShowSerializeReferenceDrawer.OnGUI(Rect, SerializedProperty, GUIContent, GuiEvent, FieldInfo)
 - uid: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.OnGUI*
   name: OnGUI
@@ -456,12 +487,6 @@ references:
   isSpec: "True"
   fullName: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.OnGUI
   nameWithType: ShowSerializeReferenceDrawer.OnGUI
-- uid: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.RightClickButton
-  name: RightClickButton
-  href: api/CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.html#CareBoo_Serially_Editor_ShowSerializeReferenceDrawer_RightClickButton
-  commentId: F:CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.RightClickButton
-  fullName: CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.RightClickButton
-  nameWithType: ShowSerializeReferenceDrawer.RightClickButton
 - uid: CareBoo.Serially.Editor.StringExtensions
   name: StringExtensions
   href: api/CareBoo.Serially.Editor.StringExtensions.html
@@ -586,13 +611,13 @@ references:
   commentId: T:CareBoo.Serially.Editor.TypeField
   fullName: CareBoo.Serially.Editor.TypeField
   nameWithType: TypeField
-- uid: CareBoo.Serially.Editor.TypeField.#ctor(Rect,System.Type,System.Lazy{IEnumerable{System.Type}},System.Action{System.Type},System.Nullable{CareBoo.Serially.Editor.GuiEvent})
+- uid: CareBoo.Serially.Editor.TypeField.#ctor(Rect,System.Type,System.Lazy{System.Collections.Generic.IEnumerable{System.Type}},System.Action{System.Type},System.Nullable{CareBoo.Serially.Editor.GuiEvent})
   name: TypeField(Rect, Type, Lazy<IEnumerable<Type>>, Action<Type>, Nullable<GuiEvent>)
-  href: api/CareBoo.Serially.Editor.TypeField.html#CareBoo_Serially_Editor_TypeField__ctor_Rect_System_Type_System_Lazy_IEnumerable_System_Type___System_Action_System_Type__System_Nullable_CareBoo_Serially_Editor_GuiEvent__
-  commentId: M:CareBoo.Serially.Editor.TypeField.#ctor(Rect,System.Type,System.Lazy{IEnumerable{System.Type}},System.Action{System.Type},System.Nullable{CareBoo.Serially.Editor.GuiEvent})
+  href: api/CareBoo.Serially.Editor.TypeField.html#CareBoo_Serially_Editor_TypeField__ctor_Rect_System_Type_System_Lazy_System_Collections_Generic_IEnumerable_System_Type___System_Action_System_Type__System_Nullable_CareBoo_Serially_Editor_GuiEvent__
+  commentId: M:CareBoo.Serially.Editor.TypeField.#ctor(Rect,System.Type,System.Lazy{System.Collections.Generic.IEnumerable{System.Type}},System.Action{System.Type},System.Nullable{CareBoo.Serially.Editor.GuiEvent})
   name.vb: TypeField(Rect, Type, Lazy(Of IEnumerable(Of Type)), Action(Of Type), Nullable(Of GuiEvent))
-  fullName: CareBoo.Serially.Editor.TypeField.TypeField(Rect, System.Type, System.Lazy<IEnumerable<System.Type>>, System.Action<System.Type>, System.Nullable<CareBoo.Serially.Editor.GuiEvent>)
-  fullName.vb: CareBoo.Serially.Editor.TypeField.TypeField(Rect, System.Type, System.Lazy(Of IEnumerable(Of System.Type)), System.Action(Of System.Type), System.Nullable(Of CareBoo.Serially.Editor.GuiEvent))
+  fullName: CareBoo.Serially.Editor.TypeField.TypeField(Rect, System.Type, System.Lazy<System.Collections.Generic.IEnumerable<System.Type>>, System.Action<System.Type>, System.Nullable<CareBoo.Serially.Editor.GuiEvent>)
+  fullName.vb: CareBoo.Serially.Editor.TypeField.TypeField(Rect, System.Type, System.Lazy(Of System.Collections.Generic.IEnumerable(Of System.Type)), System.Action(Of System.Type), System.Nullable(Of CareBoo.Serially.Editor.GuiEvent))
   nameWithType: TypeField.TypeField(Rect, Type, Lazy<IEnumerable<Type>>, Action<Type>, Nullable<GuiEvent>)
   nameWithType.vb: TypeField.TypeField(Rect, Type, Lazy(Of IEnumerable(Of Type)), Action(Of Type), Nullable(Of GuiEvent))
 - uid: CareBoo.Serially.Editor.TypeField.#ctor*
@@ -905,13 +930,13 @@ references:
   commentId: F:CareBoo.Serially.Editor.TypePickerWindow.ContentContainer
   fullName: CareBoo.Serially.Editor.TypePickerWindow.ContentContainer
   nameWithType: TypePickerWindow.ContentContainer
-- uid: CareBoo.Serially.Editor.TypePickerWindow.InitData(System.Type,IEnumerable{System.Type},System.Action{System.Type})
+- uid: CareBoo.Serially.Editor.TypePickerWindow.InitData(System.Type,System.Collections.Generic.IEnumerable{System.Type},System.Action{System.Type})
   name: InitData(Type, IEnumerable<Type>, Action<Type>)
-  href: api/CareBoo.Serially.Editor.TypePickerWindow.html#CareBoo_Serially_Editor_TypePickerWindow_InitData_System_Type_IEnumerable_System_Type__System_Action_System_Type__
-  commentId: M:CareBoo.Serially.Editor.TypePickerWindow.InitData(System.Type,IEnumerable{System.Type},System.Action{System.Type})
+  href: api/CareBoo.Serially.Editor.TypePickerWindow.html#CareBoo_Serially_Editor_TypePickerWindow_InitData_System_Type_System_Collections_Generic_IEnumerable_System_Type__System_Action_System_Type__
+  commentId: M:CareBoo.Serially.Editor.TypePickerWindow.InitData(System.Type,System.Collections.Generic.IEnumerable{System.Type},System.Action{System.Type})
   name.vb: InitData(Type, IEnumerable(Of Type), Action(Of Type))
-  fullName: CareBoo.Serially.Editor.TypePickerWindow.InitData(System.Type, IEnumerable<System.Type>, System.Action<System.Type>)
-  fullName.vb: CareBoo.Serially.Editor.TypePickerWindow.InitData(System.Type, IEnumerable(Of System.Type), System.Action(Of System.Type))
+  fullName: CareBoo.Serially.Editor.TypePickerWindow.InitData(System.Type, System.Collections.Generic.IEnumerable<System.Type>, System.Action<System.Type>)
+  fullName.vb: CareBoo.Serially.Editor.TypePickerWindow.InitData(System.Type, System.Collections.Generic.IEnumerable(Of System.Type), System.Action(Of System.Type))
   nameWithType: TypePickerWindow.InitData(Type, IEnumerable<Type>, Action<Type>)
   nameWithType.vb: TypePickerWindow.InitData(Type, IEnumerable(Of Type), Action(Of Type))
 - uid: CareBoo.Serially.Editor.TypePickerWindow.InitData*
@@ -972,13 +997,13 @@ references:
   commentId: F:CareBoo.Serially.Editor.TypePickerWindow.SearchFieldName
   fullName: CareBoo.Serially.Editor.TypePickerWindow.SearchFieldName
   nameWithType: TypePickerWindow.SearchFieldName
-- uid: CareBoo.Serially.Editor.TypePickerWindow.ShowWindow(System.Type,IEnumerable{System.Type},System.Action{System.Type},System.String)
+- uid: CareBoo.Serially.Editor.TypePickerWindow.ShowWindow(System.Type,System.Collections.Generic.IEnumerable{System.Type},System.Action{System.Type},System.String)
   name: ShowWindow(Type, IEnumerable<Type>, Action<Type>, String)
-  href: api/CareBoo.Serially.Editor.TypePickerWindow.html#CareBoo_Serially_Editor_TypePickerWindow_ShowWindow_System_Type_IEnumerable_System_Type__System_Action_System_Type__System_String_
-  commentId: M:CareBoo.Serially.Editor.TypePickerWindow.ShowWindow(System.Type,IEnumerable{System.Type},System.Action{System.Type},System.String)
+  href: api/CareBoo.Serially.Editor.TypePickerWindow.html#CareBoo_Serially_Editor_TypePickerWindow_ShowWindow_System_Type_System_Collections_Generic_IEnumerable_System_Type__System_Action_System_Type__System_String_
+  commentId: M:CareBoo.Serially.Editor.TypePickerWindow.ShowWindow(System.Type,System.Collections.Generic.IEnumerable{System.Type},System.Action{System.Type},System.String)
   name.vb: ShowWindow(Type, IEnumerable(Of Type), Action(Of Type), String)
-  fullName: CareBoo.Serially.Editor.TypePickerWindow.ShowWindow(System.Type, IEnumerable<System.Type>, System.Action<System.Type>, System.String)
-  fullName.vb: CareBoo.Serially.Editor.TypePickerWindow.ShowWindow(System.Type, IEnumerable(Of System.Type), System.Action(Of System.Type), System.String)
+  fullName: CareBoo.Serially.Editor.TypePickerWindow.ShowWindow(System.Type, System.Collections.Generic.IEnumerable<System.Type>, System.Action<System.Type>, System.String)
+  fullName.vb: CareBoo.Serially.Editor.TypePickerWindow.ShowWindow(System.Type, System.Collections.Generic.IEnumerable(Of System.Type), System.Action(Of System.Type), System.String)
   nameWithType: TypePickerWindow.ShowWindow(Type, IEnumerable<Type>, Action<Type>, String)
   nameWithType.vb: TypePickerWindow.ShowWindow(Type, IEnumerable(Of Type), Action(Of Type), String)
 - uid: CareBoo.Serially.Editor.TypePickerWindow.ShowWindow*

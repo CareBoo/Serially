@@ -2,11 +2,11 @@
   "sitemap": {
     "fileOptions": {
       "api/*": {
-        "baseUrl": "https://careboo.github.io/serially/2.2/",
+        "baseUrl": "https://careboo.github.io/Serially/2.2/",
         "changefreq": "weekly"
       }
     },
-    "baseUrl": "https://careboo.github.io/serially/2.2/",
+    "baseUrl": "https://careboo.github.io/Serially/2.2/",
     "changefreq": "monthly"
   },
   "homepages": [],
@@ -28,7 +28,7 @@
       "output": {
         ".html": {
           "relative_path": "changelog/CHANGELOG.html",
-          "hash": "am9r7jyWZbgbw/IdfknDsg=="
+          "hash": "NM2EoYl0zKn0RuJJQRux6g=="
         }
       },
       "is_incremental": false,
@@ -179,7 +179,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CareBoo.Serially.Editor.EnumerableExtensions.html",
-          "hash": "Ky76I2rgx6KucLWmLQMaeA=="
+          "hash": "GabFIYaATyzKySo5XAfSsA=="
         }
       },
       "is_incremental": false,
@@ -191,7 +191,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CareBoo.Serially.Editor.GuiEvent.html",
-          "hash": "HyseOKxe5vReBDtMNFK0Ug=="
+          "hash": "hQL+4rMaIZsv3r/22IMJqg=="
         }
       },
       "is_incremental": false,
@@ -203,7 +203,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CareBoo.Serially.Editor.SerializableTypeDrawer.html",
-          "hash": "ZGe8Gd4C23/t8ZwesW/hHw=="
+          "hash": "J6v0m074MFTTvfGAkSpFWQ=="
         }
       },
       "is_incremental": false,
@@ -215,7 +215,31 @@
       "output": {
         ".html": {
           "relative_path": "api/CareBoo.Serially.Editor.SerializableTypeMeta.html",
-          "hash": "30vR2eJUYo+AZvLMGpU+cA=="
+          "hash": "LLtKF1hUKE0U6hBWZc1fpA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CareBoo.Serially.Editor.SerializeReferenceContextMenu.Context.html",
+          "hash": "1/ZJ60/HngSCuW5C6+zHhQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CareBoo.Serially.Editor.SerializeReferenceContextMenu.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CareBoo.Serially.Editor.SerializeReferenceContextMenu.html",
+          "hash": "jV2e5Hmuz0DXrpgE28V4Fg=="
         }
       },
       "is_incremental": false,
@@ -227,19 +251,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CareBoo.Serially.Editor.SerializedPropertyExtensions.html",
-          "hash": "CgrFIZho+onoQ5dfLZaE8A=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.Context.html",
-          "hash": "KFWZNYlRTszPk/WPbF5N+Q=="
+          "hash": "yN7zofhokDwXYXwSIqxH6Q=="
         }
       },
       "is_incremental": false,
@@ -251,7 +263,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CareBoo.Serially.Editor.ShowSerializeReferenceDrawer.html",
-          "hash": "vPbcpE6VK0Sr9RHljmzHMA=="
+          "hash": "DRY+rQd0kqEzRu8Dt4vU+g=="
         }
       },
       "is_incremental": false,
@@ -263,7 +275,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CareBoo.Serially.Editor.StringExtensions.html",
-          "hash": "tKQCp38N55dK4AewzEv4jg=="
+          "hash": "ltoW3PVnG3jWNfdARUN3xg=="
         }
       },
       "is_incremental": false,
@@ -275,7 +287,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CareBoo.Serially.Editor.SystemObjectExtensions.html",
-          "hash": "+oHz+Wh/1jSnEyO6ShaQ+A=="
+          "hash": "5Oh54sYQRFYMrMpJULmtmA=="
         }
       },
       "is_incremental": false,
@@ -287,7 +299,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CareBoo.Serially.Editor.TypeExtensions.html",
-          "hash": "CEaLA47v2Yg2ShcW8UmT7A=="
+          "hash": "j8O5r2jSo5raQF4s2aB59g=="
         }
       },
       "is_incremental": false,
@@ -299,7 +311,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CareBoo.Serially.Editor.TypeField.Styles.html",
-          "hash": "WH5mKcxmqULhqrT8qeb0ag=="
+          "hash": "VpHhR2GvbNrXJyDOC554XA=="
         }
       },
       "is_incremental": false,
@@ -311,7 +323,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CareBoo.Serially.Editor.TypeField.html",
-          "hash": "Wk6CsrbihuGNJgi0wJD2/w=="
+          "hash": "x/tT6SLfULDioubsTdN7kA=="
         }
       },
       "is_incremental": false,
@@ -323,7 +335,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CareBoo.Serially.Editor.TypePickerWindow.html",
-          "hash": "UAGV04MqaglVHr6988DaSg=="
+          "hash": "5/YU4bkKLJubuFX4qt4f3w=="
         }
       },
       "is_incremental": false,
@@ -335,7 +347,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CareBoo.Serially.Editor.html",
-          "hash": "91cfv/vchIzY/v6drJgxbg=="
+          "hash": "e7rpJn7mGflYZvu4OyIyNA=="
         }
       },
       "is_incremental": false,
@@ -347,7 +359,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CareBoo.Serially.ProvideSourceInfoAttribute.html",
-          "hash": "Oo4K3nB2dDu4av3WyXozyA=="
+          "hash": "VG8dBgcukJvkJcipWBuXww=="
         }
       },
       "is_incremental": false,
@@ -359,7 +371,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CareBoo.Serially.SerializableType.html",
-          "hash": "kUa3ARfVB9mroR+9R2kieQ=="
+          "hash": "LcmkDyCFIwhkAtPfcVo4LA=="
         }
       },
       "is_incremental": false,
@@ -371,7 +383,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CareBoo.Serially.ShowSerializeReferenceAttribute.html",
-          "hash": "Dun7O0XH2o+PbDZ/eubm4w=="
+          "hash": "tTO7wiPSl/p8yYtMdGkBJw=="
         }
       },
       "is_incremental": false,
@@ -383,7 +395,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CareBoo.Serially.TypeFilterAttribute.html",
-          "hash": "JNssSo0/+k1Q6U74Xvekbw=="
+          "hash": "nD+u7Ap0NjYIDeNbu5pvVg=="
         }
       },
       "is_incremental": false,
@@ -407,7 +419,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "KhOafgAzYb7F03zpWUMf/A=="
+          "hash": "GBtmvNkk+0SCgPP3RW626w=="
         }
       },
       "is_incremental": false,
@@ -431,7 +443,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "mWp1HuBV4DiV/m2HY7OWtw=="
+          "hash": "fkKOMV5+a4ZtgTCu5DptiQ=="
         }
       },
       "is_incremental": false,
@@ -494,7 +506,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 19,
+          "total_file_count": 20,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
