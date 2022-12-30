@@ -9,7 +9,7 @@ namespace CareBoo.Serially.Editor.Tests
     public class SerializedPropertyExtensionsTest : ScriptableObject
     {
         [Serializable]
-        public class TestClass
+        public class TestClass : TestInterface
         {
             public int IntField;
             public int[] ArrayField;
@@ -21,13 +21,13 @@ namespace CareBoo.Serially.Editor.Tests
 
 
         [SerializeReference]
-        public TestClass SerializeReferenceField;
+        public TestInterface SerializeReferenceField;
 
         public (SerializedProperty, Type) GetNewFixtureProperty(TestClass setFieldValue = null)
         {
             var serializedObject = GetSerializedObject(setFieldValue);
             var property = serializedObject.FindProperty(nameof(SerializeReferenceField));
-            var propertyType = typeof(TestClass);
+            var propertyType = typeof(TestInterface);
             return (property, propertyType);
         }
 

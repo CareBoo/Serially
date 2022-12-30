@@ -9,7 +9,9 @@ namespace CareBoo.Serially.Editor
             return !type.IsGenericType
                 && !type.IsAbstract
                 && !type.IsInterface
-                && Attribute.IsDefined(type, typeof(SerializableAttribute));
+                && Attribute.IsDefined(type, typeof(SerializableAttribute))
+                && !typeof(UnityEngine.Object).IsAssignableFrom(type)
+                ;
         }
     }
 }
