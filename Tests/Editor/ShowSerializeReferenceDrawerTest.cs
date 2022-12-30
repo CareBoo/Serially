@@ -119,10 +119,18 @@ namespace CareBoo.Serially.Editor.Tests
             for (var i = 0; i < menuItems.Count; i++)
             {
                 var isDisabled = GetMenuItemIsDisabled(menuItems, i);
-                if (GetMenuItemName(menuItems, i) == "Copy")
-                    Assert.IsFalse(isDisabled);
-                else
-                    Assert.AreEqual(pasteIsDisabled, isDisabled);
+                var menuItemName = GetMenuItemName(menuItems, i);
+                switch (menuItemName)
+                {
+                    case SerializeReferenceContextMenu.CopyContextName:
+                        Assert.IsFalse(isDisabled);
+                        break;
+                    case SerializeReferenceContextMenu.PasteContextName:
+                        Assert.AreEqual(pasteIsDisabled, isDisabled);
+                        break;
+                    default:
+                        throw new NotSupportedException($"Found an unsupported menu item: {menuItemName}");
+                }
             }
         }
 
