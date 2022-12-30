@@ -14,6 +14,10 @@ namespace CareBoo.Serially.Samples.Animals
         [SerializeReference]
         public IPet MyCurrentPet;
 
+        [ShowSerializeReference]
+        [SerializeReference]
+        public IPet[] ArrayOfMyPets;
+
         public GameObject GameObjectReference;
     }
 }

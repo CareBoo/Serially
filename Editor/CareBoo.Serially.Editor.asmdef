@@ -1,5 +1,6 @@
 {
     "name": "CareBoo.Serially.Editor",
+    "rootNamespace": "CareBoo.Serially.Editor",
     "references": [
         "CareBoo.Serially"
     ],
