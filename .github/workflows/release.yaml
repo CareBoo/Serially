@@ -19,7 +19,7 @@ jobs:
       version: ${{ steps.semantic.outputs.new_release_version }}
       major_minor: ${{ steps.semantic.outputs.new_release_major_version }}.${{ steps.semantic.outputs.new_release_minor_version }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           lfs: true
 
@@ -41,12 +41,12 @@ jobs:
     needs: release
     if: needs.release.outputs.published == 'true'
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           ref: ${{ github.ref }}
           lfs: true
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         with:
           path: Serially.AssetStore/Library
           key: Library-build_unitypackage-Serially.AssetStore-StandaloneLinux64
@@ -89,7 +89,7 @@ jobs:
     if: needs.release.outputs.published == 'true'
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           ref: ${{ github.ref }}
           lfs: true
