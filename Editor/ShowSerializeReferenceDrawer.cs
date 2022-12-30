@@ -11,70 +11,32 @@ namespace CareBoo.Serially.Editor
     [CustomPropertyDrawer(typeof(ShowSerializeReferenceAttribute))]
     public class ShowSerializeReferenceDrawer : PropertyDrawer
     {
-        public const int RightClickButton = 1;
-        public static object copiedValue;
-
-        public struct Context
+        private static (Rect label, Rect property) LabelPositions(Rect position)
         {
-            public SerializedProperty Property { get; }
-            public Type FieldType { get; }
+            var label = new Rect(position.x, position.y, labelWidth, singleLineHeight);
+            var property = new Rect(position.x + labelWidth + 2f, position.y, position.width - labelWidth - 2f,
+                singleLineHeight);
 
-            public Context(SerializedProperty property)
-            {
-                Property = property;
-                FieldType = property.GetManagedReferenceFieldType();
-            }
-
-            public GenericMenu CreateMenu()
-            {
-                var menu = new GenericMenu();
-                menu.AddItem(new GUIContent(nameof(Copy)), false, Copy);
-                if (copiedValue != null && FieldType.IsAssignableFrom(copiedValue.GetType()))
-                    menu.AddItem(new GUIContent(nameof(Paste)), false, Paste);
-                else
-                    menu.AddDisabledItem(new GUIContent(nameof(Paste)));
-                return menu;
-            }
-
-            public void Copy()
-            {
-                copiedValue = Property.GetValue();
-            }
-
-            public void Paste()
-            {
-                Property.managedReferenceValue = copiedValue;
-                Property.serializedObject.ApplyModifiedProperties();
-            }
-        }
-
-        private static Rect LabelIndent(Rect position)
-        {
-            position.xMin += labelWidth + 2f;
-            position.height = singleLineHeight;
-            return position;
+            return (label, property);
         }
 
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             var currentEvent = GuiEvent.FromCurrentUnityEvent;
-            OnGUI(position, property, label, currentEvent, fieldInfo);
+            currentEvent = OnGUI(position, property, label, currentEvent, fieldInfo);
+            if (currentEvent.Type == EventType.Used)
+            {
+                Event.current.Use();
+            }
         }
 
-        public static void OnGUI(Rect position, SerializedProperty property, GUIContent label, GuiEvent currentEvent, FieldInfo fieldInfo)
+        public static GuiEvent OnGUI(Rect position, SerializedProperty property, GUIContent label, GuiEvent currentEvent, FieldInfo fieldInfo)
         {
-            if (currentEvent.Type == EventType.MouseDown
-                && position.Contains(currentEvent.MousePosition)
-                && currentEvent.Button == RightClickButton)
-            {
-                var contextMenu = new Context(property).CreateMenu();
-                contextMenu.ShowAsContext();
-                currentEvent.Type = EventType.Used;
-            }
+            var (labelPosition, propertyPosition) = LabelPositions(position);
 
             var selectableTypes = new Lazy<IEnumerable<Type>>(() => GetSelectableTypes(property, fieldInfo));
             new TypeField(
-                position: LabelIndent(position),
+                position: propertyPosition,
                 selectedType: property.GetManagedReferenceValueType(),
                 selectableTypes: selectableTypes,
                 onSelectType: property.SetManagedReferenceValueToNew,
@@ -82,6 +44,7 @@ namespace CareBoo.Serially.Editor
                 ).DrawGui();
 
             EditorGUI.PropertyField(position, property, label, true);
+            return currentEvent;
         }
 
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)

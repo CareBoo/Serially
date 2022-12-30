@@ -49,21 +49,6 @@ namespace CareBoo.Serially.Editor.Tests
             testWindow.Close();
         }
 
-        [UnityTest]
-        [Timeout(5000)]
-        public IEnumerator RightClickInGUIShouldDrawWithoutErrors()
-        {
-            var obj = CreateInstance<ShowSerializeReferenceDrawerTest>();
-            var so = new SerializedObject(obj);
-            var sp = so.FindProperty(nameof(Field));
-            var testWindow = EditorWindow.GetWindow<TestEditorWindow>();
-            var position = new Rect(0, 0, 50, 50f);
-            var currentEvent = new GuiEvent(EventType.MouseDown, position.center, 1, ShowSerializeReferenceDrawer.RightClickButton);
-            testWindow.onGui = new EditorEvent(() => ShowSerializeReferenceDrawer.OnGUI(position, sp, GUIContent.none, currentEvent, GetType().GetField(nameof(Field))));
-            yield return new WaitUntil(testWindow.OnGUIInitialized).OrTimeout(2000);
-            testWindow.Close();
-        }
-
         [Test]
         [Timeout(5000)]
         public void ContextCopyShouldCopyPropertyValue()
@@ -73,9 +58,9 @@ namespace CareBoo.Serially.Editor.Tests
             obj.Field = expected;
             var so = new SerializedObject(obj);
             var property = so.FindProperty(nameof(Field));
-            var context = new ShowSerializeReferenceDrawer.Context(property);
+            var context = new SerializeReferenceContextMenu.Context(property);
             context.Copy();
-            var actual = ShowSerializeReferenceDrawer.copiedValue;
+            var actual = SerializeReferenceContextMenu.copiedValue;
             Assert.AreEqual(expected, actual);
         }
 
@@ -84,11 +69,11 @@ namespace CareBoo.Serially.Editor.Tests
         public void ContextPasteShouldPasteValueOntoProperty()
         {
             var expected = new A() { Value = 32 };
-            ShowSerializeReferenceDrawer.copiedValue = expected;
+            SerializeReferenceContextMenu.copiedValue = expected;
             var obj = CreateInstance<ShowSerializeReferenceDrawerTest>();
             var so = new SerializedObject(obj);
             var property = so.FindProperty(nameof(Field));
-            var context = new ShowSerializeReferenceDrawer.Context(property);
+            var context = new SerializeReferenceContextMenu.Context(property);
             context.Paste();
             var actual = (A)property.GetValue();
             Assert.AreEqual(expected.Value, actual.Value);
@@ -123,12 +108,13 @@ namespace CareBoo.Serially.Editor.Tests
         [TestCaseSource(nameof(ContextCreateMenuCases))]
         public void ContextCreateMenuShouldReturnMenuWithCopyAndPaste(object copiedValue, bool pasteIsDisabled)
         {
-            ShowSerializeReferenceDrawer.copiedValue = copiedValue;
+            SerializeReferenceContextMenu.copiedValue = copiedValue;
             var obj = CreateInstance<ShowSerializeReferenceDrawerTest>();
             var so = new SerializedObject(obj);
             var property = so.FindProperty(nameof(Field));
-            var context = new ShowSerializeReferenceDrawer.Context(property);
-            var menu = context.CreateMenu();
+            var context = new SerializeReferenceContextMenu.Context(property);
+            var menu = new GenericMenu();
+            context.AddToMenu(menu);
             var menuItems = GetMenuItems(menu);
             for (var i = 0; i < menuItems.Count; i++)
             {
