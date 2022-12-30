@@ -5,6 +5,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
+## [2.2.8](https://github.com/CareBoo/Serially/compare/v2.2.7...v2.2.8) (2022-12-30)
+
+
+### Bug Fixes
+
+* **context menu:** move managed reference context menu items to the default context menu ([841b3a0](https://github.com/CareBoo/Serially/commit/841b3a011c67f9665fe1b64b80d72cf1ff98fd22)), closes [#75](https://github.com/CareBoo/Serially/issues/75)
+* **show serialize reference:** filter objects derived from `UnityEngine.Object` from possible values ([0fe75d2](https://github.com/CareBoo/Serially/commit/0fe75d21668ffae8224e26919872010d4c539677)), closes [#74](https://github.com/CareBoo/Serially/issues/74)
+
 ## [2.2.7](https://github.com/CareBoo/Serially/compare/v2.2.6...v2.2.7) (2022-06-22)
 
 
