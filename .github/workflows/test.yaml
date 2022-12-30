@@ -40,7 +40,7 @@ jobs:
           - 2021.3.1f1
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           lfs: true
 
@@ -53,7 +53,7 @@ jobs:
           echo "$license" >> $GITHUB_ENV
           echo 'EOF' >> $GITHUB_ENV
 
-      - uses: actions/cache@v2.1.1
+      - uses: actions/cache@v3
         with:
           path: ${{ matrix.projectPath }}/Library
           key: Library-${{ matrix.unityVersion }}
