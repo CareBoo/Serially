@@ -44,9 +44,9 @@ namespace CareBoo.Serially.Editor
         public const string CopyContextName = "Copy Managed Reference";
 
         public const string PasteContextName = "Paste Managed Reference";
-        
+
         public static object copiedValue;
-        
+
         [InitializeOnLoadMethod]
         public static void RegisterContextMenuCallback()
         {
