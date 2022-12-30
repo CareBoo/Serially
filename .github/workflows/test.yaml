@@ -82,14 +82,14 @@ jobs:
           name: ${{ matrix.unityVersion }} Code Coverage
           path: CodeCoverage
 
-      - name: Upload PlayMode Test Coverage Report
+      - name: Upload Codecov Reports
         uses: codecov/codecov-action@v3
         with:
-          flags: unittests
-          directory: CodeCoverage/Serially.Package-opencov/PlayMode
+          flags: unit,playmode,${{matrix.unityVersion}}
+          directory: ./CodeCoverage/Serially.Package-opencov/PlayMode
 
       - name: Upload EditMode Test Coverage Report
         uses: codecov/codecov-action@v3
         with:
-          flags: unittests
-          directory: CodeCoverage/Serially.Package-opencov/EditMode
+          flags: unit,editmode,${{matrix.unityVersion}}
+          directory: ./CodeCoverage/Serially.Package-opencov/EditMode
