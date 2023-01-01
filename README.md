@@ -8,7 +8,7 @@ Serially
   </a>
   </br>
   <a href="https://github.com/CareBoo/Serially/actions/workflows/test.yaml">
-    <img src="https://img.shields.io/github/workflow/status/CareBoo/Serially/Unity%20Tests/main?label=tests"/>
+    <img src="https://img.shields.io/github/actions/workflow/status/CareBoo/Serially/test.yaml?branch=main"/>
   </a>
   </br>
   <a href="https://www.npmjs.com/package/com.careboo.serially">
