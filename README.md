@@ -22,12 +22,55 @@ Serially
 
 </h1>
 
-Extends the Unity Editor with:
+Extends the Unity Editor with type picking functionalities.
 
-- [ShowSerializeReference](Documentation~/ShowSerializeReference.md)
-  - Adds an inspector to `SerializeReference` fields.
-- [SerializableType](Documentation~/SerializableType.md)
-  - Serialize a `System.Type`.
+- [Usage](#usage)
+  - [`ShowSerializeReferenceAttribute`](#showserializereferenceattribute)
+  - [`SerializableType`](#serializabletype)
+- [Installation](#installation)
+  - [Scoped Registries](#scoped-registries)
+  - [Local Packages](#local-packages)
+- [Documentation](#documentation)
+
+## Usage
+
+### `ShowSerializeReferenceAttribute`
+
+![ShowSerializeReferenceAttribute](Documentation~/images/ShowSerializeReferenceDrawer.png)
+
+Use the `ShowSerializeReferenceAttribute` on a serializable field with `SerializeReference` to add a type picker inspector to that field.
+
+```cs
+using UnityEngine;
+using CareBoo.Serially;
+
+public class MyBehavior : MonoBehaviour
+{
+  [SerializeReference, ShowSerializeReference]
+  public IPet myPet;
+}
+```
+
+### `SerializableType`
+
+![SerializableType](Documentation~/images/SerializableTypeDrawer.png)
+
+Serialize any type with `SerializableType` class.
+
+```cs
+using UnityEngine;
+using CareBoo.Serially;
+
+public class MyBehaviour : MonoBehaviour
+{
+  public SerializableType myType;
+  
+  private void Start()
+  {
+    Debug.Log("Serialized type is " + myType.Type.FullName);
+  }
+}
+```
 
 ## Installation
 
