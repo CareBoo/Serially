@@ -44,7 +44,7 @@ or [npmjs](https://www.npmjs.com/package/com.careboo.serially) by adding those a
 ### Local Packages
 
 Alternatively, you can install this directly as either a tarball or unity asset package from
-the [latest release](https://github.com/CareBoo/Serially).
+the [latest release](https://github.com/CareBoo/Serially/releases/latest).
 
 ## Documentation
 
