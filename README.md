@@ -31,8 +31,17 @@ Extends the Unity Editor with:
 
 ## Installation
 
+### Scoped Registries
+
+| Registry | URL                         |
+|----------|:----------------------------|
+| NPM      | https://registry.npmjs.org/ |
+| OpenUPM  | https://package.openupm.com |
+
 This project can be installed as a UPM package on [OpenUPM](https://openupm.com/packages/com.careboo.serially/)
-or [npmjs](https://www.npmjs.com/package/com.careboo.serially).
+or [npmjs](https://www.npmjs.com/package/com.careboo.serially) by adding those as scoped registries. [See the Unity manual](https://docs.unity3d.com/Manual/upm-scoped.html) for more information on Scoped Registries.
+
+### Local Packages
 
 Alternatively, you can install this directly as either a tarball or unity asset package from
 the [latest release](https://github.com/CareBoo/Serially).
