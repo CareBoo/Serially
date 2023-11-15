@@ -1,1 +1,16 @@
-../../../package.json
+{
+    "name": "com.careboo.serially",
+    "displayName": "Serially",
+    "version": "2.2.8",
+    "unity": "2019.4",
+    "license": "MIT",
+    "description": "Provides extension classes to extend Unity's serialization capabilities.\n\n- Serialize Type references\n- Inject instances into [SerializeReference] fields",
+    "changelogUrl": "https://careboo.github.io/Serially/2.2/changelog",
+    "documentationUrl": "https://careboo.github.io/Serially/2.2",
+    "licensesUrl": "https://careboo.github.io/Serially/2.2/license",
+    "author": {
+      "name": "CareBoo",
+      "url": "https://github.com/CareBoo"
+    },
+    "dependencies": {}
+}
