@@ -22,7 +22,7 @@ jobs:
         uses: renanrcp/dotnet-format-problem-matcher@v.1.3.1
 
       - name: Get Changed C# Files
-        uses: tj-actions/changed-files@v16
+        uses: tj-actions/changed-files@v41
         id: changed_csharp_files
         with:
           files: |
